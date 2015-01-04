@@ -1,0 +1,399 @@
+<HTML>
+<HEAD>
+<TITLE>SP_ADD_ITEM_FOLHA</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_ADD_FILTROAJCUST.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_ADD_REMOVE_ECC.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_ADD_ITEM_FOLHA</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_ADD_ITEM_FOLHA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">FOENCGFOL</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_ADD_ITEM_FOLHA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_ADD_ITEM_FOLHA(
+  FOENCGFOL <b>INTEGER</b>)
+<b>AS
+DECLARE VARIABLE </b>FOENCODG <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>EMPYBASE <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>EMPDADMS <b>DATE</b>;
+<b>DECLARE VARIABLE </b>FOLDMES <b>DATE</b>;
+<b>DECLARE VARIABLE </b>FOLNDIAS <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>DIAS <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>LIMINSS <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>INSS <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>FGTS <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>SFAM <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>FOENCGEMP <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>QTD <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>DDEP <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>IRRF <b>FLOAT</b>;
+<b>BEGIN
+
+DELETE FROM </b>FOLHA_EMP_ITEM <b>WHERE
+EXISTS</b>(
+<b>SELECT </b>FEINCGFOE <b>FROM </b>FOLHA_EMP <b>WHERE
+</b>FEINCGFOE = FOENCODG <b>AND
+</b>FOENCGFOL = :FOENCGFOL
+);
+
+<b>FOR
+SELECT
+   </b>FOENCODG,
+   EMPYBASE,
+   EMPDADMS,
+   FOLDMES,
+   FOLNDIAS
+ <b>FROM
+   </b>FOLHA_EMP <b>INNER JOIN </b>EMPREGADO <b>ON
+   </b>FOENCGEMP = EMPNCODG
+   <b>LEFT JOIN </b>FOLHA <b>ON
+   </b>FOLNCODG = FOENCGFOL
+ <b>WHERE
+   </b>FOENCGFOL = :FOENCGFOL <b>AND
+   </b>( EMPLATIV = 'T' <b>AND  </b>EMPDDEMS <b>IS NULL</b>)
+ <b>INTO
+   </b>:FOENCODG,
+   :EMPYBASE,
+   :EMPDADMS,
+   :FOLDMES,
+   :FOLNDIAS
+ <b>DO
+BEGIN
+</b><i>/*DERNCODG = 1  - Salário Base*/
+</i><b>IF</b>(EMPDADMS <b>IS NULL</b>)<b>THEN
+</b>DIAS = 0;
+<b>ELSE BEGIN
+IF</b>(FOLDMES &lt; EMPDADMS)<b>THEN
+
+</b><i>/*DIAS = udf_DaysBetween(EMPDADMS,addDay(FOLDMES,FOLNDIAS));*/
+</i><b>SELECT </b>DAYS <b>FROM
+</b>SP_DAYSBETWEEN(:EMPDADMS,ADDDAY(:FOLDMES,:FOLNDIAS))
+<b>INTO </b>:DIAS;
+<b>IF</b>(DIAS &gt; FOLNDIAS)<b>THEN
+</b>DIAS = 0;
+<b>ELSE
+</b>DIAS = FOLNDIAS;
+<b>END
+IF</b>(DIAS &gt; 0)<b>THEN
+INSERT INTO
+  </b>FOLHA_EMP_ITEM(
+  FEINCGFOE,
+  FEINCGDER,
+  FEIYVALOR,
+  FEIYBASE)
+<b>VALUES</b>(
+  :FOENCODG,
+  1,
+  :EMPYBASE * (:DIAS/<b>CAST</b>(:FOLNDIAS <b>AS FLOAT</b>)),
+  :DIAS);
+<b>END
+</b><i>/*DERNCODG = 11  - INSS*/
+</i><b>FOR
+ SELECT
+   </b>FEINCGFOE,
+   FEIYVALOR
+ <b>FROM
+   </b>FOLHA_EMP <b>INNER JOIN </b>FOLHA_EMP_ITEM <b>ON
+   </b>FOENCODG = FEINCGFOE
+ <b>WHERE
+   </b>FEINCGDER = 1 <b>AND
+   </b>FOENCGFOL = :FOENCGFOL
+ <b>INTO
+ </b>:FOENCODG,
+ :EMPYBASE
+<b>DO BEGIN
+SELECT
+ MAX</b>(TABNLIMT)
+<b>FROM
+   </b>TABELA
+<b>WHERE
+   </b>TABNCGTTB = 1
+<b>INTO
+   </b>:LIMINSS;
+<b>IF</b>(EMPYBASE &lt; LIMINSS)<b>THEN
+</b>LIMINSS = EMPYBASE;
+<b>SELECT </b>FIRST 1
+   TABNPDES
+ <b>FROM
+   </b>TABELA
+ <b>WHERE
+   </b>TABNCGTTB = 1 <b>AND
+   </b>(TABNLIMT &gt;= :LIMINSS)
+ <b>ORDER BY </b>TABNLIMT
+ <b>INTO
+  </b>:INSS;
+
+<b>INSERT INTO
+  </b>FOLHA_EMP_ITEM(
+  FEINCGFOE,
+  FEINCGDER,
+  FEIYVALOR,
+  FEIYBASE)
+<b>VALUES</b>(
+  :FOENCODG,
+  11,
+  (:LIMINSS * :INSS) / 100,
+  :EMPYBASE);
+<b>END
+
+
+</b><i>/*DERNCODG = 13  - FGTS*/
+
+</i><b>SELECT </b>FIRST 1 PARNFGTS <b>FROM </b>PARAMETRO <b>INTO </b>:FGTS;
+<b>FOR
+ SELECT
+   </b>FEINCGFOE,
+   FEIYVALOR
+ <b>FROM
+   </b>FOLHA_EMP <b>INNER JOIN </b>FOLHA_EMP_ITEM <b>ON
+   </b>FOENCODG = FEINCGFOE
+ <b>WHERE
+   </b>FEINCGDER = 1 <b>AND
+   </b>FOENCGFOL = :FOENCGFOL
+ <b>INTO
+ </b>:FOENCODG,
+ :EMPYBASE
+<b>DO BEGIN
+
+INSERT INTO
+  </b>FOLHA_EMP_ITEM(
+  FEINCGFOE,
+  FEINCGDER,
+  FEIYVALOR,
+  FEIYBASE)
+<b>VALUES</b>(
+  :FOENCODG,
+  13,
+  (:EMPYBASE * :FGTS) / 100,
+  :EMPYBASE);
+<b>END
+</b><i>/*DERNCODG = 12  - Salário Família*/
+</i><b>FOR
+ SELECT
+   </b>FEINCGFOE,
+   FEIYVALOR,
+   FOENCGEMP
+ <b>FROM
+   </b>FOLHA_EMP <b>INNER JOIN </b>FOLHA_EMP_ITEM <b>ON
+   </b>FOENCODG = FEINCGFOE
+ <b>WHERE
+   </b>FEINCGDER = 1 <b>AND
+   </b>FOENCGFOL = :FOENCGFOL
+ <b>INTO
+ </b>:FOENCODG,
+ :EMPYBASE,
+ :FOENCGEMP
+<b>DO BEGIN
+
+ SELECT </b>FIRST 1
+   IIF(TABNLIMT &gt;=:EMPYBASE,TABNPARC,<b>NULL</b>)
+ <b>FROM
+   </b>TABELA
+ <b>WHERE
+   </b>TABNCGTTB = 3
+<b>ORDER BY </b>TABNLIMT
+<b>INTO </b>:SFAM;
+
+ <b>SELECT
+ COUNT</b>(DEPNCODG)
+ <b>FROM
+   </b>DEPENDENTE <b>LEFT JOIN </b>EMPREGADO <b>ON
+   </b>DEPNCGEN = EMPNCGCEN
+ <b>WHERE
+   EXISTS</b>(
+   <b>SELECT </b>PARNCODG <b>FROM </b>PARAMETRO <b>WHERE
+   </b><i>/*PARNMFAM &gt;= DEPNIDAD*/
+   </i>PARNMFAM &gt;= (<b>SELECT </b>IDADE <b>FROM </b>SP_YEARSBETWEEN('NOW',DEPDNASC))
+   ) <b>AND
+   </b>EMPNCODG =:FOENCGEMP
+ <b>INTO </b>:QTD;
+
+<b>IF</b>(QTD &gt; 0 <b>AND </b>SFAM <b>IS NOT NULL</b>)<b>THEN
+INSERT INTO
+  </b>FOLHA_EMP_ITEM(
+  FEINCGFOE,
+  FEINCGDER,
+  FEIYVALOR,
+  FEIYBASE)
+<b>VALUES</b>(
+  :FOENCODG,
+  12,
+  :SFAM * :QTD,
+  :QTD);
+<b>END
+
+
+</b><i>/*DERNCODG = 62  - Dependentes de Imposto Renda */
+ </i><b>SELECT </b>FIRST 1
+   PARYDDEP
+ <b>FROM
+   </b>PARAMETRO
+<b>INTO </b>:DDEP;
+<b>FOR
+ SELECT
+   </b>FEINCGFOE,
+   FEIYVALOR,
+   FOENCGEMP
+ <b>FROM
+   </b>FOLHA_EMP <b>INNER JOIN </b>FOLHA_EMP_ITEM <b>ON
+   </b>FOENCODG = FEINCGFOE
+ <b>WHERE
+   </b>FEINCGDER = 1 <b>AND
+   </b>FOENCGFOL = :FOENCGFOL
+ <b>INTO
+ </b>:FOENCODG,
+ :EMPYBASE,
+ :FOENCGEMP
+<b>DO BEGIN
+
+ SELECT
+ COUNT</b>(DEPNCODG)
+ <b>FROM
+   </b>DEPENDENTE <b>LEFT JOIN </b>EMPREGADO <b>ON
+   </b>DEPNCGEN = EMPNCGCEN
+ <b>WHERE
+   </b>EMPNCODG =:FOENCGEMP
+ <b>INTO </b>:QTD;
+
+<b>IF</b>(QTD &gt; 0)<b>THEN
+INSERT INTO
+  </b>FOLHA_EMP_ITEM(
+  FEINCGFOE,
+  FEINCGDER,
+  FEIYVALOR,
+  FEIYBASE)
+<b>VALUES</b>(
+  :FOENCODG,
+  62,
+  :DDEP * :QTD,
+  :QTD);
+<b>END
+
+
+</b><i>/*DERNCODG = 10  - Imposto de Renda*/
+
+</i><b>FOR
+SELECT </b>FEINCGFOE,
+       FEIYVALOR,
+       <b>CAST</b>((FEIYVALOR * TABNPDES)/100 -  TABNPARC <b>AS NUMERIC</b>(13,2)) VALOR
+<b>FROM </b>(
+      <b>SELECT </b>FEINCGFOE,
+             FEIYVALOR,
+             <b>MIN</b>(TABNLIMT) MIN_
+      <b>FROM </b>(
+      <b>SELECT </b>FEINCGFOE FEINCGFOE,
+            <b>SUM</b>(IIF(IDRCTIPO = '+',FEIYVALOR,IIF(IDRCTIPO = '-',-FEIYVALOR,<b>NULL</b>)))FEIYVALOR
+      <b>FROM </b>FOLHA_EMP_ITEM
+           <b>INNER JOIN </b>ITEM_DESC_REND <b>ON </b>IDRNCGDER = FEINCGDER
+      <b>WHERE </b>IDRNCGTDR = 1 <i>/*IMPOSTO DE RENDA*/
+      </i><b>GROUP BY </b>FEINCGFOE
+           ) IRRF
+           <b>LEFT JOIN </b>TABELA <b>ON </b>TABNCGTTB = 2 <b>AND </b>TABNLIMT &gt;= FEIYVALOR
+      <b>GROUP BY </b>FEINCGFOE,
+               FEIYVALOR
+     )
+     <b>INNER JOIN </b>TABELA <b>ON </b>TABNCGTTB = 2 <b>AND </b>TABNLIMT = MIN_ <b>AND </b>TABNPDES &gt; 0
+     <b>INNER JOIN </b>FOLHA_EMP <b>ON
+     </b>FEINCGFOE = FOENCODG
+ <b>WHERE
+   </b>FOENCGFOL = :FOENCGFOL
+ <b>INTO
+ </b>:FOENCODG,
+ :EMPYBASE,
+ :IRRF
+<b>DO BEGIN
+
+INSERT INTO
+  </b>FOLHA_EMP_ITEM(
+  FEINCGFOE,
+  FEINCGDER,
+  FEIYVALOR,
+  FEIYBASE)
+<b>VALUES</b>(
+  :FOENCODG,
+  10,
+  :IRRF,
+  :EMPYBASE);
+<b>END
+
+UPDATE </b>FOLHA_EMP
+<b>SET </b>FOEYLIQD = COALESCE((
+                         <b>SELECT SUM</b>(IIF(DERCOPER = '+', FEIYVALOR, IIF(DERCOPER
+                         = '-', - FEIYVALOR, <b>NULL</b>))) FEIYVALOR
+                         <b>FROM </b>FOLHA_EMP_ITEM
+                              <b>INNER JOIN </b>DESC_REND <b>ON </b>FEINCGDER = DERNCODG
+                         <b>WHERE </b>DERCOPER <b>IN </b>('+', '-') <b>AND
+                               </b>FEINCGFOE = FOENCODG
+                         <b>GROUP BY </b>FEINCGFOE
+    ), 0),
+
+FOENQTCC =(
+<b>SELECT COUNT</b>(<b>DISTINCT </b>ECCNCGCR)
+<b>FROM </b>EMPREGADO_CENTROCUSTO
+<b>WHERE </b>ECCNCGEMP = FOENCGEMP
+<b>GROUP BY </b>ECCNCGEMP)
+<b>WHERE </b>FOENCGFOL = :FOENCGFOL;
+<i>/*
+ SELECT
+   count(distinct ECCNCGCR)
+ FROM
+   EMPREGADO_CENTROCUSTO
+ where
+   ECCNCGEMP = :ECCNCGEMP
+ group by ECCNCGEMP
+*/
+
+</i><b>END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_ADD_FILTROAJCUST.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_ADD_REMOVE_ECC.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

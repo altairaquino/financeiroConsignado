@@ -1,0 +1,187 @@
+<HTML>
+<HEAD>
+<TITLE>SP_COMISSAO_ANGARIADOR</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_AUDITORIA_CONTRATO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_CONTRATOAUDITORIA.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_COMISSAO_ANGARIADOR</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_COMISSAO_ANGARIADOR</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">DATA_INICIO</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">DATA_FIM</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_COMISSAO_ANGARIADOR</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_COMISSAO_ANGARIADOR(
+  DATA_INICIO <b>DATE</b>,
+  DATA_FIM <b>DATE</b>)
+<b>RETURNS</b>(
+  ENNCODG <b>INTEGER</b>,
+  ENCNOME <b>VARCHAR</b>(50) <b>CHARACTER SET </b>NONE,
+  CONCODG <b>INTEGER</b>,
+  BCNCODG <b>INTEGER</b>,
+  BCCDESC <b>VARCHAR</b>(40) <b>CHARACTER SET </b>NONE,
+  COCAGEN <b>VARCHAR</b>(10) <b>CHARACTER SET </b>NONE,
+  COCNUMR <b>VARCHAR</b>(10) <b>CHARACTER SET </b>NONE,
+  TCTCDESC <b>VARCHAR</b>(35) <b>CHARACTER SET </b>NONE,
+  CTLFISI <b>CHAR</b>(1) <b>CHARACTER SET </b>NONE,
+  PRODUCAO <b>FLOAT</b>,
+  COMISSAO <b>FLOAT</b>,
+  TARIFAS <b>FLOAT</b>,
+  EXTORNO <b>FLOAT</b>,
+  TOTAL <b>FLOAT</b>)
+<b>AS
+BEGIN
+     FOR SELECT </b>CTNCGEN,
+         ENCNOME,
+         <b>SUM</b>(CTYVALR),
+         <b>SUM</b>(CCNPERC * CTYVALR / 100.0)
+         <b>FROM </b>CONTRATO
+         <b>INNER JOIN </b>ENTIDADE <b>ON
+            </b>ENNCODG = CTNCGEN
+         <b>INNER JOIN </b>COMISSAOCONTRATO <b>ON
+            </b>CCNCGCT = CTNCODG <b>AND
+            </b>CCNCGEN = CTNCGEN
+         <b>INNER JOIN </b>ANGARIADOR <b>ON
+            </b>ENNCODG = ANNCGEN
+         <b>INNER JOIN </b>SITUACAOCONTRATO <b>ON
+            </b>SCNCODG = CTNCGSC
+         <b>WHERE </b>CTDPGTO <b>BETWEEN </b>:DATA_INICIO <b>AND </b>:DATA_FIM
+         <b>AND </b>ANNCGTN != 9
+         <b>AND </b>SCLPGCM = 'T'
+         --<b>AND exists </b>(<b>SELECT </b>* <b>FROM </b>CONTACORRENTE <b>WHERE </b>CONCGEN = ENNCODG)
+         <b>GROUP BY </b>1,2
+         <b>ORDER BY </b>2
+     <b>INTO </b>:ENNCODG, :ENCNOME, :PRODUCAO, :COMISSAO
+     <b>DO BEGIN
+
+        </b>-- TARIFAS
+        <b>SELECT
+             SUM</b>(CTYTARI) CTYTARI
+        <b>FROM
+             </b>VW_CONTRATO
+        <b>WHERE </b>CTDPGTO <b>BETWEEN </b>:DATA_INICIO <b>AND </b>:DATA_FIM
+             <b>AND </b>CTNCGEN = :ENNCODG
+        <b>INTO </b>:TARIFAS;
+     
+        -- CONTA CORRENTE
+        <b>IF </b>(<b>NOT exists</b>(<b>SELECT </b>* <b>FROM </b>CONTACORRENTE <b>WHERE </b>CONCGEN = :ENNCODG <b>AND </b>COLPRIN = 'T')) <b>THEN
+        BEGIN
+            </b>BCNCODG = <b>NULL</b>;
+            COCAGEN = <b>NULL</b>;
+            COCNUMR = <b>NULL</b>;
+            BCCDESC = <b>NULL</b>;
+            TCTCDESC = <b>NULL</b>;
+            CONCODG = <b>NULL</b>;
+        <b>END
+        ELSE
+        BEGIN
+            SELECT </b>CONCODG, CONCGBC, COCAGEN, COCNUMR, BCCDESC, TCTCDESC 
+            <b>FROM </b>ENTIDADE <b>LEFT JOIN </b>CONTACORRENTE <b>ON
+                </b>CONCGEN = ENNCODG
+            <b>LEFT JOIN </b>BANCO <b>ON
+                </b>BCNCODG = CONCGBC
+            <b>LEFT JOIN </b>TIPOCONTACORRENTE <b>ON
+                </b>TCTNCODG = CONTCON
+            <b>WHERE </b>ENNCODG = :ENNCODG
+            <b>AND </b>COLPRIN = 'T'
+            <b>INTO </b>:CONCODG, :BCNCODG, :COCAGEN, :COCNUMR, :BCCDESC, :TCTCDESC;
+        <b>END
+        
+        
+        
+        </b>-- EXTORNOS
+        <b>SELECT </b>COALESCE(<b>SUM</b>(CTNEXAT * CTYVALR / 100.0),0)
+         <b>FROM </b>CONTRATO
+         <b>INNER JOIN </b>ENTIDADE <b>ON
+            </b>ENNCODG = CTNCGEN
+         <b>INNER JOIN </b>ANGARIADOR <b>ON
+            </b>ENNCODG = ANNCGEN
+         <b>WHERE </b>CTDEXTN <b>IS NOT NULL
+         AND </b>CTDEXTN <b>BETWEEN </b>:DATA_INICIO <b>AND </b>:DATA_FIM
+         <b>AND </b>ENNCODG = :ENNCODG
+         <b>INTO </b>:EXTORNO;
+
+        -- FÍSICOS
+        CTLFISI = IIF(<b>EXISTS</b>(
+              <b>SELECT </b>* <b>FROM </b>CONTRATO
+              <b>WHERE </b>CTLFISI = 'F'
+              <b>AND </b>CTNCGEN = :ENNCODG
+              <b>AND </b>CTNCGSC = 6
+              <b>AND
+              </b>(<b>SELECT </b>DAYS <b>FROM </b>SP_DAYSBETWEEN('NOW',CTDVERB)) &gt; 3
+              ),'*',' ');
+
+        -- COMISSÃO
+        <i>/*
+        SELECT SUM(CCNPERC * CTYVALR / 100.0) COMS
+         FROM COMISSAOCONTRATO INNER JOIN CONTRATO ON
+         CCNCGCT = CTNCODG AND
+         CCNCGEN = CTNCGEN
+         INNER JOIN SITUACAOCONTRATO ON
+            SCNCODG = CTNCGSC
+         WHERE CTDVERB BETWEEN :DATA_INICIO AND :DATA_FIM
+         AND CTNCGEN = :ENNCODG
+         AND SCLPGCM = 'T'
+         INTO :COMISSAO;
+         */
+         </i>TOTAL = COMISSAO - TARIFAS - EXTORNO;
+        <b>SUSPEND</b>;
+     
+     <b>END
+END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_AUDITORIA_CONTRATO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_CONTRATOAUDITORIA.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

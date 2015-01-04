@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+
+<html>
+
+<head>
+	<title>Destroydrop &raquo; Javascripts &raquo; Tree</title>
+
+	<link rel='StyleSheet' href='dtree.css' type='text/css' />
+	<script type='text/javascript' src='dtree.js'></script>
+
+</head>
+
+<body>
+
+
+<h2>Example</h2>
+
+<div class='dtree'>
+
+	<p><a href='javascript: d.openAll();'>open all</a> | <a href='javascript: d.closeAll();'>close all</a></p>
+
+	
+	<script type='text/javascript'>
+		<!--
+
+d = new dTree('d');
+ d.add(0,-1,'Plano de Contas');
+d.add(1,0,'ENTRADAS','javascript: alert(d);');
+d.add(2,0,'SAíDAS','javascript: alert(d);');
+d.add(3,1,'OPERACIONAIS','javascript: alert(d);');
+d.add(4,2,'OPERACIONAIS','javascript: alert(d);');
+d.add(5,4,'DESPESAS FUNCIONAIS','javascript: alert(d);');
+d.add(6,5,'DESPESAS COM FUNCIONARIOS','javascript: alert(d);');
+d.add(7,5,'MATERIAL DE EXPEDIENTE','javascript: alert(d);');
+d.add(58,5,'PAGTO DE JUROS','javascript: alert(d);');
+d.add(9,6,'PAGAMENTO DE COMISSõES','javascript: alert(d);');
+d.add(10,6,'INSS','javascript: alert(d);');
+d.add(12,6,'PAGAMENTO DE 13º SALáRIO','javascript: alert(d);');
+d.add(13,6,'PRO-LABORE','javascript: alert(d);');
+d.add(14,6,'OUTRAS DESPENSAS COM FUNCIONARIOS','javascript: alert(d);');
+d.add(15,2,'IMOBILIZADO','javascript: alert(d);');
+d.add(16,2,'INVESTIMENTOS','javascript: alert(d);');
+d.add(17,2,'NãO-OPERACIONAIS','javascript: alert(d);');
+d.add(18,15,'CONSTRUçõES','javascript: alert(d);');
+d.add(19,15,'MóVEIS E UTENSíLIOS','javascript: alert(d);');
+d.add(20,15,'MáQUINAS E EQUIPAMENTOS','javascript: alert(d);');
+d.add(21,4,'DESPESAS ADMINISTRATIVAS','javascript: alert(d);');
+d.add(22,21,'PRO-LABORE','javascript: alert(d);');
+d.add(23,21,'HONORÁRIOS','javascript: alert(d);');
+d.add(24,21,'CARTÓRIO','javascript: alert(d);');
+d.add(25,21,'INFORMÁTICA','javascript: alert(d);');
+d.add(26,4,'DESPESAS FINANCEIRAS','javascript: alert(d);');
+d.add(27,26,'JUROS PAGOS A BANCOS','javascript: alert(d);');
+d.add(28,26,'TAXAS BANCáRIAS','javascript: alert(d);');
+d.add(29,26,'DESPESAS BANCáRIAS','javascript: alert(d);');
+d.add(30,4,'DESPESAS TRIBUTÁRIAS','javascript: alert(d);');
+d.add(31,30,'ICMS','javascript: alert(d);');
+d.add(32,30,'PIS','javascript: alert(d);');
+d.add(33,30,'CONFINS','javascript: alert(d);');
+d.add(34,30,'ISS','javascript: alert(d);');
+d.add(35,30,'I.R.','javascript: alert(d);');
+d.add(36,30,'CONTRIBUIÇÃO SOCIAL','javascript: alert(d);');
+d.add(37,30,'IPTU','javascript: alert(d);');
+d.add(38,30,'IPVA','javascript: alert(d);');
+d.add(39,4,'TRANSFERêNCIA CAIXA->BANCO','javascript: alert(d);');
+d.add(40,17,'MULTAS DIVERSAS','javascript: alert(d);');
+d.add(41,17,'RECLAMAçõES TRABALHISTAS','javascript: alert(d);');
+d.add(42,17,'PREJUíZOS EVENTUAIS','javascript: alert(d);');
+d.add(43,17,'OUTRAS SAíDAS NãO OPERACIONAIS','javascript: alert(d);');
+d.add(48,1,'NãO OPERACIONAIS','javascript: alert(d);');
+d.add(45,3,'VENDAS','javascript: alert(d);');
+d.add(46,3,'JUROS RECEBIDOS','javascript: alert(d);');
+d.add(47,3,'DESCONTOS OBTIDOS','javascript: alert(d);');
+d.add(49,48,'VENDA IMOBILIZADO','javascript: alert(d);');
+d.add(50,48,'OUTRAS ENTRADAS NãO OPERACIONAIS','javascript: alert(d);');
+d.add(51,6,'PGTO DE SALáRIO','javascript: alert(d);');
+d.add(52,6,'PGTO DE VALES','javascript: alert(d);');
+d.add(53,6,'PGTO DE COMISSõES','javascript: alert(d);');
+d.add(54,6,'ADIANTAMENTO DE SALáRIOS','javascript: alert(d);');
+d.add(55,6,'FéRIAS','javascript: alert(d);');
+d.add(56,6,'FGTS','javascript: alert(d);');
+d.add(57,6,'RESCISõES','javascript: alert(d);');
+d.add(59,5,'ÁGUA E LUZ','javascript: alert(d);');
+d.add(60,5,'TELEFONE','javascript: alert(d);');
+d.add(61,5,'LIMPEZA E CONSERVAçãO','javascript: alert(d);');
+d.add(62,5,'DESPESAS COM VEíCULOS','javascript: alert(d);');
+d.add(63,5,'DESPESA COM PUBLICIDADE','javascript: alert(d);');
+d.add(64,5,'DESPESA COM BRINDES','javascript: alert(d);');
+d.add(65,5,'DESPESA COM RIFAS E DOAçõES','javascript: alert(d);');
+d.add(66,5,'DESPESAS COM MANUTENçãO','javascript: alert(d);');
+d.add(67,5,'OUTRAS DESPESAS','javascript: alert(d);');
+d.add(68,3,'TRANSFERêNCIA BANCO->CAIXA','javascript: alert(d);');
+d.add(69,62,'COMBUSTÍVEL','javascript: alert(d);');
+d.add(70,62,'MANUTENÇÃO','javascript: alert(d);');
+d.add(71,62,'REVISÃO','javascript: alert(d);');
+
+
+
+		document.write(d);
+
+		//-->
+	</script>
+
+</div>
+
+
+</body>
+
+</html>

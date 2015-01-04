@@ -1,0 +1,187 @@
+<HTML>
+<HEAD>
+<TITLE>VW_EMPRESA</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="VW_CONTRATOAUTO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="VW_ENTIDADE.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">VW_EMPRESA</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for view VW_EMPRESA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Columns</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Column</B></P>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Type</B></P>
+<TH WIDTH="70%"><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD><P CLASS="Base2">EPNCODG</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCNOME</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCCNPJ</P></TD>
+<TD><P CLASS="Base2">VARCHAR(14)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCRZSC</P></TD>
+<TD><P CLASS="Base2">VARCHAR(40)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCICES</P></TD>
+<TD><P CLASS="Base2">VARCHAR(15)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCRESP</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCFONE</P></TD>
+<TD><P CLASS="Base2">VARCHAR(10)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCMAIL</P></TD>
+<TD><P CLASS="Base2">VARCHAR(100)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCLOGR</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPNCGTL</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCDCTL</P></TD>
+<TD><P CLASS="Base2">VARCHAR(25)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPNCGCD</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCUFCD</P></TD>
+<TD><P CLASS="Base2">VARCHAR(2)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCDCCD</P></TD>
+<TD><P CLASS="Base2">VARCHAR(50)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCBAIR</P></TD>
+<TD><P CLASS="Base2">VARCHAR(50)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPCCEP</P></TD>
+<TD><P CLASS="Base2">VARCHAR(8)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">EPLMATR</P></TD>
+<TD><P CLASS="Base2">CHAR(1)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Triggers</P>
+<P CLASS="Base">There are no triggers for view VW_EMPRESA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>CREATE VIEW </b>VW_EMPRESA(
+  EPNCODG,
+  EPCNOME,
+  EPCCNPJ,
+  EPCRZSC,
+  EPCICES,
+  EPCRESP,
+  EPCFONE,
+  EPCMAIL,
+  EPCLOGR,
+  EPNCGTL,
+  EPCDCTL,
+  EPNCGCD,
+  EPCUFCD,
+  EPCDCCD,
+  EPCBAIR,
+  EPCCEP,
+  EPLMATR)
+<b>AS
+SELECT
+   </b>EPNCODG,
+   EPCNOME,
+   EPCCNPJ,
+   EPCRZSC,
+   EPCICES,
+   EPCRESP,
+   EPCFONE,
+   EPCMAIL,
+   EPCLOGR,
+   EPNCGTL,
+   TLCDESC,
+   EPNCGCD,
+   CDCUF,
+   CDCDESC,
+   EPCBAIR,
+   EPCCEP,
+   EPLMATR
+ <b>FROM
+   </b>EMPRESA <b>LEFT JOIN </b>CIDADE <b>ON
+     </b>EPNCGCD = CDNCODG
+   <b>LEFT JOIN </b>TIPOLOGRADOURO <b>ON
+     </b>EPNCGTL = TLNCODG
+;
+
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:50</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="VW_CONTRATOAUTO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="VW_ENTIDADE.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

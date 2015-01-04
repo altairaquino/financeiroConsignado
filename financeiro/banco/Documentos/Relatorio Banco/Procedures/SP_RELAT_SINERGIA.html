@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<TITLE>SP_RELAT_SINERGIA</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_RELAT_REGIONAL_GC_HTML.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_YEARSBETWEEN.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_RELAT_SINERGIA</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_RELAT_SINERGIA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">DATA_INICIO</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">DATA_FIM</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_RELAT_SINERGIA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_RELAT_SINERGIA(
+  DATA_INICIO <b>DATE</b>,
+  DATA_FIM <b>DATE</b>)
+<b>RETURNS</b>(
+  COD_AGENCIA <b>INTEGER</b>,
+  NOME_AGENCIA <b>VARCHAR</b>(60) <b>CHARACTER SET </b>NONE,
+  META_AGENCIA <b>FLOAT</b>,
+  PROD_AGENCIA <b>FLOAT</b>,
+  PERC_PROD <b>FLOAT</b>,
+  COD_FUNC <b>INTEGER</b>,
+  NOME_FUNC <b>VARCHAR</b>(60) <b>CHARACTER SET </b>NONE,
+  TIPO_FUNC <b>VARCHAR</b>(60) <b>CHARACTER SET </b>NONE,
+  META_FUNC <b>FLOAT</b>,
+  COMS_FUNC <b>FLOAT</b>)
+<b>AS
+BEGIN
+
+     FOR SELECT </b>ANNCGEN, ENCNOME, ANNMETA <b>FROM </b>ANGARIADOR
+         <b>INNER JOIN </b>ENTIDADE <b>ON
+               </b>ANNCGEN = ENNCODG
+         <b>WHERE </b>ANNCGTN = 9
+         <b>AND </b>ENLATIV = 'T'
+         <b>ORDER BY </b>ENCNOME
+         <b>INTO </b>:COD_AGENCIA, :NOME_AGENCIA, :META_AGENCIA
+         <b>DO BEGIN
+            select SUM</b>(CTYVALR) <b>from </b>contrato
+            <b>inner join </b>SITUACAOCONTRATO <b>on
+                  </b>ctncgsc = scncodg
+            <b>where </b>CTDPGTO <b>between </b>:DATA_INICIO <b>and </b>:DATA_FIM
+            <b>and </b>sclpgcm = 'T'
+            <b>AND </b>CTNCGEN = :COD_AGENCIA
+            <b>INTO </b>:PROD_AGENCIA;
+            
+            PERC_PROD = PROD_AGENCIA / META_AGENCIA * 100.0;
+            
+            <b>FOR SELECT </b>FCANC2EN, ENCNOME, TFACDESC, FCANMETA <b>FROM </b>FUNCIONARIOAGENCIA
+                <b>INNER JOIN </b>ENTIDADE <b>ON
+                      </b>FCANC2EN = ENNCODG
+                <b>INNER JOIN </b>TIPOFUNCAGENCIA <b>ON
+                      </b>FCANCGTFA = TFANCODG
+                <b>WHERE </b>FCALATIV = 'T'
+                <b>AND </b>FCANCGEN = :COD_AGENCIA
+                <b>AND </b>FCANCGTFA <b>IN </b>(2,3)
+                <b>ORDER BY </b>TFANCODG
+                <b>INTO </b>:COD_FUNC, :NOME_FUNC, :TIPO_FUNC, :META_FUNC
+                <b>DO BEGIN
+                
+                   SELECT SUM</b>(CCNPERC * CTYVALR / 100.0) <b>FROM </b>COMISSAOCONTRATO
+                   <b>INNER JOIN </b>CONTRATO <b>ON
+                         </b>CCNCGCT = CTNCODG
+                   <b>INNER JOIN </b>SITUACAOCONTRATO <b>ON
+                         </b>SCNCODG = CTNCGSC
+                   <b>WHERE </b>CCNCGEN = :COD_FUNC
+                   <b>AND </b>CTNCGEN = :COD_AGENCIA
+                   <b>AND </b>SCLPGCM = 'T'
+                   <b>AND </b>CTDPGTO <b>BETWEEN </b>:DATA_INICIO <b>AND </b>:DATA_FIM
+                   <b>INTO </b>:COMS_FUNC;
+
+                   <b>SUSPEND</b>;
+                <b>END
+         END
+END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_RELAT_REGIONAL_GC_HTML.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_YEARSBETWEEN.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

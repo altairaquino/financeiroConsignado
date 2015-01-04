@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+  
+  <form-beans>
+  
+  		<!-- forms bancário -->
+  		<form-bean name="formLogin" type="com.grupoexata.bancario.struts.form.FormLogin"/>
+  		<form-bean name="formEntidade" type="com.grupoexata.bancario.struts.form.FormEntidade"/>
+  		<form-bean name="formLigacao" type="com.grupoexata.bancario.struts.form.FormLigacao"/>
+  		<form-bean name="formContrato" type="com.grupoexata.bancario.struts.form.FormContrato"/>
+  		<form-bean name="formProduto" type="com.grupoexata.bancario.struts.form.FormProduto"/>
+  		<form-bean name="formTabelaProduto" type="com.grupoexata.bancario.struts.form.FormTabelaProduto"/>
+  		<form-bean name="formComissaoContrato" type="com.grupoexata.bancario.struts.form.FormComissaoContrato"/>
+  		<form-bean name="formTabelaAngariador" type="com.grupoexata.bancario.struts.form.FormTabelaAngariador"/>
+  		<form-bean name="formTabelaFuncionario" type="com.grupoexata.bancario.struts.form.FormTabelaFuncionario"/>
+  		<form-bean name="formContaCorrente" type="com.grupoexata.bancario.struts.form.FormContaCorrente"/>
+  		<form-bean name="formPendenciaContrato" type="com.grupoexata.bancario.struts.form.FormPendenciaContrato"/>
+  		<form-bean name="formAngariador" type="com.grupoexata.bancario.struts.form.FormAngariador"/>
+  		<form-bean name="formFuncionarioAgencia" type="com.grupoexata.bancario.struts.form.FormFuncionarioAgencia"/>
+  		<form-bean name="formFuncRegional" type="com.grupoexata.bancario.struts.form.FormFuncRegional"/>
+  		<form-bean name="formOperacao" type="com.grupoexata.bancario.struts.form.FormOperacao"/>
+  		<form-bean name="formRegional" type="com.grupoexata.bancario.struts.form.FormRegional"/>
+  		<form-bean name="formGrupoEmail" type="com.grupoexata.bancario.struts.form.FormGrupoEmail"/>
+  		<form-bean name="formListaEmail" type="com.grupoexata.bancario.struts.form.FormListaEmail"/>
+  		<form-bean name="formFilial" type="com.grupoexata.bancario.struts.form.FormFilial"/>
+  		<form-bean name="formComissaoSinergia" type="com.grupoexata.bancario.struts.form.FormComissaoSinergia"/>
+  		<form-bean name="formPagamentoAgente" type="com.grupoexata.bancario.struts.form.FormPagamentoAgente"/>
+  		<form-bean name="formOuvidoria" type="com.grupoexata.bancario.struts.form.FormOuvidoria"/>
+  		<form-bean name="formBordero" type="com.grupoexata.bancario.struts.form.FormBordero"/>
+  		<form-bean name="formContratoBordero" type="com.grupoexata.bancario.struts.form.FormContratoBordero"/>
+  		<form-bean name="formGrupo" type="com.grupoexata.bancario.struts.form.FormGrupo"/>
+  		<form-bean name="formOperacaoGrupo" type="com.grupoexata.bancario.struts.form.FormOperacaoGrupo"/>
+  		<form-bean name="formUsuarioGrupo" type="com.grupoexata.bancario.struts.form.FormUsuarioGrupo"/>
+  		
+  		<!-- forms financeiro -->
+  		<form-bean name="formCentroCusto" type="com.grupoexata.financeiro.struts.form.FormCentroCusto"/>
+  		<form-bean name="formPlanoConta" type="com.grupoexata.financeiro.struts.form.FormPlanoConta"/>
+  		<form-bean name="formMovCaixa" type="com.grupoexata.financeiro.struts.form.FormMovCaixa"/>
+  		<form-bean name="formCaixa" type="com.grupoexata.financeiro.struts.form.FormCaixa"/>
+  		<form-bean name="formFormaLiquidez" type="com.grupoexata.financeiro.struts.form.FormFormaLiquidez"/>
+  		<form-bean name="formCentroMovCaixa" type="com.grupoexata.financeiro.struts.form.FormCentroMovCaixa"/>
+  		<form-bean name="formContaPagar" type="com.grupoexata.financeiro.struts.form.FormContaPagar"/>
+  		<form-bean name="formContaFixa" type="com.grupoexata.financeiro.struts.form.FormContaFixa"/>
+  		<form-bean name="formContaGrupo" type="com.grupoexata.financeiro.struts.form.FormContaGrupo"/>
+  		
+  		<!-- forms veiculo -->
+  		<form-bean name="formContratoAuto" type="com.grupoexata.veiculo.struts.form.FormContratoAuto"/>
+  		<form-bean name="formParcelaContratoAuto" type="com.grupoexata.veiculo.struts.form.FormParcelaContratoAuto"/>
+  		<form-bean name="formPendContratoAuto" type="com.grupoexata.veiculo.struts.form.FormPendContratoAuto"/>
+  		<form-bean name="formVeiculo" type="com.grupoexata.veiculo.struts.form.FormVeiculo"/>
+  		<form-bean name="formOcorrenciaParcelaContrato" type="com.grupoexata.veiculo.struts.form.FormOcorrenciaParcelaContrato"/>
+  		
+  		<!-- forms folha -->
+  		
+  		<form-bean name="formEmpregado" type="com.grupoexata.folha.struts.form.FormEmpregado"/>
+		<form-bean name="formDependente" type="com.grupoexata.folha.struts.form.FormDependente"/>
+		<form-bean name="formTabela" type="com.grupoexata.folha.struts.form.FormTabela"/>
+		<form-bean name="formTipotabela" type="com.grupoexata.folha.struts.form.FormTipotabela"/>
+		<form-bean name="formDescRend" type="com.grupoexata.folha.struts.form.FormDescRend"/>
+  		<form-bean name="formEmpregado" type="com.grupoexata.folha.struts.form.FormEmpregado"/>
+		<form-bean name="formDependente" type="com.grupoexata.folha.struts.form.FormDependente"/>
+		<form-bean name="formTabela" type="com.grupoexata.folha.struts.form.FormTabela"/>
+		<form-bean name="formTipotabela" type="com.grupoexata.folha.struts.form.FormTipotabela"/>
+		<form-bean name="formDescRend" type="com.grupoexata.folha.struts.form.FormDescRend"/>
+		<form-bean name="formItemDescRend" type="com.grupoexata.folha.struts.form.FormItemDescRend"/>
+		<form-bean name="formFolha" type="com.grupoexata.folha.struts.form.FormFolha"/>
+		<form-bean name="formFolhaEmp" type="com.grupoexata.folha.struts.form.FormFolhaEmp"/>
+		<form-bean name="formParametro" type="com.grupoexata.folha.struts.form.FormParametro"/>
+		<form-bean name="formTipoajcust" type="com.grupoexata.folha.struts.form.FormTipoajcust"/>
+		<form-bean name="formAjudacusto" type="com.grupoexata.folha.struts.form.FormAjudajcusto"/>
+		<form-bean name="formPagtoajcust" type="com.grupoexata.folha.struts.form.FormPagtoajcust"/>
+		<form-bean name="formPagtoajcustemp" type="com.grupoexata.folha.struts.form.FormPagtoajcustemp"/>
+		<form-bean name="formFiltro" type="com.grupoexata.folha.struts.form.FormFiltro"/>
+		<form-bean name="formFiltroajcust" type="com.grupoexata.folha.struts.form.FormFiltroajcust"/>
+		<form-bean name="formAtividade" type="com.grupoexata.folha.struts.form.FormAtividade"/>
+		
+		
+		<form-bean name="formContratoquestao" type="com.grupoexata.auditoria.struts.form.FormContratoquestao"/>
+		
+		<!-- forms Jurídico -->
+  		
+		<form-bean name="formProcesso" type="com.grupoexata.juridico.struts.form.FormProcesso"/>
+		<form-bean name="formAndamentoProcesso" type="com.grupoexata.juridico.struts.form.FormAndamentoProcesso"/>
+		<form-bean name="formLigacaoJuridico" type="com.grupoexata.juridico.struts.form.FormLigacaoJuridico"/>
+		<form-bean name="formAudiencia" type="com.grupoexata.juridico.struts.form.FormAudiencia"/>
+		
+		<form-bean name="formLigacaoSqi" type="com.grupoexata.bancario.struts.form.FormLigacaoSqi"/>
+		
+  </form-beans>
+  
+  <!-- Lembrar de implementar isto -->
+  <global-exceptions>
+  	
+  </global-exceptions>  
+  
+  <action-mappings>
+  		
+  		<action path="/home" forward="/pages/home.jsp"/>
+  		<action path="/logout" forward="/actionLogin.do?m=logout"/>
+  		
+  		<action path="/erro" forward="/pages/erro.jsp"/>
+  		
+  		<action path="/login" forward="/pages/login.jsp"/>
+  		<action path="/acessoNegado" forward="/pages/acessoNegado.jsp"/>
+  		
+  		<action path="/adminPage" forward="/pages/admin/adminPage.jsp"/>
+  		
+  		<action path="/angariadorPesquisaContrato" forward="/pages/angariadorPesquisaContrato.jsp"/>
+  		<action path="/angariadorPesquisaLigacao" forward="/pages/angariadorPesquisaLigacao.jsp"/>
+  		<action path="/angariadorPesquisaSenha" forward="/pages/angariadorPesquisaSenha.jsp"/>
+  		<action path="/angariadorPesquisaDados" forward="/pages/angariadorPesquisaDados.jsp"/>
+  		<action path="/angariadorPage" forward="/pages/angariadorPage.jsp"/>
+  		<action path="/angariadorDados" forward="/pages/angariadorDados.jsp"/>
+  		<action path="/angariadorDadosExibe" forward="/pages/angariadorDadosExibe.jsp"/>
+  		<action path="/angariadorDadosEditar" forward="/pages/angariadorDadosEditar.jsp"/>
+  		<action path="/angariadorEditar" forward="/pages/angariadorEditar.jsp"/>
+  		<action path="/angariadorNovo" forward="/pages/angariadorNovo.jsp"/>
+  		<action path="/angariadorAnaliseComissao" forward="/pages/angariadorAnaliseComissao.jsp"/>
+  		<action path="/angariadorPesquisaWindow" forward="/pages/angariadorPesquisaWindow.jsp"/>
+  		
+  		<action path="/andamentoProcessoLista" forward="/pages/juridico/andamentoProcessoLista.jsp"/>
+  		<action path="/andamentoProcessoEditar" forward="/pages/juridico/andamentoProcessoEditar.jsp"/>
+  		<action path="/andamentoProcessoNovo" forward="/pages/juridico/andamentoProcessoNovo.jsp"/>
+  		  
+  		<action path="/audienciaLista" forward="/pages/juridico/audienciaLista.jsp"/>
+  		<action path="/audienciaEditar" forward="/pages/juridico/audienciaEditar.jsp"/>
+  		<action path="/audienciaNovo" forward="/pages/juridico/audienciaNovo.jsp"/>
+  		
+  		<action path="/borderoNovo" forward="/pages/bancario/borderoNovo.jsp"/>
+  		<action path="/borderoDados" forward="/pages/bancario/borderoDados.jsp"/>
+  		<action path="/borderoEditar" forward="/pages/bancario/borderoEditar.jsp"/>
+  		<action path="/borderoLista" forward="/pages/bancario/borderoLista.jsp"/>
+  		
+  		<action path="/clienteNovoCPF" forward="/pages/clienteNovoCPF.jsp"/>
+  		<action path="/clienteNovo" forward="/pages/clienteNovo.jsp"/>
+  		<action path="/clienteEditar" forward="/pages/clienteEditar.jsp"/>
+  		<action path="/clienteEditarJuridico" forward="/pages/clienteEditarJuridico.jsp"/>
+  		<action path="/clienteDados" forward="/pages/clienteDados.jsp"/>
+  		<action path="/clientePesquisaDados" forward="/pages/clientePesquisaDados.jsp"/>
+  		
+  		<action path="/caixaLista" forward="/pages/financeiro/caixaLista.jsp"/>
+  		<action path="/caixaDados" forward="/pages/financeiro/caixaDados.jsp"/>
+  		
+  		<action path="/comissaoSinergiaLista" forward="/pages/comissaoSinergiaLista.jsp"/>
+  		
+  		<action path="/contaPagarNovo" forward="/pages/financeiro/contaPagarNovo.jsp"/>
+  		<action path="/contaPagarDados" forward="/pages/financeiro/contaPagarDados.jsp"/>
+  		<action path="/contaPagarEditar" forward="/pages/financeiro/contaPagarEditar.jsp"/>
+  		<action path="/contaPagarLista" forward="/pages/financeiro/contaPagarLista.jsp"/>
+  		
+  		<action path="/contaGrupoNovo" forward="/pages/financeiro/contaGrupoNovo.jsp"/>
+  		<action path="/contaGrupoEditar" forward="/pages/financeiro/contaGrupoEditar.jsp"/>
+  		<action path="/contaGrupoLista" forward="/pages/financeiro/contaGrupoLista.jsp"/>
+  		<action path="/contaGrupoPesquisaWindow" forward="/pages/financeiro/contaGrupoPesquisaWindow.jsp"/>
+  		
+  		<action path="/contaFixaNovo" forward="/pages/financeiro/contaFixaNovo.jsp"/>
+  		<action path="/contaFixaDados" forward="/pages/financeiro/contaFixaDados.jsp"/>
+  		<action path="/contaFixaLista" forward="/pages/financeiro/contaFixaLista.jsp"/>
+  		<action path="/contaFixaEditar" forward="/pages/financeiro/contaFixaEditar.jsp"/>
+  		
+  		<action path="/contratoAutoNovo" forward="/pages/veiculo/contratoAutoNovo.jsp"/>
+  		<action path="/contratoAutoDados" forward="/pages/veiculo/contratoAutoDados.jsp"/>
+  		<action path="/contratoAutoEditar" forward="/pages/veiculo/contratoAutoEditar.jsp"/>
+  		<action path="/contratoAutoEditarQuest" forward="/pages/veiculo/contratoAutoEditarQuest.jsp"/>
+  		<action path="/contratoAutoPage" forward="/pages/veiculo/contratoAutoPage.jsp"/>
+  		<action path="/contratoAutoLista" forward="/pages/veiculo/contratoAutoLista.jsp"/>
+  		<action path="/contratoAutoListaPendente" forward="/pages/veiculo/contratoAutoListaPendente.jsp"/>
+  		<action path="/contratoAutoPesquisaCPF" forward="/pages/veiculo/contratoAutoPesquisaCPF.jsp"/>
+  		  		
+  		<action path="/contratoBorderoLista" forward="/pages/bancario/contratoBorderoLista.jsp"/>
+  		
+  		<action path="/contratoNovo" forward="/pages/contratoNovo.jsp"/>
+  		<action path="/contratoNovoCompleto" forward="/pages/contratoNovoCompleto.jsp"/>
+  		<action path="/contratoListaAuditoria" forward="/pages/contratoListaAuditoria.jsp"/>
+  		<action path="/contratoListaConfirmaOP" forward="/pages/contratoListaConfirmaOP.jsp"/>
+  		<action path="/contratoListaArquivos" forward="/pages/contratoListaArquivos.jsp"/>
+  		<action path="/contratoListaArquivos2" forward="/pages/contratoListaArquivos2.jsp"/>
+  		<action path="/contratoAuditoria" forward="/pages/contratoAuditoria.jsp"/>
+  		<action path="/contratoNovoAng" forward="/pages/contratoNovoAng.jsp"/>
+  		<action path="/contratoDados" forward="/pages/contratoDados.jsp"/>
+  		<action path="/contratoDadosWindow" forward="/pages/contratoDadosWindow.jsp"/>
+  		<action path="/contratosSemFisico" forward="/pages/contratosSemFisico.jsp"/>
+  		<action path="/contratosSemFisicoDoAngariador" forward="/pages/contratosSemFisicoDoAngariador.jsp"/>
+  		<action path="/contratosAngariador" forward="/pages/contratosAngariador.jsp"/>
+  		<action path="/contratoPesquisaComissao" forward="/pages/contratoPesquisaComissao.jsp"/>
+  		<action path="/contratoPesquisa" forward="/pages/contratoPesquisa.jsp"/>
+  		<action path="/contratoPesquisa2" forward="/pages/contratoPesquisa2.jsp"/>
+  		<action path="/contratoPesquisaCPF" forward="/pages/contratoPesquisaCPF.jsp"/>
+  		<action path="/contratoPage" forward="/pages/contratoPage.jsp"/>
+  		<action path="/contratoLista" forward="/pages/contratoLista.jsp"/>
+  		<action path="/contratoEditar" forward="/pages/contratoEditar.jsp"/>
+  		<action path="/contratoRelatorios" forward="/pages/contratoRelatorios.jsp"/>
+  		<action path="/contratoRelatorioSituacao" forward="/pages/contratoRelatorioSituacao.jsp"/>
+  		<action path="/contratoRelatoriosAngariador" forward="/pages/contratoRelatoriosAngariador.jsp"/>
+  		
+  		<action path="/centroCustoNovo" forward="/pages/financeiro/centroCustoNovo.jsp"/>
+  		<action path="/centroCustoEditar" forward="/pages/financeiro/centroCustoEditar.jsp"/>
+  		<action path="/centroCustoLista" forward="/pages/financeiro/centroCustoLista.jsp"/>
+  		
+  		<action path="/comissaoContratoLista" forward="/pages/comissaoContratoLista.jsp"/>
+  		
+  		<action path="/contaCorrenteNovo" forward="/pages/contaCorrenteNovo.jsp"/>
+  		<action path="/contaCorrenteEditar" forward="/pages/contaCorrenteEditar.jsp"/>
+  		<action path="/contaCorrenteDados" forward="/pages/contaCorrenteDados.jsp"/>
+  		<action path="/contaCorrenteLista" forward="/pages/contaCorrenteLista.jsp"/>
+  		<action path="/contaCorrenteListaCaixaWindow" forward="/pages/financeiro/contaCorrenteListaCaixaWindow.jsp"/>
+  		
+  		<action path="/contaCorrenteFornecNovo" forward="/pages/contaCorrenteFornecNovo.jsp"/>
+  		<action path="/contaCorrenteFornecEditar" forward="/pages/contaCorrenteFornecEditar.jsp"/>
+  		<action path="/contaCorrenteFornecLista" forward="/pages/contaCorrenteFornecLista.jsp"/>
+  		
+  		<action path="/contatoJuridicoNovo" forward="/pages/juridico/contatoJuridicoNovo.jsp"/>
+  		<action path="/contatoJuridicoPage" forward="/pages/juridico/contatoJuridicoPage.jsp"/>
+  		<action path="/contatoJuridicoLista" forward="/pages/juridico/contatoJuridicoLista.jsp"/>
+  		<action path="/contatoJuridicoEditar" forward="/pages/juridico/contatoJuridicoEditar.jsp"/>  		
+  		<action path="/contatoJuridicoPesquisaWindow" forward="/pages/juridico/contatoJuridicoPesquisaWindow.jsp"/>  		
+  		<action path="/contatoJuridicoPesquisa" forward="/pages/juridico/contatoJuridicoPesquisa.jsp"/>  		
+  		
+  		<action path="/contaCorrenteEmprNovo" forward="/pages/contaCorrenteEmprNovo.jsp"/>
+  		<action path="/contaCorrenteEmprEditar" forward="/pages/contaCorrenteEmprEditar.jsp"/>
+  		<action path="/contaCorrenteEmprLista" forward="/pages/contaCorrenteEmprLista.jsp"/>
+  		
+  		<action path="/dependenteLista" forward="/pages/folha/dependente/dependenteLista.jsp"/>
+		<action path="/dependenteEditar" forward="/pages/folha/dependente/dependenteEditar.jsp"/>
+		<action path="/dependenteNovo" forward="/pages/folha/dependente/dependenteNovo.jsp"/>
+		
+		<action path="/desc_rendLista" forward="/pages/folha/desc_rend/desc_rendLista.jsp"/>
+		<action path="/desc_rendEditar" forward="/pages/folha/desc_rend/desc_rendEditar.jsp"/>
+		<action path="/desc_rendNovo" forward="/pages/folha/desc_rend/desc_rendNovo.jsp"/>
+		<action path="/desc_rendPesquisa" forward="/pages/folha/desc_rend/desc_rendPesquisa.jsp"/>
+		<action path="/desc_rendOpcao" forward="/pages/folha/desc_rend/desc_rendOpcao.jsp"/>
+		
+		<action path="/entidadeDadosWindow" forward="/pages/entidadeDadosWindow.jsp"/>
+		<action path="/entidadePesquisaWindow" forward="/pages/entidadePesquisaWindow.jsp"/>
+  		
+  		<action path="/empregadoLista" forward="/pages/folha/empregado/empregadoLista.jsp"/>
+		<action path="/empregadoEditar" forward="/pages/folha/empregado/empregadoEditar.jsp"/>
+		<action path="/empregadoNovo" forward="/pages/folha/empregado/empregadoNovo.jsp"/>
+		<action path="/empregadoPesquisa" forward="/pages/folha/empregado/empregadoPesquisa.jsp"/>
+		<action path="/empregadoDados" forward="/pages/folha/empregado/empregadoDados.jsp"/>
+		
+		<action path="/empregado_centrocustoLista" forward="/pages/folha/empregado_centrocusto/empregado_centrocustoLista.jsp"/>
+		<action path="/empregado_centrocustoEditarLista" forward="/pages/folha/empregado_centrocusto/empregado_centrocustoEditarLista.jsp"/>
+		
+		<action path="/emailEnviar" forward="/pages/emailEnviar.jsp"/>
+		
+  		<action path="/entidadeDefineSenha" forward="/pages/entidadeDefineSenha.jsp"/>
+  		
+  		<action path="/filialPesquisaWindow" forward="/pages/financeiro/filialPesquisaWindow.jsp"/>
+  		
+  		<action path="/fornecedorPage" forward="/pages/fornecedorPage.jsp"/>
+  		<action path="/fornecedorLista" forward="/pages/fornecedorLista.jsp"/>
+		<action path="/fornecedorDados" forward="/pages/fornecedorDados.jsp"/>
+		<action path="/fornecedorEditar" forward="/pages/fornecedorEditar.jsp"/>
+		<action path="/fornecedorNovo" forward="/pages/fornecedorNovo.jsp"/>
+		<action path="/fornecedorPesquisa" forward="/pages/fornecedorPesquisa.jsp"/>
+		<action path="/fornecedorPesquisaCaixaWindow" forward="/pages/financeiro/fornecedorPesquisaCaixaWindow.jsp"/>
+  		
+  		<action path="/filialNovo" forward="/pages/filialNovo.jsp"/>
+		<action path="/filialEditar" forward="/pages/filialEditar.jsp"/>
+		<action path="/filialLista" forward="/pages/filialLista.jsp"/>
+  		
+  		<action path="/formaLiquidezNovo" forward="/pages/financeiro/formaLiquidezNovo.jsp"/>
+  		<action path="/formaLiquidezEditar" forward="/pages/financeiro/formaLiquidezEditar.jsp"/>
+  		<action path="/formaLiquidezLista" forward="/pages/financeiro/formaLiquidezLista.jsp"/>
+  		<action path="/formaLiquidezEditar" forward="/pages/financeiro/formaLiquidezEditar.jsp"/>
+  		
+  		<action path="/funcionarioNovo" forward="/pages/funcionarioNovo.jsp"/>
+		<action path="/funcionarioEditar" forward="/pages/funcionarioEditar.jsp"/>
+		<action path="/funcionarioPage" forward="/pages/funcionarioPage.jsp"/>
+		<action path="/funcionarioDados" forward="/pages/funcionarioDados.jsp"/>
+  		
+  		<action path="/funcionarioAgenciaNovo" forward="/pages/bancario/funcionarioAgenciaNovo.jsp"/>
+  		<action path="/funcionarioAgenciaEditar" forward="/pages/bancario/funcionarioAgenciaEditar.jsp"/>
+  		<action path="/funcionarioAgenciaLista" forward="/pages/bancario/funcionarioAgenciaLista.jsp"/>
+  		<action path="/funcionarioAgenciaPesquisaWindow" forward="/pages/bancario/funcionarioAgenciaPesquisaWindow.jsp"/>
+  		<action path="/funcionarioPesquisaWindow" forward="/pages/bancario/funcionarioPesquisaWindow.jsp"/>
+  		
+  		<action path="/funcRegionalNovo" forward="/pages/bancario/funcRegionalNovo.jsp"/>
+  		<action path="/funcRegionalEditar" forward="/pages/bancario/funcRegionalEditar.jsp"/>
+  		<action path="/funcRegionalLista" forward="/pages/bancario/funcRegionalLista.jsp"/>
+  		
+  		<action path="/grupoLista" forward="/pages/admin/grupoLista.jsp"/>
+		<action path="/grupoEditar" forward="/pages/admin/grupoEditar.jsp"/>
+		<action path="/grupoNovo" forward="/pages/admin/grupoNovo.jsp"/>
+		
+		<action path="/grupoContaLista" forward="/pages/financeiro/grupoContaLista.jsp"/>
+		
+		<action path="/grupoEmailLista" forward="/pages/bancario/grupoEmailLista.jsp"/>
+		<action path="/grupoEmailEditar" forward="/pages/bancario/grupoEmailEditar.jsp"/>
+		<action path="/grupoEmailNovo" forward="/pages/bancario/grupoEmailNovo.jsp"/>
+		
+		<action path="/listaEmailLista" forward="/pages/bancario/listaEmailLista.jsp"/>
+		<action path="/listaEmailEditar" forward="/pages/bancario/listaEmailEditar.jsp"/>
+		<action path="/listaEmailNovo" forward="/pages/bancario/listaEmailNovo.jsp"/>
+  		
+  		<action path="/ligacaoJuridicoNovo" forward="/pages/juridico/ligacaoJuridicoNovo.jsp"/>
+  		<action path="/ligacaoJuridicoLista" forward="/pages/juridico/ligacaoJuridicoLista.jsp"/>
+  		<action path="/ligacaoJuridicoEditar" forward="/pages/juridico/ligacaoJuridicoEditar.jsp"/>
+  		
+  		<action path="/ligacaoSqiNovo" forward="/pages/bancario/ligacaoSqiNovo.jsp"/>
+  		<action path="/ligacaoSqiLista" forward="/pages/bancario/ligacaoSqiLista.jsp"/>
+  		<action path="/ligacaoSqiEditar" forward="/pages/bancario/ligacaoSqiEditar.jsp"/>
+  		
+  		<action path="/logLista" forward="/pages/logLista.jsp"/>
+  		
+  		<action path="/lojaVeiculoLista" forward="/pages/veiculo/lojaVeiculoLista.jsp"/>
+		<action path="/lojaVeiculoDados" forward="/pages/veiculo/lojaVeiculoDados.jsp"/>
+		<action path="/lojaVeiculoEditar" forward="/pages/veiculo/lojaVeiculoEditar.jsp"/>
+		<action path="/lojaVeiculoNovo" forward="/pages/veiculo/lojaVeiculoNovo.jsp"/>
+		<action path="/lojaContratoPesquisaWindow" forward="/pages/veiculo/lojaContratoPesquisaWindow.jsp"/>
+  		
+  		<action path="/movCaixaNovo" forward="/pages/financeiro/movCaixaNovo2.jsp"/>
+  		<action path="/movimentoEntrada" forward="/pages/financeiro/movimentoEntrada.jsp"/>
+  		<action path="/movimentoSaida" forward="/pages/financeiro/movimentoSaida.jsp"/>
+  		<action path="/movCaixaEditar" forward="/pages/financeiro/movCaixaEditar.jsp"/>
+  		<action path="/movCaixaDados" forward="/pages/financeiro/movCaixaDados.jsp"/>
+  		<action path="/movCaixaLista" forward="/pages/financeiro/movCaixaLista.jsp"/>
+  		<action path="/movCaixaFornecedorLista" forward="/pages/financeiro/movCaixaFornecedorLista.jsp"/>
+  		 
+  		<action path="/ocorrenciaParcelaContratoLista" forward="/pages/veiculo/ocorrenciaParcelaContratoLista.jsp"/>
+  		<action path="/ocorrenciaParcelaContratoNovo" forward="/pages/veiculo/ocorrenciaParcelaContratoNovo.jsp"/>
+  		<action path="/ocorrenciaParcelaContratoEditar" forward="/pages/veiculo/ocorrenciaParcelaContratoEditar.jsp"/>
+  		
+  		<action path="/ouvidoriaNovo" forward="/pages/bancario/ouvidoriaNovo.jsp"/>
+  		
+  		<action path="/ocupacaoPesquisa" forward="/pages/folha/ocupacao/ocupacaoPesquisa.jsp"/>
+  		
+  		<action path="/operadorVeiculoLista" forward="/pages/veiculo/operadorVeiculoLista.jsp"/>
+		<action path="/operadorVeiculoDados" forward="/pages/veiculo/operadorVeiculoDados.jsp"/>
+		<action path="/operadorVeiculoEditar" forward="/pages/veiculo/operadorVeiculoEditar.jsp"/>
+		<action path="/operadorVeiculoNovo" forward="/pages/veiculo/operadorVeiculoNovo.jsp"/>
+		<action path="/operadorContratoPesquisaWindow" forward="/pages/veiculo/operadorContratoPesquisaWindow.jsp"/>
+		
+		<action path="/operacaoLista" forward="/pages/admin/operacaoLista.jsp"/>
+		<action path="/operacaoEditar" forward="/pages/admin/operacaoEditar.jsp"/>
+		<action path="/operacaoNovo" forward="/pages/admin/operacaoNovo.jsp"/>
+		
+		<action path="/operacaoGrupoLista" forward="/pages/admin/operacaoGrupoLista.jsp"/>
+		
+  		<action path="/pagamentoAgenteNovo" forward="/pages/bancario/pagamentoAgenteNovo.jsp"/>
+  		<action path="/pagamentoAgenteDados" forward="/pages/bancario/pagamentoAgenteDados.jsp"/>
+  		<action path="/pagamentoAgenteEditar" forward="/pages/bancario/pagamentoAgenteEditar.jsp"/>
+  		<action path="/pagamentoAgenteLista" forward="/pages/bancario/pagamentoAgenteLista.jsp"/>
+  		
+  		<action path="/planoContaNovo" forward="/pages/financeiro/planoContaNovo.jsp"/>
+  		<action path="/planoContaEditar" forward="/pages/financeiro/planoContaEditar.jsp"/>
+  		<action path="/planoContaLista" forward="/pages/financeiro/planoContaLista.jsp"/>
+  		<action path="/planoContaArvore" forward="/pages/financeiro/planoContaArvore.jsp"/>
+  		<action path="/planoContaPesquisaCaixaWindow" forward="/pages/financeiro/planoContaPesquisaCaixaWindow.jsp"/>
+  		
+  		<action path="/pendContratoAutoLista" forward="/pages/veiculo/pendContratoAutoLista.jsp"/>
+  		
+  		<action path="/produtoNovo" forward="/pages/produtoNovo.jsp"/>
+  		<action path="/produtoEditar" forward="/pages/produtoEditar.jsp"/>
+  		<action path="/produtoLista" forward="/pages/produtoLista.jsp"/>
+  		
+  		<action path="/processoNovo" forward="/pages/juridico/processoNovo.jsp"/>
+  		<action path="/processoDados" forward="/pages/juridico/processoDados.jsp"/>
+  		<action path="/processoPesquisa" forward="/pages/juridico/processoPesquisa.jsp"/>
+  		<action path="/processoPage" forward="/pages/juridico/processoPage.jsp"/>
+  		<action path="/processoEditar" forward="/pages/juridico/processoEditar.jsp"/>
+  		
+  		<action path="/pendenciaContratoNovo" forward="/pages/pendenciaContratoNovo.jsp"/>
+  		<action path="/pendenciaContratoLista" forward="/pages/pendenciaContratoLista.jsp"/>
+  		
+  		<action path="/parcelaContratoAutoLista" forward="/pages/veiculo/parcelaContratoAutoLista.jsp"/>
+  		<action path="/parcelaContratoAutoDados" forward="/pages/veiculo/parcelaContratoAutoDados.jsp"/>
+  		
+  		<action path="/relatorioGerencial" forward="/pages/relatorioGerencial.jsp"/>
+  		<action path="/relatorioFuncionarioComissao" forward="/pages/relatorioFuncionarioComissao.jsp"/>
+  		<action path="/relatoriosSinergia" forward="/pages/relatoriosSinergia.jsp"/>
+  		<action path="/relatoriosSinergiaSup" forward="/pages/relatoriosSinergiaSup.jsp"/>
+  		<action path="/relatoriosProducao" forward="/pages/relatoriosProducao.jsp"/>
+  		<action path="/relatoriosGCOM" forward="/pages/relatoriosGCOM.jsp"/>
+  		<action path="/relatoriosDiversos" forward="/pages/relatoriosDiversos.jsp"/>
+  		<action path="/relatoriosJuridico" forward="/pages/relatoriosJuridico.jsp"/>
+  		<action path="/relatoriosSqi" forward="/pages/relatoriosSqi.jsp"/>
+  		<action path="/relatorioFinanceiro" forward="/pages/financeiro/relatorioFinanceiro.jsp"/>
+  		
+  		<action path="/regionalNovo" forward="/pages/bancario/regionalNovo.jsp"/>
+		<action path="/regionalEditar" forward="/pages/bancario/regionalEditar.jsp"/>
+		<action path="/regionalLista" forward="/pages/bancario/regionalLista.jsp"/>
+  		
+  		<action path="/tabelaProdutoNovo" forward="/pages/tabelaProdutoNovo.jsp"/>
+		<action path="/tabelaProdutoEditar" forward="/pages/tabelaProdutoEditar.jsp"/>
+		<action path="/tabelaProdutoLista" forward="/pages/tabelaProdutoLista.jsp"/>
+		<action path="/tabelaProdutoComissaoAng" forward="/pages/tabelaProdutoComissaoAng.jsp"/>
+		
+		<action path="/tabelaLista" forward="/pages/folha/tabela/tabelaLista.jsp"/>
+		<action path="/tabelaEditar" forward="/pages/folha/tabela/tabelaEditar.jsp"/>
+		<action path="/tabelaNovo" forward="/pages/folha/tabela/tabelaNovo.jsp"/>
+		<action path="/tabelaPesquisa" forward="/pages/folha/tabela/tabelaPesquisa.jsp"/>
+		<action path="/tabelaDados" forward="/pages/folha/tabela/tabelaDados.jsp"/>
+		
+		<action path="/tipotabelaLista" forward="/pages/folha/tipotabela/tipotabelaLista.jsp"/>
+		<action path="/tipotabelaEditar" forward="/pages/folha/tipotabela/tipotabelaEditar.jsp"/>
+		<action path="/tipotabelaOpcao" forward="/pages/folha/tipotabela/tipotabelaOpcao.jsp"/>
+		<action path="/tipotabelaPesquisa" forward="/pages/folha/tipotabela/tipotabelaPesquisa.jsp"/>
+		<action path="/tipotabelaNovo" forward="/pages/folha/tipotabela/tipotabelaNovo.jsp"/>
+  		
+  		<action path="/tabelaFuncionarioLista" forward="/pages/tabelaFuncionarioLista.jsp"/>
+  		
+  		<action path="/tabelaAngariadorLista" forward="/pages/tabelaAngariadorLista.jsp"/>
+  		
+  		<action path="/usuarioAlteraSenha" forward="/pages/usuarioAlteraSenha.jsp"/>
+  		<action path="/usuarioEditar" forward="/pages/usuarioEditar.jsp"/>
+
+  		<action path="/usuarioGrupoLista" forward="/pages/admin/usuarioGrupoLista.jsp"/>
+  		
+  		<action path="/veiculoDados" forward="/pages/veiculo/veiculoDados.jsp"/>
+  		<action path="/veiculoEditar" forward="/pages/veiculo/veiculoEditar.jsp"/>
+  		
+  		<action path="/actionAudiencia"
+  			parameter="m"
+  			type="com.grupoexata.juridico.struts.action.ActionAudiencia"
+  			name="formAudiencia">
+  		</action>
+  		
+  		<action path="/actionLigacaoJuridico"
+  			parameter="m"
+  			type="com.grupoexata.juridico.struts.action.ActionLigacaoJuridico"
+  			name="formLigacaoJuridico">
+  		</action>
+
+  		<action path="/actionLigacaoSqi"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionLigacaoSqi"
+  			name="formLigacaoSqi">
+  		</action>
+  		
+  		<action path="/actionBordero"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionBordero"
+  			name="formBordero">
+  		</action>
+  		
+  		<action path="/actionOperacaoGrupo"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionOperacaoGrupo"
+  			name="formOperacaoGrupo">
+  		</action>
+
+  		<action path="/actionUsuarioGrupo"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionUsuarioGrupo"
+  			name="formUsuarioGrupo">
+  		</action>
+  		
+  		<action path="/actionContratoBordero"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionContratoBordero"
+  			name="formContratoBordero">
+  		</action>
+  		
+  		<action path="/actionOuvidoria"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionOuvidoria"
+  			name="formOuvidoria">
+  		</action>
+
+  		<action path="/actionPagamentoAgente"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionPagamentoAgente"
+  			name="formPagamentoAgente">
+  		</action>
+  		
+  		<action path="/actionComissaoSinergia"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionComissaoSinergia"
+  			name="formComissaoSinergia">
+  		</action>
+  		
+  		<action path="/actionProcesso"
+  			parameter="m"
+  			type="com.grupoexata.juridico.struts.action.ActionProcesso"
+  			name="formProcesso">
+  		</action>
+  		
+  		<action path="/actionGrupoConta"
+  			parameter="m"
+  			type="com.grupoexata.financeiro.struts.action.ActionGrupoConta">
+  		</action>
+  		
+  		<action path="/actionContaGrupo"
+  			parameter="m"
+  			type="com.grupoexata.financeiro.struts.action.ActionContaGrupo"
+  			name="formContaGrupo">
+  		</action>
+
+  		<action path="/actionAndamentoProcesso"
+  			parameter="m"
+  			type="com.grupoexata.juridico.struts.action.ActionAndamentoProcesso"
+  			name="formAndamentoProcesso">
+  		</action>
+  		
+  		<action path="/actionListaEmail"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionListaEmail"
+  			name="formListaEmail">
+  		</action>
+  		
+  		<action path="/actionGrupoEmail"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionGrupoEmail"
+  			name="formGrupoEmail">
+  		</action>
+  		
+  		<action path="/actionEnvioEmail"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionEnvioEmail"
+  			name="formTabela">
+  		</action>
+  		
+  		<action path="/actionFilial"
+  			parameter="m"
+  			type="com.grupoexata.bancario.struts.action.ActionFilial"
+  			name="formFilial">
+  		</action>
+  		
+  		<action path="/actionMovCaixa"
+  			type="com.grupoexata.financeiro.struts.action.ActionMovCaixa"
+  			parameter="m"
+  			name="formMovCaixa">
+  		</action>
+  		
+  		<action path="/actionTabela"
+			type="com.grupoexata.folha.struts.action.ActionTabela"
+			parameter="m"
+			name="formTabela"> 	
+		</action>
+		
+		<action path="/actionOperacao"
+			type="com.grupoexata.bancario.struts.action.ActionOperacao"
+			parameter="m"
+			name="formOperacao">
+		</action>
+		
+		<action path="/actionFuncRegional"
+		 	parameter="m"
+		 	type="com.grupoexata.bancario.struts.action.ActionFuncRegional"
+		 	name="formFuncRegional">		
+		</action>
+		
+		<action path="/actionGrupo"
+			type="com.grupoexata.bancario.struts.action.ActionGrupo"
+			parameter="m"
+			name="formGrupo">
+		</action>
+		
+		<action path="/actionRegional"
+			type="com.grupoexata.bancario.struts.action.ActionRegional"
+			parameter="m"
+			name="formRegional">
+		</action>
+		
+		<action path="/actionLog"
+			type="com.grupoexata.bancario.struts.action.ActionLog"
+			parameter="m">
+		</action>
+		
+		<action path="/actionTipotabela"
+			type="com.grupoexata.folha.struts.action.ActionTipotabela"
+			parameter="m"
+			name="formTipotabela"> 			
+		</action>
+		
+		<action path="/actionDescRend"
+			type="com.grupoexata.folha.struts.action.ActionDescRend"
+			parameter="m"
+			name="formDescRend"> 			
+		</action>
+  		
+  		<action path="/actionContratoAuto"
+  			type="com.grupoexata.veiculo.struts.action.ActionContratoAuto"
+  			parameter="m"
+  			name="formContratoAuto">
+  		</action>
+
+  		<action path="/actionFuncionarioAgencia"
+  			type="com.grupoexata.bancario.struts.action.ActionFuncionarioAgencia"
+  			parameter="m"
+  			name="formFuncionarioAgencia">
+  		</action>
+  		
+  		<action path="/actionEmpregadoCentrocusto"
+			type="com.grupoexata.folha.struts.action.ActionEmpregadoCentrocusto"
+			parameter="m"
+			name="formEmpregadoCentrocusto"> 			
+		</action>
+		
+  		<action path="/actionOcorrenciaParcelaContrato"
+  			type="com.grupoexata.veiculo.struts.action.ActionOcorrenciaParcelaContrato"
+  			parameter="m"
+  			name="formOcorrenciaParcelaContrato">
+  		</action>
+  		
+  		<action path="/actionParcelaContratoAuto"
+  			type="com.grupoexata.veiculo.struts.action.ActionParcelaContratoAuto"
+  			parameter="m"
+  			name="formParcelaContratoAuto">
+  		</action>
+  		
+  		<action path="/actionEmpregado"
+			type="com.grupoexata.folha.struts.action.ActionEmpregado"
+			parameter="m"
+			name="formEmpregado"> 			
+		</action>
+		
+		<action path="/actionDependente"
+			type="com.grupoexata.folha.struts.action.ActionDependente"
+			parameter="m"
+			name="formDependente"> 			
+		</action>
+		
+  		<action path="/actionPendContratoAuto"
+  			type="com.grupoexata.veiculo.struts.action.ActionPendContratoAuto"
+  			parameter="m"
+  			name="formPendContratoAuto">
+  		</action>
+  		
+  		<action path="/actionVeiculo"
+  			type="com.grupoexata.veiculo.struts.action.ActionVeiculo"
+  			parameter="m"
+  			name="formVeiculo">
+  		</action>
+  		
+  		<action path="/actionContaPagar"
+  			type="com.grupoexata.financeiro.struts.action.ActionContaPagar"
+  			parameter="m"
+  			name="formContaPagar">
+  		</action>
+  		
+  		<action path="/actionContaFixa"
+  			type="com.grupoexata.financeiro.struts.action.ActionContaFixa"
+  			parameter="m"
+  			name="formContaFixa">
+  		</action>
+  		
+  		<action path="/actionCentroMovCaixa"
+  			type="com.grupoexata.financeiro.struts.action.ActionCentroMovCaixa"
+  			parameter="m"
+  			name="formCentroMovCaixa">
+  		</action>
+  		
+  		<action path="/actionFormaLiquidez"
+  			type="com.grupoexata.financeiro.struts.action.ActionFormaLiquidez"
+  			parameter="m"
+  			name="formFormaLiquidez">  			
+  		</action>
+  		
+  		<action path="/actionCaixa"
+  			type="com.grupoexata.financeiro.struts.action.ActionCaixa"
+  			parameter="m"
+  			name="formCaixa"> 			
+  		</action>
+  		
+  		<action path="/actionLogin"
+  	        type="com.grupoexata.bancario.struts.action.ActionLogin" 
+  	        parameter="m"
+  	        name="formLogin">
+  		</action>
+  		
+  		<action path="/actionAngariador"
+  	        type="com.grupoexata.bancario.struts.action.ActionAngariador" 
+  	        parameter="m"
+  	        name="formAngariador">
+  		</action>
+  		
+  		<action path="/actionContrato"
+  	        type="com.grupoexata.bancario.struts.action.ActionContrato" 
+  	        parameter="m"
+  	        name="formContrato">
+  		</action>
+  		
+  		<action path="/actionLigacao"
+  	        type="com.grupoexata.bancario.struts.action.ActionLigacao"
+  	        parameter="m"
+  	        name="formLigacao">
+  		</action>
+  		
+  		<action path="/actionEntidade"
+  	        type="com.grupoexata.bancario.struts.action.ActionEntidade" 
+  	        parameter="m"
+  	        name="formEntidade">
+  		</action>
+  		
+  		<action path="/actionPendenciaContrato"
+  	        type="com.grupoexata.bancario.struts.action.ActionPendenciaContrato" 
+  	        parameter="m"
+  	        name="formPendenciaContrato">
+  		</action>
+  		
+  		<action path="/actionProduto"
+  	        type="com.grupoexata.bancario.struts.action.ActionProduto" 
+  	        parameter="m"
+  	        name="formProduto">
+  		</action>
+  		
+  		<action path="/actionTabelaProduto"
+  	        type="com.grupoexata.bancario.struts.action.ActionTabelaProduto" 
+  	        parameter="m"
+  	        name="formTabelaProduto">
+  		</action>
+  		
+  		<action path="/actionComissaoContrato"
+  	        type="com.grupoexata.bancario.struts.action.ActionComissaoContrato" 
+  	        parameter="m"
+  	        name="formComissaoContrato">
+  		</action>
+  		
+  		<action path="/actionTabelaAngariador"
+  	        type="com.grupoexata.bancario.struts.action.ActionTabelaAngariador" 
+  	        parameter="m"
+  	        name="formTabelaAngariador">
+  		</action>
+  		  	
+  		<action path="/actionTabelaFuncionario"
+  	        type="com.grupoexata.bancario.struts.action.ActionTabelaFuncionario" 
+  	        parameter="m"
+  	        name="formTabelaFuncionario">
+  		</action>
+  		
+  		<action path="/actionContaCorrente"
+  	        type="com.grupoexata.bancario.struts.action.ActionContaCorrente" 
+  	        parameter="m"
+  	        name="formContaCorrente">
+  		</action>
+  		
+  		<action path="/actionCentroCusto"
+  			type="com.grupoexata.financeiro.struts.action.ActionCentroCusto"
+  			parameter="m"
+  			name="formCentroCusto">
+  		</action>
+  		
+  		<action path="/actionPlanoConta"
+  			type="com.grupoexata.financeiro.struts.action.ActionPlanoConta"
+  			parameter="m"
+  			name="formPlanoConta">
+  		</action>
+  		
+  		<action path="/tabelaLista" forward="/pages/folha/tabela/tabelaLista.jsp"/>
+		<action path="/tabelaEditar" forward="/pages/folha/tabela/tabelaEditar.jsp"/>
+		<action path="/tabelaNovo" forward="/pages/folha/tabela/tabelaNovo.jsp"/>
+		<action path="/tabelaPesquisa" forward="/pages/folha/tabela/tabelaPesquisa.jsp"/>
+		<action path="/tabelaDados" forward="/pages/folha/tabela/tabelaDados.jsp"/>
+		<action path="/actionTabela"
+			type="com.grupoexata.folha.struts.action.ActionTabela"
+			parameter="m"
+			name="formTabela"> 			
+		</action>
+		
+		<action path="/tipotabelaLista" forward="/pages/folha/tipotabela/tipotabelaLista.jsp"/>
+		<action path="/tipotabelaEditar" forward="/pages/folha/tipotabela/tipotabelaEditar.jsp"/>
+		<action path="/tipotabelaOpcao" forward="/pages/folha/tipotabela/tipotabelaOpcao.jsp"/>
+		<action path="/tipotabelaPesquisa" forward="/pages/folha/tipotabela/tipotabelaPesquisa.jsp"/>
+		<action path="/tipotabelaNovo" forward="/pages/folha/tipotabela/tipotabelaNovo.jsp"/>
+		<action path="/actionTipotabela"
+			type="com.grupoexata.folha.struts.action.ActionTipotabela"
+			parameter="m"
+			name="formTipotabela"> 			
+		</action>
+		
+		<action path="/desc_rendLista" forward="/pages/folha/desc_rend/desc_rendLista.jsp"/>
+		<action path="/desc_rendEditar" forward="/pages/folha/desc_rend/desc_rendEditar.jsp"/>
+		<action path="/desc_rendNovo" forward="/pages/folha/desc_rend/desc_rendNovo.jsp"/>
+		<action path="/desc_rendPesquisa" forward="/pages/folha/desc_rend/desc_rendPesquisa.jsp"/>
+		<action path="/desc_rendOpcao" forward="/pages/folha/desc_rend/desc_rendOpcao.jsp"/>
+		<action path="/actionDescRend"
+			type="com.grupoexata.folha.struts.action.ActionDescRend"
+			parameter="m"
+			name="formDescRend"> 			
+		</action>
+		
+		<action path="/item_desc_rendLista" forward="/pages/folha/item_desc_rend/item_desc_rendLista.jsp"/>
+		<action path="/item_desc_rendEditar" forward="/pages/folha/item_desc_rend/item_desc_rendEditar.jsp"/>
+		<action path="/item_desc_rendNovo" forward="/pages/folha/item_desc_rend/item_desc_rendNovo.jsp"/>
+		<action path="/item_desc_rendDados" forward="/pages/folha/item_desc_rend/item_desc_rendDados.jsp"/>
+		<action path="/actionItemDescRend"
+			type="com.grupoexata.folha.struts.action.ActionItemDescRend"
+			parameter="m"
+			name="formItemDescRend">	
+		</action>	
+		
+		
+		<action path="/folhaLista" forward="/pages/folha/folha/folhaLista.jsp"/>
+		<action path="/folhaEditar" forward="/pages/folha/folha/folhaEditar.jsp"/>
+		<action path="/folhaNovo" forward="/pages/folha/folha/folhaNovo.jsp"/>
+		<action path="/folhaPesquisa" forward="/pages/folha/folha/folhaPesquisa.jsp"/>
+		<action path="/folhaDados" forward="/pages/folha/folha/folhaDados.jsp"/>
+		<action path="/folhaRelatorios" forward="/pages/folha/folha/folhaRelatorios.jsp"/>
+		<action path="/actionFolha"
+			type="com.grupoexata.folha.struts.action.ActionFolha"
+			parameter="m"
+			name="formFolha">
+		</action>
+		<action path="/folha_empLista" forward="/pages/folha/folha_emp/folha_empLista.jsp"/>
+		<action path="/folha_empEditar" forward="/pages/folha/folha_emp/folha_empEditar.jsp"/>
+		<action path="/folha_empNovo" forward="/pages/folha/folha_emp/folha_empNovo.jsp"/>
+		<action path="/folha_empPesquisa" forward="/pages/folha/folha_emp/folha_empPesquisa.jsp"/>
+		<action path="/folha_empDados" forward="/pages/folha/folha_emp/folha_empDados.jsp"/>
+		<action path="/actionFolhaEmp"
+			type="com.grupoexata.folha.struts.action.ActionFolhaEmp"
+			parameter="m"
+			name="formFolhaEmp">
+		</action>
+		<action path="/folha_emp_itemLista" forward="/pages/folha/folha_emp_item/folha_emp_itemLista.jsp"/>
+		<action path="/folha_emp_itemEditar" forward="/pages/folha/folha_emp_item/folha_emp_itemEditar.jsp"/>
+		<action path="/folha_emp_itemNovo" forward="/pages/folha/folha_emp_item/folha_emp_itemNovo.jsp"/>
+		<action path="/folha_emp_itemPesquisa" forward="/pages/folha/folha_emp_item/folha_emp_itemPesquisa.jsp"/>
+		<action path="/folha_emp_itemDados" forward="/pages/folha/folha_emp_item/folha_emp_itemDados.jsp"/>
+		<action path="/actionFolhaEmpItem"
+			type="com.grupoexata.folha.struts.action.ActionFolhaEmpItem"
+			parameter="m"
+			name="formFolhaEmpItem">
+		</action>
+		
+		
+		<action path="/parametroEditar" forward="/pages/folha/parametro/parametroEditar.jsp"/>
+		<action path="/actionParametro"
+			type="com.grupoexata.folha.struts.action.ActionParametro"
+			parameter="m"
+			name="formParametro">
+		</action>
+		
+		<action path="/actionTipoajcust"
+			type="com.grupoexata.folha.struts.action.ActionTipoajcust"
+			parameter="m"
+			name="formTipoajcust">
+		</action>
+		<action path="/tipoajcustLista" forward="/pages/folha/tipoajcust/tipoajcustLista.jsp"/>
+		<action path="/tipoajcustEditar" forward="/pages/folha/tipoajcust/tipoajcustEditar.jsp"/>
+		<action path="/tipoajcustNovo" forward="/pages/folha/tipoajcust/tipoajcustNovo.jsp"/>
+		
+		<action path="/actionAjudacusto"
+			type="com.grupoexata.folha.struts.action.ActionAjudacusto"
+			parameter="m"
+			name="formAjudacusto">
+		</action>
+		<action path="/ajudacustoLista" forward="/pages/folha/ajudajcusto/ajudacustoLista.jsp"/>
+		
+
+		<action path="/actionPagtoajcust"
+			type="com.grupoexata.folha.struts.action.ActionPagtoajcust"
+			parameter="m"
+			name="formPagtoajcust">
+		</action>
+		<action path="/pagtoajcustLista" forward="/pages/folha/pagtoajcust/pagtoajcustLista.jsp"/>
+		<action path="/pagtoajcustEditar" forward="/pages/folha/pagtoajcust/pagtoajcustEditar.jsp"/>
+		<action path="/pagtoajcustNovo" forward="/pages/folha/pagtoajcust/pagtoajcustNovo.jsp"/>
+		<action path="/pagtoajcustOpcao" forward="/pages/folha/pagtoajcust/pagtoajcustOpcao.jsp"/>
+		<action path="/pagtoajcustRelatorios" forward="/pages/folha/pagtoajcust/pagtoajcustRelatorios.jsp"/>
+		
+		<action path="/actionPagtoajcustemp"
+			type="com.grupoexata.folha.struts.action.ActionPagtoajcustemp"
+			parameter="m"
+			name="formPagtoajcustemp">
+		</action>
+		<action path="/pagtoajcustRelatorios" forward="/pages/folha/pagtoajcust/pagtoajcustRelatorios.jsp"/>
+		
+		<action path="/pagtoajcustempLista" forward="/pages/folha/pagtoajcustemp/pagtoajcustempLista.jsp"/>
+		<action path="/pagtoajcustempEditar" forward="/pages/folha/pagtoajcustemp/pagtoajcustempEditar.jsp"/>
+		<action path="/pagtoajcustempNovo" forward="/pages/folha/pagtoajcustemp/pagtoajcustempNovo.jsp"/>
+		
+		<action path="/actionFiltro"
+			type="com.grupoexata.folha.struts.action.ActionFiltro"
+			parameter="m"
+			name="formFiltro">
+		</action>
+		<action path="/filtroLista" forward="/pages/folha/filtro/filtroLista.jsp"/>
+		<action path="/filtroEditar" forward="/pages/folha/filtro/filtroEditar.jsp"/>
+		<action path="/filtroNovo" forward="/pages/folha/filtro/filtroNovo.jsp"/>
+		<action path="/filtroOpcao" forward="/pages/folha/filtro/filtroOpcao.jsp"/>
+		
+		<action path="/actionFiltroajcust"
+			type="com.grupoexata.folha.struts.action.ActionFiltroajcust"
+			parameter="m"
+			name="formFiltroajcust">
+		</action>
+		<action path="/filtroajcustLista" forward="/pages/folha/filtroajcust/filtroajcustLista.jsp"/>
+  		
+  		
+  		<action path="/atividadeLista" forward="/pages/folha/atividade/atividadeLista.jsp"/>
+		<action path="/atividadeEditar" forward="/pages/folha/atividade/atividadeEditar.jsp"/>
+		<action path="/atividadeNovo" forward="/pages/folha/atividade/atividadeNovo.jsp"/>
+		<action path="/atividadeOpcao" forward="/pages/folha/atividade/atividadeOpcao.jsp"/>
+		
+		<action path="/questionario" forward="/pages/auditoria/questionario.jsp"></action>
+		
+		<action path="/actionAtividade"
+			type="com.grupoexata.folha.struts.action.ActionAtividade"
+			parameter="m"
+			name="formAtividade">
+		</action>
+		
+		<action path="/actionLayout"
+  	        type="com.grupoexata.bancario.struts.action.ActionLayout" 
+  	        parameter="m"
+  	        name="formContrato">
+  		</action>
+  		<action path="/layoutlistaArquivos" forward="/pages/bancario/gcom/listaArquivos.jsp"/>
+		
+		<!-- AUDITORIA -->
+		<action path="/questionario" forward="/pages/auditoria/questionario/questionario.jsp"/>
+		<action path="/actionContratoquestao"
+  	        type="com.grupoexata.auditoria.struts.action.ActionContratoquestao" 
+  	        parameter="m"
+  	        name="formContratoquestao">
+  		</action>
+		
+		
+  </action-mappings>
+  
+  <message-resources parameter="Messages"/>
+  
+</struts-config>

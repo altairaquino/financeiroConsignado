@@ -1,0 +1,229 @@
+<HTML>
+<HEAD>
+<TITLE>ANDAMENTOPROCESSO</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="AMOSTRA.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="ANGARIADOR.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">ANDAMENTOPROCESSO</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">Andamento do Processo</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Fields</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="1%"><P CLASS="Base2"><B>PK</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>FK</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Name</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Domain</B></P>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Data type</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Not null</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Default</B></P>
+<TH><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">ANPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">ANPNCGPRO</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código do processo</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">ANPNCGFAP</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Fase do processo</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">ANPNCGEN</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código do Usuário da Alteração.</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">ANPDDATA</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Data</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">ANPCDESC</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">VARCHAR(80)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Descrição</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Triggers</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="15%"><P CLASS="Base2"><B>Trigger</B></P>
+<TH WIDTH="20%"><P CLASS="Base2"><B>Type</B></P>
+<TH WIDTH="5%"><P CLASS="Base2"><B>Active</B></P>
+<TH WIDTH="5%"><P CLASS="Base2"><B>Position</B></P>
+<TH><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Triggers/BI_ANPNCODG.html">BI_ANPNCODG</A></TD><TD><P CLASS="Base2">AFTER </P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">0</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Indices</P>
+<TABLE CLASS="dtArg" CELLSPACING="0">
+<TH><P CLASS="Base2"><B>Index</B></P>
+<TH><P CLASS="Base2"><B>Fields</B></P>
+<TH><P CLASS="Base2"><B>Active</B></P>
+<TH><P CLASS="Base2"><B>Unique</B></P>
+<TH><P CLASS="Base2"><B>Order</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">FK_ANPEN</A></TD><TD><P CLASS="Base2">ANPNCGEN</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">FK_ANPFAP</A></TD><TD><P CLASS="Base2">ANPNCGFAP</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">FK_ANPPRO</A></TD><TD><P CLASS="Base2">ANPNCGPRO</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">PK_ANDAMENTOPROCESSO</A></TD><TD><P CLASS="Base2">ANPNCODG</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">References</P>
+<TABLE CLASS="dtArg" CELLSPACING="0">
+<TH><P CLASS="Base2"><B>Table</B></P>
+<TH><P CLASS="Base2"><B>Foreign Key</B></P>
+<TH><P CLASS="Base2"><B>Fields</B></P>
+<TH><P CLASS="Base2"><B>FK Fields</B></P>
+<TH><P CLASS="Base2"><B>DEL Rule</B></P>
+<TH><P CLASS="Base2"><B>UPD Rule</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_ANPEN.html">FK_ANPEN</A></TD><TD><P CLASS="Base2">ANPNCGEN</P></TD>
+<TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/FASEPROCESSO.html">FASEPROCESSO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_ANPFAP.html">FK_ANPFAP</A></TD><TD><P CLASS="Base2">ANPNCGFAP</P></TD>
+<TD><P CLASS="Base2">FAPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/PROCESSO.html">PROCESSO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_ANPPRO.html">FK_ANPPRO</A></TD><TD><P CLASS="Base2">ANPNCGPRO</P></TD>
+<TD><P CLASS="Base2">PRONCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Referenced</P>
+<P CLASS="Base">There are no tables referenced by table ANDAMENTOPROCESSO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>CREATE TABLE </b>ANDAMENTOPROCESSO (
+  ANPNCODG <b>INTEGER NOT NULL</b>,
+  ANPNCGPRO <b>INTEGER NOT NULL</b>,
+  ANPNCGFAP <b>INTEGER NOT NULL</b>,
+  ANPNCGEN <b>INTEGER NOT NULL</b>,
+  ANPDDATA <b>DATE NOT NULL</b>,
+  ANPCDESC <b>VARCHAR</b>(80) <b>CHARACTER SET </b>NONE <b>NOT NULL COLLATE </b>NONE);
+
+
+<b>ALTER TABLE </b>ANDAMENTOPROCESSO <b>ADD CONSTRAINT </b>PK_ANDAMENTOPROCESSO <b>PRIMARY KEY </b>(ANPNCODG);
+
+<b>ALTER TABLE </b>ANDAMENTOPROCESSO <b>ADD CONSTRAINT </b>FK_ANPEN <b>FOREIGN KEY </b>(ANPNCGEN) <b>REFERENCES </b>ENTIDADE(ENNCODG);
+
+<b>ALTER TABLE </b>ANDAMENTOPROCESSO <b>ADD CONSTRAINT </b>FK_ANPFAP <b>FOREIGN KEY </b>(ANPNCGFAP) <b>REFERENCES </b>FASEPROCESSO(FAPNCODG);
+
+<b>ALTER TABLE </b>ANDAMENTOPROCESSO <b>ADD CONSTRAINT </b>FK_ANPPRO <b>FOREIGN KEY </b>(ANPNCGPRO) <b>REFERENCES </b>PROCESSO(PRONCODG);
+
+
+<b>SET </b>TERM ^ ;
+
+<b>CREATE TRIGGER </b>BI_ANPNCODG <b>FOR </b>ANDAMENTOPROCESSO
+<b>ACTIVE AFTER 
+POSITION </b>0
+<b>AS
+</b>^
+<b>SET </b>TERM ; ^
+
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:39</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="AMOSTRA.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="ANGARIADOR.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

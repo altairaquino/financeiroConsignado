@@ -1,0 +1,506 @@
+.clrfix:after {clear:both;display:block;visibility:hidden;height:0;content:".";}
+.clrfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clrfix {height: 1%;}
+.clrfix {display: block;}
+/* End hide from IE-mac */
+
+.blocoSimuladorCI input {font-family:tahoma;font-size:11px;color:#5a5a5a;}
+.blocoSimuladorCI td{font-family:tahoma;font-size:11px;color:#5a5a5a;}
+.frm small {color:#d62a26;font-size:10px;}
+.frm li span {font-size:10px;}
+
+#lytRodape {background-image:url('../imgsite/rodape.png');background-position: bottom;background-repeat:no-repeat;width:779px;font-family:Tahoma;font-size:9px;padding-top:20px;}
+#lytRodape .direita {float:right;}
+#lytRodape .direita a {text-decoration:none;color:#000000;font-size:9px !important;}
+#lytRodape .esquerda {margin-left:9px;}
+#lytRodape .esquerda a {text-decoration:none;color:#5d5d5d;font-size:9px !important;}
+#lytRodape .esquerda img {margin:0 3px;vertical-align:top;}
+#lytRodape a:hover {text-decoration:underline}
+#lytRodape .nome {font-family:Verdana;font-size:9px;color:#FFFFFF;}
+#lytRodape .nome span {font-weight:bold;}
+
+#lytTopo {background-image:url('../imgsite/topo.png');background-repeat:no-repeat;width:779px;height:106px;font-family:Tahoma;font-size:11px;}
+#lytTopo .topoSuperior {height:58px;}
+#lytTopo .blocoIB {float:right;}
+#lytTopo .menuDireito {float:right;margin-right:7px;}
+#lytTopo .menuDireito a {text-decoration:none;color:#000;padding:4px 10px 4px 10px;float:left;}
+#lytTopo .menuDireito img{float:left;margin:4px 0 0 0;}
+#lytTopo .menuEsquerdo img{float:left;margin:4px 0 0 0;}
+#lytTopo .menuEsquerdo {margin-left:7px;}
+#lytTopo .menuEsquerdo a {text-decoration:none;color:#000;padding:4px 10px 4px 10px;float:left;}
+#lytTopo .subMenu {clear:both;margin:5px 9px 0 9px;}
+#lytTopo .subMenu a {text-decoration:none;color:#666;}
+#lytTopo .subMenu img {margin:2px 4px;vertical-align:bottom;}
+#lytTopo a:hover {text-decoration:underline}
+#lytTopo .selecionado {font-weight:bold;background:url('../img/bkg_menu_selecionado.gif') repeat-x;padding:0 10px 0 10px;border-top:1px solid #bcbcbc;border-left:1px solid #bcbcbc;border-right:1px solid #bcbcbc;}
+.ferramentas {float:right;margin:3px 0 0 0;}
+
+.layer4Dicas {padding:0 26px;}
+.layer4Dicas h1 {font-family:tahoma;font-size:14px;font-weight:bold;color:#666;padding:30px 0 14px;margin:0;}
+.layer4Dicas p {font-family:tahoma;font-size:11px;color:#000;padding:0;margin:0;}
+
+.atendimentoHome {list-style:none;margin:0;padding:37px 0 0 18px;}
+.atendimentoHome li {padding-bottom:4px;}
+.atendimentoHome span {font-family:tahoma;color:#f01414;font-size:12px;padding-right:7px;}
+.atendimentoHome a {font-family:tahoma;font-size:11px;font-weight:bold;color:#5a5a5a !important;text-decoration:none;}
+.atendimentoHome a:hover {text-decoration:underline;}
+
+.blocoContrateAgora {list-style:none;padding:12px;margin:0;}
+.blocoContrateAgora li {padding-bottom:13px;font-weight:bold;}
+.blocoContrateAgora .ultimo {padding-bottom:0 !important;} 
+.blocoContrateAgora a {font-size:12px;color:#5a5a5a !important;}
+.blocoContrateAgora span {color:#f01513 !important;padding-right:5px;}
+
+.saibaMaisSomosTitulo {font-family:Tahoma;font-weight:bold;font-size:11px;color:#d62a26;}
+.saibaMaisSomosTexto {font-family:Tahoma;font-size:11px;color:#7e7e7e;}
+
+.txtFerramenta {font-family:Tahoma;font-size:9px; color:#5B5B5B; font-weight:bold;}
+
+#solucao a.saibaMaisSolucoes {font-family:Tahoma !important;font-size:11px !important;color:#7e7e7e;}
+#solucao a.saibaMaisSolucoes:hover {font-family:Tahoma !important;font-size:11px;color:#ce0000;text-decoration:none}
+
+.TitAncora {font-family:verdana; font-size:11px;	color: #E52324;	font-weight:bold;	text-decoration:none;}
+.txtTitTab {font: bold 10px Verdana;color: #E52324;padding: 10 0 10 0;}
+.txtTit {font: bold 10px Verdana;color: #E52324;padding: 5 10 5 10;}
+.txtTab {font: normal 10px Verdana;color: #666666;padding: 5 10 5 10;}
+.txtTab a {font: bold 10px Verdana;color: #666666;text-decoration: none;}
+.txtDisclaimer {font: normal 10px Verdana;color: #666666;}
+.Tit1 {background-color: #999999;font: bold 10px Verdana;color: #FFFFFF;padding: 5 10 5 10;}
+.linTit1 {background-color: #999999;}
+.Tit2 {background-color: #D6D6D6;font: bold 10px Verdana;color: #666666;padding: 5 10 5 10;}
+.linTit2 {background-color: #C3C1C1;}
+.linDot {background: url(../img/lytPontos.gif);}
+.linDot2 {background: url(../img/lytPontos2.gif);}
+
+
+a.linkmenu:link {color:#000000; TEXT-DECORATION: none; font-weight:none;}
+a.linkmenu:visited {color:#000000; TEXT-DECORATION: none; font-weight:none;}
+a.linkmenu:active {color:e21f21; font-size: 100%; TEXT-DECORATION: none; font-weight:none;}
+a.linkmenu:hover {color:e21f21; TEXT-DECORATION: none; font-weight:none;} 
+a.linkmenutopo:link {font-family:verdana; font-size:9px;color:#ffffff; TEXT-DECORATION: none; font-weight:none;}
+a.linkmenutopo:visited {font-family:verdana; font-size:9px;color:#ffffff; TEXT-DECORATION: none; font-weight:none;}
+a.linkmenutopo:active {font-family:verdana; font-size:9px;color:E5E5E5; TEXT-DECORATION: none; font-weight:none;}
+a.linkmenutopo:hover {font-family:verdana; font-size:9px;color:E5E5E5; TEXT-DECORATION: none; font-weight:none;}
+
+
+.titCartoesDestaque {font-family:verdana; font-size:11px; color:#EA1F22; font-weight:bold;}
+.txtCartoesDestaque {font-family:verdana; font-size:10px; color:#615F60;}
+.titDestaqueSecundario {font-family:verdana; font-size:10px; color:#EA1F22; font-weight:bold;}
+.txtDestaqueSecundario {font-family:verdana; font-size:10px; color:#615F60;}
+.linkVitrine {font-family:verdana;font-size:9px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+a.linkVitrine:link {font-family:verdana;font-size:9px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+a.linkVitrine:visited {font-family:verdana;font-size:9px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+a.linkVitrine:hover {font-family:verdana;font-size:9px; color:#FFFFFF; text-decoration:none; font-weight:bold;}
+
+a.linkProdutos:link {font-family:verdana;font-size:9px; color:#5B5B5B; text-decoration:none; font-weight:bold;}
+a.linkProdutos:visited {font-family:verdana;font-size:9px; color:#5B5B5B; text-decoration:none; font-weight:bold;}
+a.linkProdutos:hover {font-family:verdana;font-size:9px; color:#5B5B5B; text-decoration:underline; font-weight:bold;}
+
+.titVitrine {font-family:verdana;font-size:9px; color:#5B5B5B; font-weight:bold;}
+.txtVitrine {font-family:verdana;font-size:9px; color:#5B5B5B;}
+
+.titDestCartao {font-family:verdana;font-size:10px; color:#D62A28; font-weight:bold;}
+.titDestCartaoSec {font-family:verdana;font-size:10px; color:#5A5A5A; font-weight:bold;}
+
+
+
+a.linkDestaqueCartoes:link {font-family:verdana;font-size:10px; color:#7E7E7E; text-decoration:none;}
+a.linkDestaqueCartoes:visited {font-family:verdana;font-size:10px; color:#7E7E7E; text-decoration:none;}
+a.linkDestaqueCartoes:hover {font-family:verdana;font-size:10px; color:#7E7E7E; text-decoration:underline;}
+
+a.linkDestaqueCartoesSec:link {font-family:verdana;font-size:10px; color:#7E7E7E; text-decoration:none;}
+a.linkDestaqueCartoesSec:visited {font-family:verdana;font-size:10px; color:#7E7E7E; text-decoration:none;}
+a.linkDestaqueCartoesSec:hover {font-family:verdana;font-size:10px; color:#7E7E7E; text-decoration:underline;}
+
+.saibaDestaqueCartoesSec {font-family:verdana;font-size:9px; color:#D62A26; font-weight:bold;}
+a.saibaDestaqueCartoesSec:link {font-family:verdana;font-size:9px; color:#5A5A5A; text-decoration:none; font-weight:bold;}
+a.saibaDestaqueCartoesSec:visited {font-family:verdana;font-size:9px; color:#5A5A5A; text-decoration:none; font-weight:bold;}
+a.saibaDestaqueCartoesSec:hover {font-family:verdana;font-size:9px; color:#5A5A5A; text-decoration:none; font-weight:bold;}
+
+
+.textoDestaqueGA {font-family:verdana; font-size:11px; color:#666666; font-weight:bold;}
+.textoGA {font-family:verdana; font-size:11px; color:#7D7C7C;}
+.buscaDestaqueGA {font-family:verdana; font-size:10px; color:#666666; font-weight:bold;}
+.buscaGA {font-family:verdana; font-size:10px; color:#666666;}
+.resultadoDestaqueGA {font-family:verdana; font-size:10px; color:#000000; font-weight:bold;}
+.resultadoGA {font-family:verdana; font-size:10px; color:#000000;}
+
+
+.menuFerramenta {font-size:9px; color:#FFFFFF; text-decoration:none;}
+.menuInstitucional {font-size:9px; color:#FFFFFF; text-decoration:none;}
+.menuAreaOn {font-family:tahoma;font-size:11px; color:#000000; text-decoration:none;font-weight:bold;}
+a.menuAreaOn:link {font-family:tahoma;font-size:11px; color:#000000; text-decoration:none;font-weight:bold;}
+a.menuAreaOn:visited {font-family:tahoma;font-size:11px; color:#000000; text-decoration:none;font-weight:bold;}
+a.menuAreaOn:hover {font-family:tahoma;font-size:11px; color:#000000; text-decoration:none;font-weight:bold;}
+.menuAreaOff {font-family:tahoma;font-size:11px; color:#000000; text-decoration:none;}
+a.menuAreaOff:link {font-family:tahoma;font-size:11px; color:#000000; text-decoration:none;}
+a.menuAreaOff:visited {font-family:tahoma;font-size:11px; color:#000000; text-decoration:none;}
+a.menuAreaOff:hover {font-family:tahoma;font-size:11px; color:#000000; text-decoration:none;}
+a.menuSubAareaOn:link {font-family:tahoma;font-size:11px; color:#CC3333; text-decoration:none;font-weight:bold}
+a.menuSubAareaOn:visited {font-family:tahoma;font-size:11px; color:#CC3333; text-decoration:none;font-weight:bold}
+a.menuSubAareaOn:hover {font-family:tahoma;font-size:11px; color:#CC3333; text-decoration:none;font-weight:bold}
+.menuSubAarea {font-family:tahoma;font-size:11px; color:#CC3333; text-decoration:none; font-weight: bold;}
+a.menuSubAarea:link {font-family:tahoma;font-size:11px; color:#CC3333; text-decoration:none;}
+a.menuSubAarea:visited {font-family:tahoma;font-size:11px; color:#CC3333; text-decoration:none;}
+a.menuSubAarea:hover {font-family:tahoma;font-size:11px; color:#CC3333; text-decoration:none;}
+.rodape {font-size:10px; color:#FFFFFF;}
+a.rodape:link {font-size:10px; color:#FFFFFF;text-decoration:none;}
+a.rodape:visited {font-size:10px; color:#FFFFFF;text-decoration:none;}
+a.rodape:hover {font-size:10px; color:#FFFFFF;text-decoration:none;}
+.rodapeDestaque {font-size:10px; color:#FFFFFF; font-weight:bold;}
+a.rodapeDestaque:link {font-size:10px; color:#FFFFFF;text-decoration:none; font-weight:bold;}
+a.rodapeDestaque:visited {font-size:10px; color:#FFFFFF;text-decoration:none; font-weight:bold;}
+a.rodapeDestaque:hover {font-size:10px; color:#FFFFFF;text-decoration:none; font-weight:bold;}
+a.menuProdutos:link {font-size:10px; color:#000000; text-decoration:none;}
+a.menuProdutos:visited {font-size:10px; color:#000000; text-decoration:none;}
+a.menuProdutos:hover {font-size:10px; color:#000000; text-decoration:none;}
+a.menuInternasOnn:link {font-size:10px; color:#000000; text-decoration:none; font-weight:bold;}
+a.menuInternasOnn:visited {font-size:10px; color:#000000; text-decoration:none; font-weight:bold;}
+a.menuInternasOff2:hover {font-size:10px; color:#000000; text-decoration:none; font-weight:bold;}
+a.menuInternasOff2:link {font-size:10px; color:#000000; text-decoration:none; font-weight:bold;}
+a.menuInternasOff2:visited {font-size:10px; color:#000000; text-decoration:none; font-weight:bold;}
+a.menuInternasOnn:hover {font-size:10px; color:#000000; text-decoration:none; font-weight:bold;}
+a.menuInternasOff:link {font-size:10px; color:#000000; text-decoration:none;}
+a.menuInternasOff:visited {font-size:10px; color:#000000; text-decoration:none;}
+a.menuInternasOff:hover {font-size:10px; color:#000000; text-decoration:none;}
+.subSecaoOnMenuInternas {font-size:10px; color:#CC3333; text-decoration:none;}
+a.subSecaoOnMenuInternas:link {font-size:10px; color:#CC3333; text-decoration:none;}
+a.subSecaoOnMenuInternas:visited {font-size:10px; color:#CC3333; text-decoration:none;}
+a.subSecaoOnMenuInternas:hover {font-size:10px; color:#CC3333; text-decoration:none;}
+.textoMenu {font-size:10px; color:#000000; text-decoration:none;}
+.menuLateral {
+	font-family:verdana;
+	font-size:10px;
+	color:#000000; 
+	background:#E8E8E8;
+	border-right:1px solid #808080;
+	border-left:1px solid #808080; 
+	border-top:1px solid #808080; 
+	border-bottom:1px solid #808080;	
+}
+.menuAcesso {
+	font-family:verdana;
+	font-size:10px;
+	color:#000000; 
+	background-color:#E8E8E8;
+	border-right:1px solid #808080;
+	border-left:1px solid #808080; 
+	border-top:1px solid #808080; 
+	border-bottom:1px solid #808080;
+}
+
+.menuAcesso optgroup {color:E42928;}
+
+.cadastrolink {font-size:10px; color:#D42D22;}
+a.cadastrolink:link {font-size:10px; color:#D42D22; text-decoration:none;}
+a.cadastrolink:visited {font-size:10px; color:#D42D22; text-decoration:none;}
+a.cadastrolink:hover {font-size:10px; color:#D42D22; text-decoration:Underline;}
+.maisNoticias {font-size:9px; color:#333333; text-decoration:none;}
+a.maisNoticias:link {font-size:9px; color:#333333; text-decoration:none;}
+a.maisNoticias:visited {font-size:9px; color:#333333; text-decoration:none;}
+a.maisNoticias:hover {font-size:9px; color:#333333; text-decoration:none;}
+.saibaMaisLink {background-image: url(../img/img_mais_noticias_seta.gif);background-position:right;background-repeat:no-repeat;padding-right:12px;text-decoration:none;font-size:9px;color:#AE1220;}
+a.saibaMaisLink:link {background-image: url(../img/img_mais_noticias_seta.gif);background-position:right;background-repeat:no-repeat;padding-right:12px;text-decoration:none;font-size:9px;color:#AE1220;}
+a.saibaMaisLink:visited {background-image: url(../img/img_mais_noticias_seta.gif);background-position:right;background-repeat:no-repeat;padding-right:12px;text-decoration:none;font-size:9px;color:#AE1220;}
+a.saibaMaisLink:hover {background-image: url(../img/img_mais_noticias_seta.gif);background-position:right;background-repeat:no-repeat;padding-right:12px;text-decoration:none;font-size:9px;color:#AE1220;}
+.saibaMaisLinkAuxiliar {background-image: url(../img/img_mais_noticias_seta.gif);background-position:right;background-repeat:no-repeat;padding-right:12px;text-decoration:none;font-size:9px;color:#000000;}
+a.saibaMaisLinkAuxiliar:link {background-image: url(../img/img_mais_noticias_seta.gif);background-position:right;background-repeat:no-repeat;padding-right:12px;text-decoration:none;font-size:9px;color:#000000;}
+a.saibaMaisLinkAuxiliar:visited {background-image: url(../img/img_mais_noticias_seta.gif);background-position:right;background-repeat:no-repeat;padding-right:12px;text-decoration:none;font-size:9px;color:#000000;}
+a.saibaMaisLinkAuxiliar:hover {background-image: url(../img/img_mais_noticias_seta.gif);background-position:right;background-repeat:no-repeat;padding-right:12px;text-decoration:none;font-size:9px;color:#000000;}
+
+.chamadaCompra {background-color:#F0F0F0;}
+.tabelaPadrao {background-color:#FFFFFF;}
+.tabelaPadraoTudosobre {background-color:#CCCCCC;}
+.barraTitulo {background-color:#CCCCCC;}
+.barraTituloTudosobre {background-color:#FFFFFF;}
+.linhaTabela {background-color:#FFFFFF;}
+.btnChamadaCompra {background-color:#999999;}
+.btnChamadaCompra2 {background-color:#CCCCCC;}
+.contChamadaCompra {font-size:10px; color:#333333; font-weight:bold;}
+
+
+.contTabTexto {font-family:verdana; font-size:10px; color:#000000;}
+.contTabTextoDestaque {font-family:verdana; font-size:10px; color:#000000; font-weight:bold;}
+.contTabRodape {font-family:verdana; font-size:9px; color:#000000;}
+
+.contTabSimTitulo {font-family:verdana; font-size:9px; color:#000000; font-weight:bold;}
+.contTabSim {font-family:verdana; font-size:9px; color:#000000;}
+.aviso{font-family:verdana; font-size:10px; color:#990C19;}
+.avisoDestaque{font-family:verdana; font-size:10px; color:#990C19; font-weight:bold;}
+
+.anoSelecionadoInicial {background-image:url(../img/bkg_ano_selecionado_incial.gif);font-weight:bold;font-size:10px;text-indent: 8px;}
+.anoNaoSelecionadoInicial {background-image:url(../img/bkg_ano_nao_selecionado_incial.gif);font-weight:bold;font-size:10px;text-indent: 8px;}
+.anoSelecionado {background-image:url(../img/bkg_ano_selecionado.gif);font-weight:bold;font-size:10px;text-indent: 10px;}
+.anoNaoSelecionado {background-image:url(../img/bkg_ano_nao_selecionado.gif);font-size:10px;text-align:center;font-weight:bold;}
+.anoSelecionadoFinal {background-image:url(../img/bkg_ano_selecionado_final.gif);font-weight:bold;font-size:10px;text-indent: 8px;}
+.anoNaoSelecionadoFinal {background-image:url(../img/bkg_ano_nao_selecionado_final.gif);font-weight:bold;font-size:10px;text-indent: 8px;}
+
+
+.quebraImpressao {page-break-before:always;}
+
+
+body {font-family:verdana; font-size:11px; color:#000000;}
+td {font-family:verdana; font-size:11px; color:#000000;}
+select {font-family:verdana; font-size:10px; color:#000000;}
+
+a {font-family:verdana; font-size:10px; text-decoration:none; color:#000;}
+a:link {font-family:verdana; font-size:10px; text-decoration:none; color:#000;}
+a:visited {font-family:verdana; font-size:10px; text-decoration:none; color:#000;}
+a:hover {font-family:verdana; font-size:10px; text-decoration:Underline; color:#000;}
+
+.input {
+	font-family:verdana;
+	font-size:10px;
+	color:#000000; 
+	background:#FFFFFF;
+	border-style: solid;
+	border-right-width:1px;
+	border-left-width:1px; 
+	border-top-width:1px; 
+	border-bottom-width:1px;
+	border-color: #D3CBBE;
+}
+
+.input2 {
+	font-family:verdana;
+	font-size:10px;
+	color:#000000; 
+	background:#FFFFFF;
+	border-right:1px solid #000000;
+	border-left:1px solid #000000; 
+	border-top:1px solid #000000; 
+	border-bottom:1px solid #000000;
+}
+
+.inputdisabled {
+	font-family:verdana;
+	font-size:10px;
+	color:#000000; 
+	background:#CCCCCC;
+	border-right:1px solid #D3CBBE;
+	border-left:1px solid #D3CBBE; 
+	border-top:1px solid #D3CBBE; 
+	border-bottom:1px solid #D3CBBE;
+}
+
+/* Acessibilidade */
+.destaqueAcs {font-size:1.0 em;font-weight:bold;}
+.contLink2Acs {font-family:verdana; font-size:1.0 em; color:#AE1220; text-decoration:underline;}
+
+a.menuInstitucional:link {font-size:10px; color:#FFFFFF; text-decoration:none;}
+a.menuInstitucional:visited {font-size:10px; color:#FFFFFF; text-decoration:none;}
+a.menuInstitucional:hover {font-size:10px; color:#FFFFFF; text-decoration:none;}
+
+
+a.menuFerramenta:link {font-size:10px; color:#FFFFFF; text-decoration:none;}
+a.menuFerramenta:visited {font-size:10px; color:#FFFFFF; text-decoration:none;}
+a.menuFerramenta:hover {font-size:10px; color:#FFFFFF; text-decoration:none;}
+
+.auxTitulo {font-family:verdana; font-size:10px; color:#E6291E; font-weight:bold;}
+a.auxTitulo:link {font-family:verdana; font-size:10px; color:#E6291E; font-weight:bold; text-decoration:none;}
+a.auxTitulo:visited {font-family:verdana; font-size:10px; color:#E6291E; font-weight:bold; text-decoration:none;}
+a.auxTitulo:hover {font-family:verdana; font-size:10px; color:#E6291E; font-weight:bold; text-decoration:Underline;}
+
+.auxTexto {font-family:verdana; font-size:10px; color:#000000;}
+
+.auxForm {font-family:verdana; font-size:10px; color:#B40F16;}
+
+.teste {font-family:verdana; font-size:10px; color:#AE1220;}
+
+
+.mesCorrente {color:#FFFFFF;font-size:10px;font-weight:bold;}
+.diaSemana {color:#666666;font-size:9px;text-decoration:none;}
+.diaDomingo {color:#666666;font-size:9px;font-weight:bold;text-decoration:none;}
+
+
+.contMigPao {font-family:verdana; font-size:10px; color:#7D7C7C;}
+a.contMigPao:link {font-family:verdana; font-size:10px; color:#7D7C7C; text-decoration:none;}
+a.contMigPao:visited {font-family:verdana; font-size:10px; color:#7D7C7C; text-decoration:none;}
+a.contMigPao:hover{font-family:verdana; font-size:10px; color:#7D7C7C; text-decoration:underline;}
+
+.contTitulo {font-family:verdana; font-size:12px; color:#948A7C;}
+.bullet {font-family:verdana; font-size:9px; color:#948A7C; font-weight:bold;}
+
+.contSubTitulo {font-family:verdana; font-size:14px; color:#F7030C;}
+
+.contSubTitulo2 {font-family:verdana; font-size:11px; color:#7C7368;}
+
+.prodTitulo {font-family:verdana; font-size:10px; color:#E6291E; font-weight:bold;}
+a.prodTitulo:link {font-family:verdana; font-size:10px; color:#E6291E; font-weight:bold; text-decoration:none;}
+a.prodTitulo:visited {font-family:verdana; font-size:10px; color:#E6291E; font-weight:bold; text-decoration:none;}
+a.prodTitulo:hover {font-family:verdana; font-size:10px; color:#E6291E; font-weight:bold; text-decoration:Underline;}
+
+.contLink {font-family:verdana; font-size:9px; color:#AE1220;}
+a.contLink:link {font-family:verdana; font-size:9px; color:#AE1220; text-decoration:none;}
+a.contLink:visited {font-family:verdana; font-size:9px; color:#AE1220; text-decoration:none;}
+a.contLink:hover {font-family:verdana; font-size:9px; color:#AE1220; text-decoration:none;}
+
+a.contLink2:link {font-family:verdana; font-size:10px; color:#AE1220; text-decoration:Underline;}
+a.contLink2:visited {font-family:verdana; font-size:10px; color:#AE1220; text-decoration:Underline;}
+a.contLink2:hover {font-family:verdana; font-size:10px; color:#AE1220; text-decoration:Underline;}
+
+.subItem {font-family:verdana; font-size:11px; color:#948A7C; font-weight:bold;}
+
+.contTabTitulo {font-family:verdana; font-size:11px; color:#AE1220; font-weight:bold;}
+
+.contTabPopTitulo {font-family:verdana; font-size:9px; color:#000000; font-weight:bold;}
+.contTabPopTitulo2 {font-family:verdana; font-size:9px; color:#AE1220; font-weight:bold;}
+.contTabPopTitulo3 {font-family:verdana; font-size:10px; color:#AE1220; font-weight:bold;}
+.contTabPopTexto {font-family:verdana; font-size:9px; color:#000000;}
+.contTabPopTexto2 {font-family:verdana; font-size:10px; color:#000000; font-weight:bold;}
+.contTabTitulo2 {font-family:verdana; font-size:9px; color:#000000; font-weight:bold;}
+.contTabTexto2 {font-family:verdana; font-size:9px; color:#000000;}
+.contRodape {font-family:verdana; font-size:10px; color:#FFFFFF;}
+
+.popTituloSb {font-family:verdana; font-size:10px; color:#F51E30; font-weight:bold;}
+.popSubTituloSb {font-family:verdana; font-size:10px; color:#9A191A; font-weight:bold;}
+.popTextoDestaqueSb {font-family:verdana; font-size:10px; color:#000000; font-weight:bold;}
+.popMenuSb {font-family:verdana; font-size:10px; color:#E6291E; font-weight:bold;}
+.popSubItemSb {font-family:verdana; font-size:14px; color:#7C7368; font-weight:bold;}
+.popDescricaoItemSb {font-family:verdana; font-size:11px; color:#7C7368;}
+a.popDescricaoItemSb:link {font-family:verdana; font-size:11px; color:#7C7368; font-weight:bold; text-decoration:none;}
+a.popDescricaoItemSb:visited {font-family:verdana; font-size:11px; color:#7C7368; font-weight:bold; text-decoration:none;}
+a.popDescricaoItemSb:hover {font-family:verdana; font-size:11px; color:#7C7368; font-weight:bold; text-decoration:none;}
+
+.popItemMenuSbOn {font-family:verdana; font-size:10px; color:#000000; font-weight:bold;}
+a.popItemMenuSbOn:link {font-family:verdana; font-size:10px; color:#000000; font-weight:bold; text-decoration:none;}
+a.popItemMenuSbOn:visited {font-family:verdana; font-size:10px; color:#000000; font-weight:bold; text-decoration:none;}
+a.popItemMenuSbOn:hover {font-family:verdana; font-size:10px; color:#000000; font-weight:bold; text-decoration:none;}
+
+.popItemMenuSbOff {font-family:verdana; font-size:10px; color:#000000;}
+a.popItemMenuSbOff:link {font-family:verdana; font-size:10px; color:#000000; text-decoration:underline;}
+a.popItemMenuSbOff:visited {font-family:verdana; font-size:10px; color:#000000; text-decoration:underline;}
+a.popItemMenuSbOff:hover {font-family:verdana; font-size:10px; color:#000000; text-decoration:underline;}
+
+.popItemProdutoSb {font-family:verdana; font-size:9px; color:#000000; font-weight:bold;}
+a.popItemProdutoSb:link {font-family:verdana; font-size:9px; color:#000000; font-weight:bold; text-decoration:underline;}
+a.popItemProdutoSb:visited {font-family:verdana; font-size:9px; color:#000000; font-weight:bold ;text-decoration:underline;}
+a.popItemProdutoSb:hover {font-family:verdana; font-size:9px; color:#000000; font-weight:bold; text-decoration:underline;}
+
+.popTextoSb {font-family:verdana; font-size:10px; color:#000000;}
+.popTitulo {font-family:verdana; font-size:14px; color:#E6291E; font-weight:bold;}
+.popTabTitulo {font-family:verdana; font-size:11px; color:#7C7368;}
+.popAviso {font-family:verdana; font-size:10px; color:#E6291E; font-weight:bold;}
+
+
+
+.auxLink {font-family:verdana; font-size:9px; color:#AE1220; text-decoration:none;}
+a.auxLink:link {font-family:verdana; font-size:9px; color:#AE1220; text-decoration:none;}
+a.auxLink:visited {font-family:verdana; font-size:9px; color:#AE1220; text-decoration:none;}
+a.auxLink:hover {font-family:verdana; font-size:9px; color:#AE1220; text-decoration:Underline;}
+
+.contTopico {font-family:verdana; font-size:11px; color:#9F040A; font-weight:bold;}
+
+.avisos_cadastros {font-family:verdana; font-size:10px; color:#9F040A;}
+
+
+
+.tituloCadastro {font-family:verdana; font-size:9px; color:#AC3C3C; font-weight:bold;}
+.tituloCadastro2 {font-family:verdana; font-size:9px; color:#000000; font-weight:none;}
+
+.subTituloCadastro {font-family:verdana; font-size:10px; color:#696969; font-weight:bold;}
+a.subTituloCadastro:link {font-family:verdana; font-size:10px; color:#696969; font-weight:bold; text-decoration:none;}
+a.subTituloCadastro:visited {font-family:verdana; font-size:10px; color:#696969; font-weight:bold; text-decoration:none;}
+a.subTituloCadastro:hover {font-family:verdana; font-size:10px; color:#696969; font-weight:bold; text-decoration:none;}
+
+.ajudaCadastro {font-family:verdana; font-size:11px; color:#9F040A;}
+
+.homeTexto {font-family:verdana; font-size:10px; color:#000000;}
+
+.contTabLembrete {font-family:verdana; font-size:10px; color:#B40F16;}
+
+a.nivel1MapaSite:link {font-family:verdana; font-size:10px; color:#9F040A; font-weight:bold; text-decoration:none;}
+a.nivel1MapaSite:visited {font-family:verdana; font-size:10px; color:#9F040A; font-weight:bold; text-decoration:none;}
+a.nivel1MapaSite:hover {font-family:verdana; font-size:10px; color:#9F040A; font-weight:bold; text-decoration:none;}
+
+a.nive21MapaSite:link {font-family:verdana; font-size:10px; color:#9F040A; text-decoration:none;}
+a.nive21MapaSite:visited {font-family:verdana; font-size:10px; color:#9F040A; text-decoration:none;}
+a.nive21MapaSite:hover {font-family:verdana; font-size:10px; color:#9F040A; text-decoration:none;}
+
+a.nive31MapaSite:link {font-family:verdana; font-size:10px; color:#000000; text-decoration:none;}
+a.nive31MapaSite:visited {font-family:verdana; font-size:10px; color:#000000; text-decoration:none;}
+a.nive31MapaSite:hover {font-family:verdana; font-size:10px; color:#000000; text-decoration:none;}
+
+a.nivel1MapaSite_off:link {font-family:verdana; font-size:10px; color:#000000; font-weight:bold; text-decoration:none;}
+a.nivel1MapaSite_off:visited {font-family:verdana; font-size:10px; color:#000000; font-weight:bold; text-decoration:none;}
+a.nivel1MapaSite_off:hover {font-family:verdana; font-size:10px; color:#000000; font-weight:bold; text-decoration:none;}
+
+a.nive21MapaSite_off:link {font-family:verdana; font-size:10px; color:#000000; text-decoration:none;}
+a.nive21MapaSite_off:visited {font-family:verdana; font-size:10px; color:#000000; text-decoration:none;}
+a.nive21MapaSite_off:hover {font-family:verdana; font-size:10px; color:#000000; text-decoration:none;}
+
+a.nive31MapaSite_off:link {font-family:verdana; font-size:10px; color:#000000; text-decoration:none;}
+a.nive31MapaSite_off:visited {font-family:verdana; font-size:10px; color:#000000; text-decoration:none;}
+a.nive31MapaSite_off:hover {font-family:verdana; font-size:10px; color:#000000; text-decoration:none;}
+
+.tituloMapaSite {font-family:verdana; font-size:11px; color:#4E4D4D; font-weight:bold; text-decoration:none;}
+
+.tituloFundo {font-family:verdana; font-size:11px; color:#9F040A; font-weight:bold; text-decoration:none;}
+.textFundo {font-family:verdana; font-size:10px; color:#000000; text-decoration:none;}
+
+.linkBusca {font-family:verdana; font-size:9px; color:#9F040A;}
+.linkBusca:link {font-family:verdana; font-size:9px; color:#9F040A;text-decoration:none;}
+.linkBusca:visited {font-family:verdana; font-size:9px; color:#9F040A;text-decoration:none;}
+.linkBusca:hover {font-family:verdana; font-size:9px; color:#9F040A;text-decoration:none;}
+
+.linkBuscaOn {font-family:verdana; font-size:9px; color:#7C7368;}
+.linkBuscaOn:link {font-family:verdana; font-size:9px; color:#7C7368;text-decoration:none;}
+.linkBuscaOn:visited {font-family:verdana; font-size:9px; color:#7C7368;text-decoration:none;}
+.linkBuscaOn:hover {font-family:verdana; font-size:9px; color:#7C7368;text-decoration:none;}
+
+.linkBuscaPaginacao {font-family:verdana; font-size:9px; color:#000000;}
+a.linkBuscaPaginacao:link {font-family:verdana; font-size:9px; color:#000000;text-decoration:none;}
+a.linkBuscaPaginacao:visited {font-family:verdana; font-size:9px; color:#000000;text-decoration:none;}
+a.linkBuscaPaginacao:hover {font-family:verdana; font-size:9px; color:#000000;text-decoration:none;}
+.linkBuscaPaginacaoSelecionado {font-family:verdana; font-size:9px; color:#9F040A; font-weight:bold;}
+a.linkBuscaPaginacaoSelecionado:link {font-family:verdana; font-size:9px; color:#9F040A;text-decoration:none; font-weight:bold;}
+a.linkBuscaPaginacaoSelecionado:visited {font-family:verdana; font-size:9px; color:#9F040A;text-decoration:none; font-weight:bold;}
+a.linkBuscaPaginacaoSelecionado:hover {font-family:verdana; font-size:9px; color:#9F040A;text-decoration:none; font-weight:bold;}
+
+.instrucaoN {font-family:verdana; font-size:12px; color:#B40F16; font-weight:bold; text-decoration:none;}
+
+.tituloIb {font-family:verdana; font-size:11px; color:#AE1220; font-weight:bold; text-decoration:none;}
+.tituloIb2 {font-family:verdana; font-size:11px; color:#9F040A; font-weight:bold; text-decoration:none;}
+.link_ib {font-family:verdana; font-size:10px; color:#9F040A; text-decoration:none;}
+a.link_ib:link {font-family:verdana; font-size:10px; color:#9F040A; text-decoration:none;}
+a.link_ib:visited {font-family:verdana; font-size:10px; color:#9F040A; text-decoration:none;}
+a.link_ib:hover {font-family:verdana; font-size:10px; color:#9F040A; text-decoration:Underline;}
+
+.txtErr {font-family:verdana; font-size:11px; color:#F22121; font-weight:bold; text-decoration:none;}
+
+.erroTitulo {font-family:verdana; font-size:14px; color:#9A9898; font-weight:bold; text-decoration:none;}
+.erroTexto {font-family:verdana; font-size:10px; color:#9A9898; text-decoration:none;}
+.errolink {font-family:verdana; font-size:10px; color:#9A9898; text-decoration:none; font-weight:bold;}
+a.errolink:link {font-family:verdana; font-size:10px; color:#9A9898; text-decoration:none; font-weight:bold;}
+a.errolink:visited {font-family:verdana; font-size:10px; color:#9A9898; text-decoration:none; font-weight:bold;}
+a.errolink:hover {font-family:verdana; font-size:10px; color:#9A9898; text-decoration:none; font-weight:bold;}
+.erroDados {font-family:verdana; font-size:11px; color:#FFFFFF; text-decoration:none;}
+
+
+a.linkTudoSobreDestaque:link {font-family:Verdana; font-size:10px; color:#000000; text-decoration:none; font-weight:bold;}
+a.linkTudoSobreDestaque:visited {font-family:Verdana; font-size:10px; color:#000000; text-decoration:none; font-weight:bold;}
+a.linkTudoSobreDestaque:hover {font-family:Verdana; font-size:10px; color:#000000; text-decoration:none; font-weight:bold;}
+
+a.linkTudoSobre:link {font-family:Verdana; font-size:10px; color:#000000; text-decoration:none;}
+a.linkTudoSobre:visited {font-family:Verdana; font-size:10px; color:#000000; text-decoration:none;}
+a.linkTudoSobre:hover {font-family:Verdana; font-size:10px; color:#000000; text-decoration:none;}
+.itemMenuTudoSobre {background-image: url(../img/img_setaItemMenuAjuda.gif); background-repeat: no-repeat; text-indent: 24px;}
+
+
+/* inicio popup veja mais*/
+
+.tituloPopVejaFunciona{color:#fd0000;font-size:12px;font-weight:bold;margin-left:20px;display:block;font-family:Verdana;margin-bottom:14px;margin-top:12px;}
+.textoPopVejaFunciona{color:#676767;font-size:10px;font-weight:bold;margin-left:20px;display:block;font-family:Verdana;margin-bottom:5px;margin-top:5px;}
+.textoImgPopVejaFunciona{color:#676767;font-size:10px;font-weight:bold;margin-left:198px;font-family:Verdana;margin-bottom:2px;margin-top:30px;display:block;}
+.textoImg1PopVejaFunciona{color:#676767;font-size:10px;font-weight:bold;margin-left:198px;font-family:Verdana;margin-bottom:2px;margin-top:5px;display:block;}
+#rodapePopVejaFunciona{margin:0px;}
+#lateralPopVejaFunciona{width:4px;height:215px;background:url(../../img/lateralEsquerda.jpg) no-repeat;float:left;}
+#topoPopVejaFunciona{width:660px;height:54px;background:#ff0100;}
+#topoPopVejaFunciona img{margin-left:20px;border:0}
+#textoPopVejaFunciona #imgButFecharPopVejaFunciona{margin-left:570px;border:0}
+#centralPopVejaFunciona{width:660px;margin-bottom:28px;}
+#pricipalPopVejaFunciona{width:675px;}
+#rodapePopVejaFunciona{width:665px;height:23px;background:#ff0101}
+#textoPopVejaFunciona #imgTecladoPopVejaFunciona {margin-left:14px;float:left;border:0}
+/*fim pop up veja mais*/

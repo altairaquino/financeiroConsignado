@@ -1,0 +1,23 @@
+<dwr>
+	<allow>
+		<create creator="static" javascript="Mapping">
+			<param name="class" value="com.grupoexata.bancario.dwr.DwrMapping"/>
+		</create>
+		<create creator="static" javascript="Ocupacao">
+			<param name="class" value="com.grupoexata.folha.dwr.DwrOcupacao"/>
+		</create>	
+		<create creator="static" javascript="CentroCusto">
+			<param name="class" value="com.grupoexata.folha.dwr.DwrCentroCusto"/>
+		</create>
+		<create creator="static" javascript="ItemDescRend">
+			<param name="class" value="com.grupoexata.folha.dwr.DwrItemDescRend"/>
+		</create>
+		<create creator="static" javascript="FolhaEmpItem">
+			<param name="class" value="com.grupoexata.folha.dwr.DwrFolhaEmpItem"/>
+		</create>
+		<create creator="static" javascript="Questionario">
+			<param name="class" value="com.grupoexata.auditoria.dwr.DwrQuestionario"/>
+		</create>
+	</allow>
+	
+</dwr>

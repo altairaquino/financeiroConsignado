@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<TITLE>SP_RELAT_CORRETOR</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_REGISTRA_PGTO_CONTRATO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_RELAT_PROD_SINERGIA.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_RELAT_CORRETOR</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_RELAT_CORRETOR</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">COD_CORRETOR</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_RELAT_CORRETOR</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_RELAT_CORRETOR(
+  COD_CORRETOR <b>INTEGER</b>)
+<b>RETURNS</b>(
+  ENNCODG <b>INTEGER</b>,
+  ENCNOME <b>VARCHAR</b>(60) <b>CHARACTER SET </b>NONE,
+  MES <b>INTEGER</b>,
+  ANO <b>INTEGER</b>,
+  PRODUCAO <b>FLOAT</b>,
+  MEDIA_PROD <b>FLOAT</b>,
+  PERC_ANTERIOR <b>FLOAT</b>,
+  QUANT <b>INTEGER</b>,
+  PERC_OP <b>FLOAT</b>,
+  ALERTA <b>CHAR</b>(1) <b>CHARACTER SET </b>NONE)
+<b>AS
+DECLARE VARIABLE </b>MES_PROD <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>ANO_PROD <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>AUX <b>FLOAT</b>;
+<b>BEGIN
+  </b>PERC_ANTERIOR = 0;
+  AUX = 0;
+
+  <b>SELECT </b>ENNCODG, ENCNOME <b>FROM </b>ENTIDADE
+  <b>WHERE </b>ENNCODG = :COD_CORRETOR
+  <b>INTO </b>:ENNCODG, :ENCNOME;
+
+  <b>FOR SELECT DISTINCT EXTRACT</b>(<b>YEAR FROM </b>CTDCADT) ANO, <b>EXTRACT</b>(<b>MONTH FROM </b>CTDCADT) MES <b>FROM
+      </b>CONTRATO <b>WHERE </b>CTNCGEN = :COD_CORRETOR <b>ORDER BY </b>1,2
+      <b>INTO </b>:ANO_PROD, :MES_PROD
+  <b>DO BEGIN
+          </b>MES = MES_PROD;
+          ANO = ANO_PROD;
+          
+          <b>SELECT </b>(<b>SUM</b>(CTYVALR)/
+                 (<b>SELECT COUNT</b>(ENNCODG) <b>FROM </b>ENTIDADE
+                         <b>INNER JOIN </b>ANGARIADOR <b>ON
+                               </b>ENNCODG = ANNCGEN
+                  <b>WHERE </b>ENLATIV = 'T'
+                  <b>AND </b>ANNCGTN = 3)) MEDIA
+                  <b>FROM </b>CONTRATO
+                  <b>WHERE EXTRACT</b>(<b>YEAR FROM </b>CTDCADT) = :ANO_PROD
+                  <b>AND EXTRACT</b>(<b>MONTH FROM </b>CTDCADT) = :MES_PROD
+          <b>INTO </b>:MEDIA_PROD;
+
+          <b>SELECT </b>COALESCE(<b>SUM</b>(CTYVALR),0), <b>count</b>(*) <b>FROM </b>CONTRATO
+          <b>WHERE EXTRACT</b>(<b>YEAR FROM </b>CTDCADT) = :ANO_PROD
+          <b>AND EXTRACT</b>(<b>MONTH FROM </b>CTDCADT) = :MES_PROD
+          <b>AND </b>CTNCGEN = :COD_CORRETOR
+          <b>INTO </b>:PRODUCAO, :QUANT;
+          
+          <b>SELECT count</b>(*) <b>FROM </b>CONTRATO
+          <b>WHERE EXTRACT</b>(<b>YEAR FROM </b>CTDCADT) = :ANO_PROD
+          <b>AND EXTRACT</b>(<b>MONTH FROM </b>CTDCADT) = :MES_PROD
+          <b>AND </b>CTNCGEN = :COD_CORRETOR
+          <b>AND </b>CTNCGFP = 2
+          <b>INTO </b>:PERC_OP;
+          
+          PERC_OP = PERC_OP / QUANT * 100;
+          
+          <b>IF </b>(AUX = 0)<b>THEN
+          BEGIN
+               </b>AUX = PRODUCAO;
+          <b>END
+          ELSE
+          BEGIN
+               </b>--PERC_ANTERIOR = PRODUCAO / AUX * 100;
+               PERC_ANTERIOR = (PRODUCAO - AUX)/AUX * 100;
+               AUX = PRODUCAO;
+          <b>END
+          
+          </b>ALERTA = IIF(PERC_ANTERIOR &gt; 50,'T','F');
+
+          <b>SUSPEND</b>;
+          
+  <b>END
+
+END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_REGISTRA_PGTO_CONTRATO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_RELAT_PROD_SINERGIA.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

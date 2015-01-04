@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<TITLE>SP_CRIA_TABELAFUNCIONARIOTODOS</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_CRIA_TABELAFUNCIONARIO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_CRIA_TABELA_ANGARIADOR.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_CRIA_TABELAFUNCIONARIOTODOS</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_CRIA_TABELAFUNCIONARIOTODOS</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">TPNCODG</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_CRIA_TABELAFUNCIONARIOTODOS</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_CRIA_TABELAFUNCIONARIOTODOS(
+  TPNCODG <b>INTEGER</b>)
+<b>AS
+DECLARE VARIABLE </b>PERC_COMIS <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>PRAZO <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>FCANCODG <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>ZERA <b>CHAR</b>(1);
+<b>DECLARE VARIABLE </b>TIPO <b>INTEGER</b>;
+<b>BEGIN
+
+  SELECT </b>TPLZERA, TPNPRAZ <b>FROM </b>TABELAPRODUTO
+  <b>WHERE </b>TPNCODG = :TPNCODG
+  <b>INTO </b>:ZERA, :PRAZO;
+
+  <b>FOR SELECT </b>FCANCODG, FCANPERC <b>FROM </b>FUNCIONARIOAGENCIA
+  <b>INTO </b>:FCANCODG, :PERC_COMIS
+  <b>DO BEGIN
+     INSERT INTO </b>TABELAFUNCIONARIO (TFCNCGFCA, TFCNCGTP, TFCNCOMS)
+     <b>VALUES </b>(:FCANCODG, :TPNCODG, IIF((:ZERA = 'T') <b>OR </b>(:PRAZO &lt; 48),0, :PERC_COMIS));
+  <b>END
+  
+  FOR SELECT DISTINCT </b>CMSNCGTFC <b>FROM </b>COMISSAO_SINERGIA
+  <b>INTO </b>:TIPO
+  <b>DO BEGIN
+     INSERT INTO </b>COMISSAO_SINERGIA (CMSNCGTFC, CMSNCGTP)
+     <b>VALUES </b>(:TIPO, :TPNCODG);
+  <b>END
+
+
+END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_CRIA_TABELAFUNCIONARIO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_CRIA_TABELA_ANGARIADOR.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

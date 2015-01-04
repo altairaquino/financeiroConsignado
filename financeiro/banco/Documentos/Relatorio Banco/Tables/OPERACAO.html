@@ -1,0 +1,174 @@
+<HTML>
+<HEAD>
+<TITLE>OPERACAO</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="OPCAO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="OPERACAOGRUPO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">OPERACAO</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for table OPERACAO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Fields</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="1%"><P CLASS="Base2"><B>PK</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>FK</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Name</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Domain</B></P>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Data type</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Not null</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Default</B></P>
+<TH><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">OPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">OPNPART</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Operação pai. (0) para operações pai.</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">OPCDESC</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">VARCHAR(45)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Descrição</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">OPCHINT</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">VARCHAR(100)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Hint do link</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">OPCLINK</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">VARCHAR(100)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Link da operação.</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">OPLATIV</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Domains/LOGICO.html">LOGICO</A></TD><TD><P CLASS="Base2">CHAR(1)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">'T'</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Triggers</P>
+<P CLASS="Base">There are no triggers for table OPERACAO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Indices</P>
+<TABLE CLASS="dtArg" CELLSPACING="0">
+<TH><P CLASS="Base2"><B>Index</B></P>
+<TH><P CLASS="Base2"><B>Fields</B></P>
+<TH><P CLASS="Base2"><B>Active</B></P>
+<TH><P CLASS="Base2"><B>Unique</B></P>
+<TH><P CLASS="Base2"><B>Order</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">PK_OPERACAO1</A></TD><TD><P CLASS="Base2">OPNCODG</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">References</P>
+<P CLASS="Base">There are no references for table OPERACAO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Referenced</P>
+<TABLE CLASS="dtArg" CELLSPACING="0">
+<TH><P CLASS="Base2"><B>Table</B></P>
+<TH><P CLASS="Base2"><B>Foreign Key</B></P>
+<TH><P CLASS="Base2"><B>Fields</B></P>
+<TH><P CLASS="Base2"><B>FK Fields</B></P>
+<TH><P CLASS="Base2"><B>DEL Rule</B></P>
+<TH><P CLASS="Base2"><B>UPD Rule</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/OPERACAOGRUPO.html">OPERACAOGRUPO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_GOOP.html">FK_GOOP</A></TD><TD><P CLASS="Base2">GONCGOP</P></TD>
+<TD><P CLASS="Base2">OPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/USUARIOOPERACAO.html">USUARIOOPERACAO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_UOOP.html">FK_UOOP</A></TD><TD><P CLASS="Base2">UONCGOP</P></TD>
+<TD><P CLASS="Base2">OPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>CREATE TABLE </b>OPERACAO (
+  OPNCODG <b>INTEGER NOT NULL</b>,
+  OPNPART <b>INTEGER</b>,
+  OPCDESC <b>VARCHAR</b>(45) <b>CHARACTER SET </b>WIN1251 <b>NOT NULL COLLATE </b>WIN1251,
+  OPCHINT <b>VARCHAR</b>(100) <b>CHARACTER SET </b>WIN1251 <b>COLLATE </b>WIN1251,
+  OPCLINK <b>VARCHAR</b>(100) <b>CHARACTER SET </b>WIN1251 <b>COLLATE </b>WIN1251,
+  OPLATIV LOGICO <b>DEFAULT </b>'T' <b>NOT NULL</b>);
+
+
+<b>ALTER TABLE </b>OPERACAO <b>ADD CONSTRAINT </b>PK_OPERACAO1 <b>PRIMARY KEY </b>(OPNCODG);
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:45</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="OPCAO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="OPERACAOGRUPO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

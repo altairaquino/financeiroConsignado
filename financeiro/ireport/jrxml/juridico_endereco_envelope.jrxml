@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="juridico_endereco_envelope"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="421"
+		 pageHeight="595"
+		 columnWidth="309"
+		 columnSpacing="0"
+		 leftMargin="56"
+		 rightMargin="56"
+		 topMargin="56"
+		 bottomMargin="56"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="PRONCODG" isForPrompting="true" class="java.lang.Integer">
+		<defaultValueExpression ><![CDATA[new Integer(1520)]]></defaultValueExpression>
+	</parameter>
+	<queryString><![CDATA[SELECT * FROM VW_PROCESSO
+WHERE PRONCODG = $P{PRONCODG}]]></queryString>
+
+	<field name="PRONCODG" class="java.lang.Integer"/>
+	<field name="PRONCODG2" class="java.lang.Integer"/>
+	<field name="PRONCGEN" class="java.lang.Integer"/>
+	<field name="PROCNMCL" class="java.lang.String"/>
+	<field name="PRODNASC" class="java.sql.Date"/>
+	<field name="PROCCPF" class="java.lang.String"/>
+	<field name="PROCSEXO" class="java.lang.String"/>
+	<field name="PRONC2EN" class="java.lang.Integer"/>
+	<field name="PROCNMCN" class="java.lang.String"/>
+	<field name="PROCNUMR" class="java.lang.String"/>
+	<field name="PRONCGTAC" class="java.lang.Integer"/>
+	<field name="PROCDCTAC" class="java.lang.String"/>
+	<field name="PROCLOCA" class="java.lang.String"/>
+	<field name="PROCOBS" class="java.lang.String"/>
+	<field name="PRONCADT" class="java.lang.Integer"/>
+	<field name="PROCCADT" class="java.lang.String"/>
+	<field name="PRONALTE" class="java.lang.Integer"/>
+	<field name="PROCALTE" class="java.lang.String"/>
+	<field name="PRODDATA" class="java.sql.Timestamp"/>
+	<field name="PRODALTE" class="java.sql.Timestamp"/>
+	<field name="PROCUFCD" class="java.lang.String"/>
+	<field name="PROCDCCD" class="java.lang.String"/>
+	<field name="PRONCGCD" class="java.lang.Integer"/>
+	<field name="PRONCGTL" class="java.lang.Integer"/>
+	<field name="PROCDCTL" class="java.lang.String"/>
+	<field name="PROCLOGR" class="java.lang.String"/>
+	<field name="PROCFONE" class="java.lang.String"/>
+	<field name="PROCFONE2" class="java.lang.String"/>
+	<field name="PROCCEP" class="java.lang.String"/>
+	<field name="PROCBAIR" class="java.lang.String"/>
+	<field name="PRONCONS" class="java.lang.Integer"/>
+	<field name="PROCCONS" class="java.lang.String"/>
+	<field name="PRONSUPE" class="java.lang.Integer"/>
+	<field name="PROCSUPE" class="java.lang.String"/>
+	<field name="PROLATIV" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="false" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="348"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="112"
+						y="2"
+						width="17"
+						height="328"
+						key="textField-1"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle" rotation="Right">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="9" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROCNMCL}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="134"
+						y="2"
+						width="16"
+						height="121"
+						key="staticText-4"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle" rotation="Right">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="9" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Destinatário:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="97"
+						y="2"
+						width="16"
+						height="328"
+						key="textField-4"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle" rotation="Right">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="9" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROCDCTL}.toUpperCase()+ " " + $F{PROCLOGR}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="134"
+						y="2"
+						width="0"
+						height="215"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="81"
+						y="2"
+						width="16"
+						height="328"
+						key="textField-5"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle" rotation="Right">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="9" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["CEP: "+ $F{PROCCEP} +" - "+ $F{PROCBAIR} +" - "+ $F{PROCDCCD} +"/"+$F{PROCUFCD}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

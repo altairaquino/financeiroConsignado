@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<TITLE>VW_LIGACAO</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="VW_LAYOUTITEM.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="VW_LISTAEMAIL.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">VW_LIGACAO</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for view VW_LIGACAO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Columns</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Column</B></P>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Type</B></P>
+<TH WIDTH="70%"><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD><P CLASS="Base2">LGNCODG</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGNCGAN</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGCNMAN</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGNCGFC</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGCNMFC</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGNCGML</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGCDCML</P></TD>
+<TD><P CLASS="Base2">VARCHAR(50)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGNCGRL</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGCDCRL</P></TD>
+<TD><P CLASS="Base2">VARCHAR(35)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGCDOCM</P></TD>
+<TD><P CLASS="Base2">VARCHAR(14)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGDDATA</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGYVALR</P></TD>
+<TD><P CLASS="Base2">DOUBLE PRECISION</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">LGMOBSV</P></TD>
+<TD><P CLASS="Base2">BLOB</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Triggers</P>
+<P CLASS="Base">There are no triggers for view VW_LIGACAO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>CREATE VIEW </b>VW_LIGACAO(
+  LGNCODG,
+  LGNCGAN,
+  LGCNMAN,
+  LGNCGFC,
+  LGCNMFC,
+  LGNCGML,
+  LGCDCML,
+  LGNCGRL,
+  LGCDCRL,
+  LGCDOCM,
+  LGDDATA,
+  LGYVALR,
+  LGMOBSV)
+<b>AS
+SELECT
+   </b>LGNCODG,
+   LGNCGEN,
+   EN1.ENCNOME,
+   LGNC2EN,
+   EN2.ENCNOME,
+   LGNCGML,
+   MLCDESC,
+   LGNCGRL,
+   RLCDESC,
+   LGCDOCM,
+   LGDDATA,
+   LGYVALR,
+   LGMOBSV
+ <b>FROM
+   </b>LIGACAO <b>LEFT JOIN </b>ENTIDADE EN1 <b>ON
+     </b>LGNCGEN = EN1.ENNCODG
+   <b>LEFT JOIN </b>ENTIDADE EN2 <b>ON
+     </b>LGNC2EN = EN2.ENNCODG
+   <b>LEFT JOIN </b>MOTIVOLIGACAO <b>ON
+     </b>LGNCGML = MLNCODG
+   <b>LEFT JOIN </b>RESULTADOLIGACAO <b>ON
+     </b>LGNCGRL = RLNCODG
+;
+
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:51</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="VW_LAYOUTITEM.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="VW_LISTAEMAIL.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

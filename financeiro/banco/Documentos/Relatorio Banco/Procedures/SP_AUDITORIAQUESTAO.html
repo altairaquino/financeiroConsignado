@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<TITLE>SP_AUDITORIAQUESTAO</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_ATUALIZA_SPREAD_CORRETORES.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_AUDITORIA_CONTRATO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_AUDITORIAQUESTAO</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_AUDITORIAQUESTAO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">AQSNCGGPA</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">CQNNCGCT</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">OPERADOR</P></TD>
+<TD><P CLASS="Base2">CHAR(5)</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_AUDITORIAQUESTAO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_AUDITORIAQUESTAO(
+  AQSNCGGPA <b>INTEGER</b>,
+  CQNNCGCT <b>INTEGER</b>,
+  OPERADOR <b>CHAR</b>(5) <b>CHARACTER SET </b>NONE)
+<b>RETURNS</b>(
+  RET <b>INTEGER</b>)
+<b>AS
+DECLARE VARIABLE </b>B <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>CTQNCODG <b>INTEGER</b>;
+<b>BEGIN
+ </b>OPERADOR = <b>UPPER</b>(<b>TRIM</b>(OPERADOR));
+ <b>FOR
+ SELECT
+   </b>IIF(CONTRATOQUESTAO.CTQNCGOPC = AUDITORIAQUESTAO.AQSNCGOPC, 1, 0),
+   CTQNCODG
+ <b>FROM
+   </b>AUDITORIAQUESTAO
+   <b>LEFT JOIN </b>QUESTAO <b>ON
+   </b>AUDITORIAQUESTAO.AQSNCGQST = QUESTAO.QSTNCODG
+   <b>LEFT JOIN </b>QUESTIONARIO <b>ON
+   </b>QUESTAO.QSTNCGQTN = QUESTIONARIO.QTNNCODG
+   <b>LEFT JOIN </b>CONTRATOQUESTIONARIO <b>ON
+   </b>QUESTIONARIO.QTNNCODG = CONTRATOQUESTIONARIO.CQNNCGQTN
+   <b>LEFT JOIN </b>CONTRATOQUESTAO <b>ON
+   </b>CONTRATOQUESTIONARIO.CQNNCODG = CONTRATOQUESTAO.CTQNCGCQN <b>AND
+   </b>CONTRATOQUESTAO.CTQNCGQST = QUESTAO.QSTNCODG
+ <b>WHERE
+   </b>AQSNCGGPA = :AQSNCGGPA <b>AND
+   </b>CONTRATOQUESTIONARIO.CQNNCGCT = :CQNNCGCT
+ <b>INTO </b>:B, :CTQNCODG
+ <b>DO BEGIN
+  IF</b>(OPERADOR = 'OR')<b>THEN
+  BEGIN
+   IF</b>(RET <b>IS NULL</b>)<b>THEN </b>RET = 0;
+   RET = IIF(B = 1 <b>OR </b>RET = 1, 1, 0);
+  <b>END ELSE
+  IF</b>(OPERADOR = 'AND')<b>THEN
+  BEGIN
+   IF</b>(RET <b>IS NULL</b>)<b>THEN </b>RET = 1;
+   RET = IIF(B = 1 <b>AND </b>RET = 1, 1, 0);
+  <b>END
+  ELSE </b>B = <b>NULL</b>;
+  <b>IF</b>(CTQNCODG <b>IS NOT NULL AND </b>B <b>IS NOT NULL</b>)<b>THEN
+  UPDATE </b>CONTRATOQUESTAO
+  <b>SET
+  </b>CTQLAUDT = IIF(:B = 1, 'T', 'F'),
+  CTQLCHECK = 'T'
+  <b>WHERE
+    </b>CTQNCODG = :CTQNCODG;
+ <b>END
+ SUSPEND</b>;
+<b>END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_ATUALIZA_SPREAD_CORRETORES.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_AUDITORIA_CONTRATO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

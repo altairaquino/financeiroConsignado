@@ -1,0 +1,164 @@
+<HTML>
+<HEAD>
+<TITLE>SP_ESTATISTICA</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_DEC_AMOSTRA.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_FECHA_COMISSAO_SINERGIA_MES.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_ESTATISTICA</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_ESTATISTICA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">VALOR</P></TD>
+<TD><P CLASS="Base2">VARCHAR(50)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FREQ</P></TD>
+<TD><P CLASS="Base2">VARCHAR(50)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">K</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">QUERY</P></TD>
+<TD><P CLASS="Base2">VARCHAR(200)</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_ESTATISTICA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_ESTATISTICA(
+  VALOR <b>VARCHAR</b>(50) <b>CHARACTER SET </b>NONE,
+  FREQ <b>VARCHAR</b>(50) <b>CHARACTER SET </b>NONE,
+  K <b>INTEGER</b>,
+  QUERY <b>VARCHAR</b>(200) <b>CHARACTER SET </b>NONE)
+<b>RETURNS</b>(
+  LMIN <b>DOUBLE PRECISION</b>,
+  LMAX <b>DOUBLE PRECISION</b>,
+  FI <b>INTEGER</b>,
+  FI_A <b>INTEGER</b>,
+  FR <b>DOUBLE PRECISION</b>,
+  FR_A <b>DOUBLE PRECISION</b>,
+  M <b>DOUBLE PRECISION</b>,
+  MD <b>DOUBLE PRECISION</b>,
+  MO <b>DOUBLE PRECISION</b>)
+<b>AS
+DECLARE VARIABLE </b>QR <b>VARCHAR</b>(500);
+<b>DECLARE VARIABLE </b>H <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>MIN_ <b>DOUBLE PRECISION</b>;
+<b>DECLARE VARIABLE </b>MAX_ <b>DOUBLE PRECISION</b>;
+<b>DECLARE VARIABLE </b>MO_ <b>DOUBLE PRECISION</b>;
+<b>DECLARE VARIABLE </b>LI <b>DOUBLE PRECISION</b>;
+<b>DECLARE VARIABLE </b>D1 <b>DOUBLE PRECISION</b>;
+<b>DECLARE VARIABLE </b>I <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>QTD <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>SK <b>VARCHAR</b>(50);
+<b>BEGIN
+  IF</b>(K <b>IS NULL</b>)<b>THEN
+    </b>SK = 'ROUND(1 + LOG10(NULLIF(COUNT(*),0)) *3.22)';
+  <b>ELSE
+    </b>SK = '' || K;
+    
+   QR =
+  ' SELECT ' || SK || ' K,' ||
+  ' ROUND((MAX(' || VALOR ||') - MIN(' || VALOR ||'))/' || SK ||') H, ' ||
+  ' FLOOR(MIN(' || VALOR ||')) MIN_ ,' ||
+  ' SUM(' || FREQ || ') QTD,'||
+  ' SUM(' || VALOR || '*' || FREQ || ') M '||
+  ' FROM( ' || QUERY || ') ';
+  <b>EXECUTE STATEMENT </b>QR <b>INTO </b>:K , :H, :MIN_, :QTD, :M;
+  
+  I = 0;
+  K = COALESCE(K, 0);
+  <i>/*MEDIA*/
+  </i>M = M / <b>CAST</b>(QTD <b>AS DOUBLE PRECISION</b>);
+  FI_A = 0;
+  MO_ = 0;
+  MIN_ = COALESCE(MIN_, 0);
+  MAX_ = 0;
+  <b>WHILE</b>(I &lt; K)<b>DO
+  BEGIN
+    </b>LMIN = (I * H) + MIN_;
+    LMAX = LMIN + H -1;
+    <b>IF</b>(I = K + 1)<b>THEN
+      </b>LMAX = LMAX + 1;
+    QR =
+    ' SELECT ' ||
+    ' SUM(' || FREQ || ') FREQ' ||
+    ' FROM( ' || QUERY || ') WHERE ' || VALOR || ' BETWEEN ' || LMIN || ' AND ' || LMAX;
+    <b>EXECUTE STATEMENT </b>QR <b>INTO </b>:FI;
+    FI = COALESCE(FI,0);
+    <i>/*MEDIANA*/
+    </i>MAX_ = MAXVALUE(FI, MAX_);
+    <b>IF</b>((QTD/2) <b>BETWEEN </b>FI_A <b>AND </b>(FI_A + FI))<b>THEN
+    BEGIN
+      </b>MD = LMIN + ((((QTD / <b>CAST</b>(2 <b>AS DOUBLE PRECISION</b>)) - FI_A) * H) / FI);
+    <b>END
+    </b>FI_A = FI_A + FI;
+    <b>IF</b>(D1 <b>IS NOT NULL</b>)<b>THEN
+    BEGIN
+      </b>MO = LI + (D1 * H) / ( D1 + (MO_ - FI));
+      D1 = <b>NULL</b>;
+    <b>END
+    IF</b>(MAX_ = FI)<b>THEN
+    BEGIN
+      </b>LI = LMIN;
+      D1 = FI - MO_;
+    <b>END
+    </b>MO_ = FI;
+    FR = FI / <b>CAST</b>(QTD <b>AS DOUBLE PRECISION</b>);
+    FR_A = FI_A / <b>CAST</b>(QTD <b>AS DOUBLE PRECISION</b>);
+    I = I + 1;
+    
+    <b>SUSPEND</b>;
+  <b>END
+  
+END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_DEC_AMOSTRA.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_FECHA_COMISSAO_SINERGIA_MES.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

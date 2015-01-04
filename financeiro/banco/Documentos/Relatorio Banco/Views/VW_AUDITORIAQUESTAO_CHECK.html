@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>VW_AUDITORIAQUESTAO_CHECK</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="VW_ATIVIDADE.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="VW_AUDITORIATIPO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">VW_AUDITORIAQUESTAO_CHECK</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for view VW_AUDITORIAQUESTAO_CHECK</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Columns</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Column</B></P>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Type</B></P>
+<TH WIDTH="70%"><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD><P CLASS="Base2">AQSNCODG</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">AQSNCGQST</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">AQSNCGGPO</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">AQSNCGOPC</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">AQSNCGGPA</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">AQSLAUDT</P></TD>
+<TD><P CLASS="Base2">CHAR(1)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">AQSNCGCT</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Triggers</P>
+<P CLASS="Base">There are no triggers for view VW_AUDITORIAQUESTAO_CHECK</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>CREATE VIEW </b>VW_AUDITORIAQUESTAO_CHECK(
+  AQSNCODG,
+  AQSNCGQST,
+  AQSNCGGPO,
+  AQSNCGOPC,
+  AQSNCGGPA,
+  AQSLAUDT,
+  AQSNCGCT)
+<b>AS
+SELECT
+   </b>AQSNCODG,
+   AQSNCGQST,
+   AQSNCGGPO,
+   AQSNCGOPC,
+   AQSNCGGPA,
+   IIF(CONTRATOQUESTAO.CTQNCGOPC = AUDITORIAQUESTAO.AQSNCGOPC, 'T', 'F') AQSLAUDT,
+   CQNNCGCT AQSNCGCT
+ <b>FROM
+   </b>AUDITORIAQUESTAO
+   <b>LEFT JOIN </b>QUESTAO <b>ON
+   </b>AUDITORIAQUESTAO.AQSNCGQST = QUESTAO.QSTNCODG
+   <b>LEFT JOIN </b>QUESTIONARIO <b>ON
+   </b>QUESTAO.QSTNCGQTN = QUESTIONARIO.QTNNCODG
+   <b>LEFT JOIN </b>CONTRATOQUESTIONARIO <b>ON
+   </b>QUESTIONARIO.QTNNCODG = CONTRATOQUESTIONARIO.CQNNCGQTN
+   <b>LEFT JOIN </b>CONTRATOQUESTAO <b>ON
+   </b>CONTRATOQUESTIONARIO.CQNNCODG = CONTRATOQUESTAO.CTQNCGCQN <b>AND
+   </b>CONTRATOQUESTAO.CTQNCGQST = QUESTAO.QSTNCODG<i>/**
+ WHERE
+   AUDITORIAQUESTAO.AQSNCGGPA = :AQSNCGGPA AND
+   CONTRATOQUESTIONARIO.CQNNCGCT = :CQNNCGCT/**/
+</i>;
+
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:49</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="VW_ATIVIDADE.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="VW_AUDITORIATIPO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

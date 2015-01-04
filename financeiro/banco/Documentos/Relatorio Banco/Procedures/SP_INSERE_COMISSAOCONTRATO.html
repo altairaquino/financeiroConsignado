@@ -1,0 +1,156 @@
+<HTML>
+<HEAD>
+<TITLE>SP_INSERE_COMISSAOCONTRATO</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_IMPORTA_CONTAFIXA_DIA.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_INSERE_CONTRATO_COMPLETO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_INSERE_COMISSAOCONTRATO</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_INSERE_COMISSAOCONTRATO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_INSERE_COMISSAOCONTRATO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_INSERE_COMISSAOCONTRATO(
+  CTNCODG <b>INTEGER</b>)
+<b>AS
+DECLARE VARIABLE </b>ANGARIAD <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>ANGARIAD2 <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>COMISSA <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>COMISSA2 <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>ZERACOMISSAO <b>CHAR</b>(1);
+<b>DECLARE VARIABLE </b>CTNCGTP <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>CTNCGEN <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>CTNC2EN <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>CTNEXAT <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>IDADE <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>TIPO <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>FUNC <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>COMISSA_FUNC <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>SINERGIA <b>CHAR</b>(1);
+<b>BEGIN
+
+  </b>-- DELETA <b>AS </b>COMISSÕES <b>DO </b>CONTRATO
+  <b>DELETE FROM </b>COMISSAOCONTRATO
+  <b>WHERE </b>CCNCGCT = :CTNCODG;
+
+  <b>SELECT </b>CTNCGTP, CTNEXAT, CTNCGEN, CTNC2EN <b>FROM </b>CONTRATO <b>WHERE </b>CTNCODG = :CTNCODG
+  <b>INTO </b>:CTNCGTP, :CTNEXAT, :CTNCGEN, :CTNC2EN;
+
+  <b>SELECT </b>TPLZERA <b>FROM </b>TABELAPRODUTO <b>WHERE </b>TPNCODG = :CTNCGTP
+  <b>INTO </b>:ZERACOMISSAO;
+
+  -- INSERE <b>AS </b>COMISSÕES FIXAS <b>DO </b>BALCÃO E GERENCIA.
+  <i>/**** DESATIVAR COMISSAOFIXA
+  FOR SELECT CFNCGEN, CFNPERC FROM COMISSAOFIXA
+  INTO :ANGARIAD, :COMISSA
+  DO BEGIN
+     IF (ZERACOMISSAO = 'F' OR CTNEXAT &gt; 0) THEN
+     BEGIN
+        INSERT INTO COMISSAOCONTRATO (CCNCGEN, CCNCGCT, CCNPERC, CCDCADT)
+        VALUES (:ANGARIAD, :CTNCODG, :COMISSA, 'NOW');
+     END
+     ELSE
+     BEGIN
+        INSERT INTO COMISSAOCONTRATO (CCNCGEN, CCNCGCT, CCNPERC, CCDCADT)
+        VALUES (:ANGARIAD, :CTNCODG, 0, 'NOW');
+     END
+  END
+  ******/
+
+  </i>-- INSERE <b>AS </b>COMISSÕES DOS FUNCIONARIOS DAS AGENCIAS
+  <b>FOR SELECT </b>FCANC2EN, TFCNCOMS <b>FROM </b>TABELAFUNCIONARIO
+      <b>LEFT JOIN </b>FUNCIONARIOAGENCIA <b>ON
+           </b>FCANCODG = TFCNCGFCA
+      <b>WHERE </b>FCALATIV = 'T'
+      <b>AND </b>TFCNCGTP = :CTNCGTP
+      <b>AND </b>FCANCGEN = :CTNCGEN
+  <b>INTO </b>:FUNC, :COMISSA_FUNC
+  <b>DO BEGIN
+     IF </b>(ZERACOMISSAO = 'F' <b>OR </b>CTNEXAT &gt; 0) <b>THEN
+     BEGIN
+        INSERT INTO </b>COMISSAOCONTRATO (CCNCGEN, CCNCGCT, CCNPERC, CCDCADT)
+        <b>VALUES </b>(:FUNC, :CTNCODG, :COMISSA_FUNC, 'NOW');
+     <b>END
+     ELSE
+     BEGIN
+        INSERT INTO </b>COMISSAOCONTRATO (CCNCGEN, CCNCGCT, CCNPERC, CCDCADT)
+        <b>VALUES </b>(:FUNC, :CTNCODG, 0, 'NOW');
+     <b>END
+  END
+
+  SELECT </b>ANNCGEN, TGNCOMS, ANNCGTN
+  <b>FROM </b>ANGARIADOR <b>INNER JOIN </b>TABELA_ANGARIADOR <b>ON
+     </b>ANNCGEN = TGNCGEN
+  <b>WHERE </b>ANNCGEN = :CTNCGEN
+  <b>AND </b>TGNCGTP = :CTNCGTP
+  <b>INTO </b>:ANGARIAD2, :COMISSA2, :TIPO;
+
+  -- INSERE A COMISSÃO <b>DO </b>CORRETOR OU AGENCIA SINERGIA
+  <b>IF </b>(ANGARIAD2 <b>IS NOT NULL</b>) <b>THEN
+  BEGIN
+     IF </b>((ZERACOMISSAO = 'F'  <b>AND </b>CTNEXAT &gt; 0) <b>AND </b>TIPO != 9) <b>THEN
+     BEGIN
+        INSERT INTO </b>COMISSAOCONTRATO (CCNCGEN, CCNCGCT, CCNPERC, CCDCADT)
+        <b>VALUES </b>(:ANGARIAD2, :CTNCODG, :COMISSA2, 'NOW');
+     <b>END
+     ELSE
+     BEGIN
+        INSERT INTO </b>COMISSAOCONTRATO (CCNCGEN, CCNCGCT, CCNPERC, CCDCADT)
+        <b>VALUES </b>(:ANGARIAD2, :CTNCODG, 0, 'NOW');
+     <b>END
+  END
+
+END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_IMPORTA_CONTAFIXA_DIA.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_INSERE_CONTRATO_COMPLETO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

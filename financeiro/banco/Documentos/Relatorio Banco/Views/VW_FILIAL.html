@@ -1,0 +1,175 @@
+<HTML>
+<HEAD>
+<TITLE>VW_FILIAL</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="VW_FASEPROCESSO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="VW_FILTROAJCUST.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">VW_FILIAL</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for view VW_FILIAL</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Columns</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Column</B></P>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Type</B></P>
+<TH WIDTH="70%"><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD><P CLASS="Base2">FLNCODG</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLNCGEP</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCNMEP</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCNOME</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCRESP</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCFONE</P></TD>
+<TD><P CLASS="Base2">VARCHAR(10)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCMAIL</P></TD>
+<TD><P CLASS="Base2">VARCHAR(100)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLNCGTL</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCDCTL</P></TD>
+<TD><P CLASS="Base2">VARCHAR(25)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCLOGR</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCBAIR</P></TD>
+<TD><P CLASS="Base2">VARCHAR(50)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLNCGCD</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCDCCD</P></TD>
+<TD><P CLASS="Base2">VARCHAR(50)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCUFCD</P></TD>
+<TD><P CLASS="Base2">VARCHAR(2)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">FLCCEP</P></TD>
+<TD><P CLASS="Base2">VARCHAR(8)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Triggers</P>
+<P CLASS="Base">There are no triggers for view VW_FILIAL</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>CREATE VIEW </b>VW_FILIAL(
+  FLNCODG,
+  FLNCGEP,
+  FLCNMEP,
+  FLCNOME,
+  FLCRESP,
+  FLCFONE,
+  FLCMAIL,
+  FLNCGTL,
+  FLCDCTL,
+  FLCLOGR,
+  FLCBAIR,
+  FLNCGCD,
+  FLCDCCD,
+  FLCUFCD,
+  FLCCEP)
+<b>AS
+SELECT
+   </b>FLNCODG,
+   FLNCGEP,
+   EPCNOME,
+   FLCNOME,
+   FLCRESP,
+   FLCFONE,
+   FLCMAIL,
+   FLNCGTL,
+   TLCDESC,
+   FLCLOGR,
+   FLCBAIR,
+   FLNCGCD,
+   CDCDESC,
+   CDCUF,
+   FLCCEP
+ <b>FROM
+   </b>FILIAL <b>INNER JOIN </b>EMPRESA <b>ON
+      </b>EPNCODG = FLNCGEP
+   <b>INNER JOIN </b>CIDADE <b>ON
+      </b>FLNCGCD = CDNCODG
+   <b>LEFT JOIN </b>TIPOLOGRADOURO <b>ON
+      </b>FLNCGTL = TLNCODG
+;
+
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:51</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="VW_FASEPROCESSO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="VW_FILTROAJCUST.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

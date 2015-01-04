@@ -1,0 +1,191 @@
+<HTML>
+<HEAD>
+<TITLE>VW_CONTAFIXA</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="VW_CONTACORRENTE.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="VW_CONTAGRUPO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">VW_CONTAFIXA</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for view VW_CONTAFIXA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Columns</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Column</B></P>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Type</B></P>
+<TH WIDTH="70%"><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD><P CLASS="Base2">COFNCODG</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFNCGGPC</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFCDCGPC</P></TD>
+<TD><P CLASS="Base2">VARCHAR(40)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFNCONT</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFCCONT</P></TD>
+<TD><P CLASS="Base2">VARCHAR(40)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFNFILI</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFCFILI</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFNDIA</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFCDESC</P></TD>
+<TD><P CLASS="Base2">VARCHAR(80)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFCDOCM</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFNFORN</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFCFORN</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFNCOCO</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFCCOCO</P></TD>
+<TD><P CLASS="Base2">VARCHAR(127)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFYVALR</P></TD>
+<TD><P CLASS="Base2">FLOAT</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">COFLATIV</P></TD>
+<TD><P CLASS="Base2">CHAR(1)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Triggers</P>
+<P CLASS="Base">There are no triggers for view VW_CONTAFIXA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>CREATE VIEW </b>VW_CONTAFIXA(
+  COFNCODG,
+  COFNCGGPC,
+  COFCDCGPC,
+  COFNCONT,
+  COFCCONT,
+  COFNFILI,
+  COFCFILI,
+  COFNDIA,
+  COFCDESC,
+  COFCDOCM,
+  COFNFORN,
+  COFCFORN,
+  COFNCOCO,
+  COFCCOCO,
+  COFYVALR,
+  COFLATIV)
+<b>AS
+SELECT
+   </b>COFNCODG,
+   GPCNCODG,
+   GPCCDESC,
+   COFNCONT,
+   COGCDESC,
+   COFNFILI,
+   FLCNOME,
+   COFNDIA,
+   COFCDESC,
+   COFCDOCM,
+   COFNFORN,
+   ENCNOME,
+   COFNCOCO,
+   (BCCDESC ||' - AG:'|| COCAGEN ||' - C:'||COCNUMR||' ('||TCTCDESC||')') COFCCOCO,
+   COFYVALR,
+   COFLATIV
+ <b>FROM
+   </b>CONTAFIXA <b>INNER JOIN </b>CONTAGRUPO <b>ON
+      </b>COGNCODG = COFNCONT
+   <b>INNER JOIN </b>GRUPOCONTA <b>ON
+      </b>COGNCGGPC = GPCNCODG
+   <b>LEFT JOIN </b>FILIAL <b>ON
+      </b>FLNCODG = COFNFILI
+   <b>LEFT JOIN </b>ENTIDADE <b>ON
+      </b>COFNFORN = ENNCODG
+   <b>LEFT JOIN </b>CONTACORRENTE <b>ON
+      </b>COFNCOCO = CONCODG
+   <b>LEFT JOIN </b>TIPOCONTACORRENTE <b>ON
+      </b>CONTCON = TCTNCODG
+   <b>LEFT JOIN </b>BANCO <b>ON
+      </b>CONCGBC = BCNCODG
+ <b>WHERE </b>COFLATIV = 'T'
+;
+
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:49</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="VW_CONTACORRENTE.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="VW_CONTAGRUPO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

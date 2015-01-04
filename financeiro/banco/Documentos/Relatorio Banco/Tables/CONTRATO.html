@@ -1,0 +1,586 @@
+<HTML>
+<HEAD>
+<TITLE>CONTRATO</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="CONTATOSINDI.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="CONTRATOAUDITORIA.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">CONTRATO</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">Tabela de Contratos/Propostas</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Fields</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="1%"><P CLASS="Base2"><B>PK</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>FK</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Name</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Domain</B></P>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Data type</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Not null</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Default</B></P>
+<TH><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código do Contrato</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTNNUMR</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">VARCHAR(15)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Número do contrato</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">CTNC2EN</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código da Entidade para Tipo (Cliente)</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">CTNCGEN</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código da Entidade para Tipo (Angariador)</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTDVERB</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Data da Verbação</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTDPGTO</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Data de Pagamento</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTYVALR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Domains/MOEDA.html">MOEDA</A></TD><TD><P CLASS="Base2">FLOAT</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">VAlor do Contrato</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">CTNCGFP</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código da Forma de Pagamento</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">CTNCGSC</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código da Situação do Contrato</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">CTNCGTP</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código da Tabela Produto</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTNEXAT</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">FLOAT</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Comissão Recebida pela Exata</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTLFISI</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Domains/LOGICO.html">LOGICO</A></TD><TD><P CLASS="Base2">CHAR(1)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Físico foi entrege?</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTDBXFI</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">TIMESTAMP</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Data e Hora da Baixa do Físico</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTNUSBX</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Usuário que efetuou a baixa do físico.</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTDEXTN</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">TIMESTAMP</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Data do Extorno</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTNCADT</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código do Usuário que efetuou o cadastro</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTDCADT</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">TIMESTAMP</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">'now'</P></TD>
+<TD><P CLASS="Base2">Data de Cadastro do Contrato</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTDALTE</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">TIMESTAMP</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Data de Alteração</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTNALTE</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código do Usuário da Alteração</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTLAUDI</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Domains/LOGICO.html">LOGICO</A></TD><TD><P CLASS="Base2">CHAR(1)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">'T'</P></TD>
+<TD><P CLASS="Base2">Há necessidade de auditoria?</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">CTNCGBC</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código do banco da OP.</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTCAGEN</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">VARCHAR(6)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Código da Agência da OP.</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTDSQOP</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Data de Confirmação do Saque da OP</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTNSQOP</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Usuário responsável pelo Confirmação do Saque da OP</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CTLATIV</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Domains/LOGICO.html">LOGICO</A></TD><TD><P CLASS="Base2">CHAR(1)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">'T'</P></TD>
+<TD><P CLASS="Base2">Ativo?</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Triggers</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="15%"><P CLASS="Base2"><B>Trigger</B></P>
+<TH WIDTH="20%"><P CLASS="Base2"><B>Type</B></P>
+<TH WIDTH="5%"><P CLASS="Base2"><B>Active</B></P>
+<TH WIDTH="5%"><P CLASS="Base2"><B>Position</B></P>
+<TH><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Triggers/BI_CTNCODG.html">BI_CTNCODG</A></TD><TD><P CLASS="Base2">AFTER </P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">0</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Triggers/CONTRATO_AI.html">CONTRATO_AI</A></TD><TD><P CLASS="Base2">AFTER </P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">0</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Triggers/CONTRATO_AU.html">CONTRATO_AU</A></TD><TD><P CLASS="Base2">AFTER </P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">0</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Triggers/CONTRATO_BD.html">CONTRATO_BD</A></TD><TD><P CLASS="Base2">AFTER </P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">0</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Triggers/CONTRATO_BU.html">CONTRATO_BU</A></TD><TD><P CLASS="Base2">AFTER </P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">0</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Indices</P>
+<TABLE CLASS="dtArg" CELLSPACING="0">
+<TH><P CLASS="Base2"><B>Index</B></P>
+<TH><P CLASS="Base2"><B>Fields</B></P>
+<TH><P CLASS="Base2"><B>Active</B></P>
+<TH><P CLASS="Base2"><B>Unique</B></P>
+<TH><P CLASS="Base2"><B>Order</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">FK_CTBC</A></TD><TD><P CLASS="Base2">CTNCGBC</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">FK_CTEN1</A></TD><TD><P CLASS="Base2">CTNC2EN</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">FK_CTEN2</A></TD><TD><P CLASS="Base2">CTNCGEN</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">FK_CTFP</A></TD><TD><P CLASS="Base2">CTNCGFP</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">FK_CTSC</A></TD><TD><P CLASS="Base2">CTNCGSC</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">FK_CTTP</A></TD><TD><P CLASS="Base2">CTNCGTP</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/IDX_CTDPGTO.html">IDX_CTDPGTO</A></TD><TD><P CLASS="Base2">CTDPGTO</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/IDX_CTDVERB.html">IDX_CTDVERB</A></TD><TD><P CLASS="Base2">CTDVERB</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/IDX_CTNNUMR.html">IDX_CTNNUMR</A></TD><TD><P CLASS="Base2">CTNNUMR</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">PK_CONTRATO</A></TD><TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">References</P>
+<TABLE CLASS="dtArg" CELLSPACING="0">
+<TH><P CLASS="Base2"><B>Table</B></P>
+<TH><P CLASS="Base2"><B>Foreign Key</B></P>
+<TH><P CLASS="Base2"><B>Fields</B></P>
+<TH><P CLASS="Base2"><B>FK Fields</B></P>
+<TH><P CLASS="Base2"><B>DEL Rule</B></P>
+<TH><P CLASS="Base2"><B>UPD Rule</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/BANCO.html">BANCO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_CTBC.html">FK_CTBC</A></TD><TD><P CLASS="Base2">CTNCGBC</P></TD>
+<TD><P CLASS="Base2">BCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_CTEN1.html">FK_CTEN1</A></TD><TD><P CLASS="Base2">CTNC2EN</P></TD>
+<TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_CTEN2.html">FK_CTEN2</A></TD><TD><P CLASS="Base2">CTNCGEN</P></TD>
+<TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/FORMAPAGAMENTO.html">FORMAPAGAMENTO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_CTFP.html">FK_CTFP</A></TD><TD><P CLASS="Base2">CTNCGFP</P></TD>
+<TD><P CLASS="Base2">FPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/SITUACAOCONTRATO.html">SITUACAOCONTRATO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_CTSC.html">FK_CTSC</A></TD><TD><P CLASS="Base2">CTNCGSC</P></TD>
+<TD><P CLASS="Base2">SCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/TABELAPRODUTO.html">TABELAPRODUTO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_CTTP.html">FK_CTTP</A></TD><TD><P CLASS="Base2">CTNCGTP</P></TD>
+<TD><P CLASS="Base2">TPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Referenced</P>
+<TABLE CLASS="dtArg" CELLSPACING="0">
+<TH><P CLASS="Base2"><B>Table</B></P>
+<TH><P CLASS="Base2"><B>Foreign Key</B></P>
+<TH><P CLASS="Base2"><B>Fields</B></P>
+<TH><P CLASS="Base2"><B>FK Fields</B></P>
+<TH><P CLASS="Base2"><B>DEL Rule</B></P>
+<TH><P CLASS="Base2"><B>UPD Rule</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/COMISSAOCONTRATO.html">COMISSAOCONTRATO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_CCCT.html">FK_CCCT</A></TD><TD><P CLASS="Base2">CCNCGCT</P></TD>
+<TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOAUDITORIA.html">CONTRATOAUDITORIA</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_CTACT.html">FK_CTACT</A></TD><TD><P CLASS="Base2">CTANCGCT</P></TD>
+<TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOQUESTIONARIO.html">CONTRATOQUESTIONARIO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_CQNCT.html">FK_CQNCT</A></TD><TD><P CLASS="Base2">CQNNCGCT</P></TD>
+<TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/GCOMIMPORT.html">GCOMIMPORT</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_GCICT.html">FK_GCICT</A></TD><TD><P CLASS="Base2">GCINCGCT</P></TD>
+<TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/PENDENCIACONTRATO.html">PENDENCIACONTRATO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_PECT.html">FK_PECT</A></TD><TD><P CLASS="Base2">PENCGCT</P></TD>
+<TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>CREATE TABLE </b>CONTRATO (
+  CTNCODG <b>INTEGER NOT NULL</b>,
+  CTNNUMR <b>VARCHAR</b>(15) <b>CHARACTER SET </b>NONE <b>NOT NULL COLLATE </b>NONE,
+  CTNC2EN <b>INTEGER NOT NULL</b>,
+  CTNCGEN <b>INTEGER NOT NULL</b>,
+  CTDVERB <b>DATE</b>,
+  CTDPGTO <b>DATE</b>,
+  CTYVALR MOEDA <b>NOT NULL</b>,
+  CTNCGFP <b>INTEGER NOT NULL</b>,
+  CTNCGSC <b>INTEGER NOT NULL</b>,
+  CTNCGTP <b>INTEGER NOT NULL</b>,
+  CTNEXAT <b>FLOAT</b>,
+  CTLFISI LOGICO <b>NOT NULL</b>,
+  CTDBXFI <b>TIMESTAMP</b>,
+  CTNUSBX <b>INTEGER</b>,
+  CTDEXTN <b>TIMESTAMP</b>,
+  CTNCADT <b>INTEGER NOT NULL</b>,
+  CTDCADT <b>TIMESTAMP DEFAULT </b>'now' <b>NOT NULL</b>,
+  CTDALTE <b>TIMESTAMP</b>,
+  CTNALTE <b>INTEGER</b>,
+  CTLAUDI LOGICO <b>DEFAULT </b>'T' <b>NOT NULL</b>,
+  CTNCGBC <b>INTEGER</b>,
+  CTCAGEN <b>VARCHAR</b>(6) <b>CHARACTER SET </b>NONE <b>COLLATE </b>NONE,
+  CTDSQOP <b>DATE</b>,
+  CTNSQOP <b>INTEGER</b>,
+  CTLATIV LOGICO <b>DEFAULT </b>'T' <b>NOT NULL</b>);
+
+
+<b>ALTER TABLE </b>CONTRATO <b>ADD CONSTRAINT </b>PK_CONTRATO <b>PRIMARY KEY </b>(CTNCODG);
+
+<b>ALTER TABLE </b>CONTRATO <b>ADD CONSTRAINT </b>FK_CTBC <b>FOREIGN KEY </b>(CTNCGBC) <b>REFERENCES </b>BANCO(BCNCODG);
+
+<b>ALTER TABLE </b>CONTRATO <b>ADD CONSTRAINT </b>FK_CTEN1 <b>FOREIGN KEY </b>(CTNC2EN) <b>REFERENCES </b>ENTIDADE(ENNCODG);
+
+<b>ALTER TABLE </b>CONTRATO <b>ADD CONSTRAINT </b>FK_CTEN2 <b>FOREIGN KEY </b>(CTNCGEN) <b>REFERENCES </b>ENTIDADE(ENNCODG);
+
+<b>ALTER TABLE </b>CONTRATO <b>ADD CONSTRAINT </b>FK_CTFP <b>FOREIGN KEY </b>(CTNCGFP) <b>REFERENCES </b>FORMAPAGAMENTO(FPNCODG);
+
+<b>ALTER TABLE </b>CONTRATO <b>ADD CONSTRAINT </b>FK_CTSC <b>FOREIGN KEY </b>(CTNCGSC) <b>REFERENCES </b>SITUACAOCONTRATO(SCNCODG);
+
+<b>ALTER TABLE </b>CONTRATO <b>ADD CONSTRAINT </b>FK_CTTP <b>FOREIGN KEY </b>(CTNCGTP) <b>REFERENCES </b>TABELAPRODUTO(TPNCODG);
+
+<b>CREATE INDEX </b>IDX_CTDPGTO <b>ON </b>CONTRATO(CTDPGTO);
+
+<b>CREATE INDEX </b>IDX_CTDVERB <b>ON </b>CONTRATO(CTDVERB);
+
+<b>CREATE INDEX </b>IDX_CTNNUMR <b>ON </b>CONTRATO(CTNNUMR);
+
+
+<b>SET </b>TERM ^ ;
+
+<b>CREATE TRIGGER </b>BI_CTNCODG <b>FOR </b>CONTRATO
+<b>ACTIVE AFTER 
+POSITION </b>0
+<b>AS
+</b>^
+
+<b>CREATE TRIGGER </b>CONTRATO_AI <b>FOR </b>CONTRATO
+<b>ACTIVE AFTER 
+POSITION </b>0
+<b>AS
+</b>^
+
+<b>CREATE TRIGGER </b>CONTRATO_AU <b>FOR </b>CONTRATO
+<b>ACTIVE AFTER 
+POSITION </b>0
+<b>AS
+</b>^
+
+<b>CREATE TRIGGER </b>CONTRATO_BD <b>FOR </b>CONTRATO
+<b>ACTIVE AFTER 
+POSITION </b>0
+<b>AS
+</b>^
+
+<b>CREATE TRIGGER </b>CONTRATO_BU <b>FOR </b>CONTRATO
+<b>ACTIVE AFTER 
+POSITION </b>0
+<b>AS
+</b>^
+<b>SET </b>TERM ; ^
+
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:41</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="CONTATOSINDI.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="CONTRATOAUDITORIA.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

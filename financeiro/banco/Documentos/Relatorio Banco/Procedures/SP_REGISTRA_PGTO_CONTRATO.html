@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<TITLE>SP_REGISTRA_PGTO_CONTRATO</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_REGISTRA_ESTORNO_CONTRATO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_RELAT_CORRETOR.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_REGISTRA_PGTO_CONTRATO</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_REGISTRA_PGTO_CONTRATO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">DATA</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_REGISTRA_PGTO_CONTRATO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_REGISTRA_PGTO_CONTRATO(
+  CTNCODG <b>INTEGER</b>,
+  DATA <b>DATE</b>)
+<b>AS
+DECLARE VARIABLE </b>STATUS <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>SAQUE_OP <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>CORRETOR <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>FORMA_PGTO <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>DATA_CADASTRO <b>DATE</b>;
+<b>BEGIN
+
+  SELECT </b>CTNCGSC, CTDCADT, CTNCGFP, CTNCGEN, CTNSQOP <b>FROM </b>CONTRATO
+  <b>WHERE </b>CTNCODG = :CTNCODG
+  <b>INTO </b>:STATUS, :DATA_CADASTRO, :FORMA_PGTO, :CORRETOR, :SAQUE_OP;
+
+  <b>IF </b>(STATUS <b>NOT IN </b>(4,9) <b>AND </b>DATA &gt;= DATA_CADASTRO) <b>THEN
+  BEGIN
+           UPDATE </b>CONTRATO <b>SET
+           </b>CTDPGTO = :DATA,
+           CTNCGSC = 6
+           <b>WHERE </b>CTNCODG = :CTNCODG
+           <b>AND </b>CTLATIV = 'T';
+  <b>END
+
+END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_REGISTRA_ESTORNO_CONTRATO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_RELAT_CORRETOR.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

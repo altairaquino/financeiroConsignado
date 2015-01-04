@@ -1,0 +1,266 @@
+<HTML>
+<HEAD>
+<TITLE>VW_AUDITORIATIPO_CHECK</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="VW_AUDITORIATIPO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="VW_AUDITORIAVALOR.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">VW_AUDITORIATIPO_CHECK</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for view VW_AUDITORIATIPO_CHECK</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Columns</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Column</B></P>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Type</B></P>
+<TH WIDTH="70%"><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD><P CLASS="Base2">ATPNCODG</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ATPLESTN</P></TD>
+<TD><P CLASS="Base2">CHAR(1)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ATPLUF</P></TD>
+<TD><P CLASS="Base2">CHAR(2)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ATPLPDFS</P></TD>
+<TD><P CLASS="Base2">CHAR(1)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ATPNCGCD</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ATPNCGBC</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ATPNCGGPA</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ATPNCGCT</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ATPLAUDT</P></TD>
+<TD><P CLASS="Base2">CHAR(1)</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Triggers</P>
+<P CLASS="Base">There are no triggers for view VW_AUDITORIATIPO_CHECK</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>CREATE VIEW </b>VW_AUDITORIATIPO_CHECK(
+  ATPNCODG,
+  ATPLESTN,
+  ATPLUF,
+  ATPLPDFS,
+  ATPNCGCD,
+  ATPNCGBC,
+  ATPNCGGPA,
+  ATPNCGCT,
+  ATPLAUDT)
+<b>AS
+SELECT
+   </b>ATPNCODG,
+   ATPLESTN,
+   ATPLUF,
+   ATPLPDFS,
+   ATPNCGCD,
+   ATPNCGBC,
+   ATPNCGGPA,
+   ATPNCGCT,
+   ATPLAUDT
+ <b>FROM
+</b>(
+   -- ESTORNO
+  <b>SELECT
+   </b>ATPNCODG,
+   ATPLESTN,-- &lt;---
+   <b>NULL </b>ATPLUF,
+   <b>NULL </b>ATPLPDFS,
+   <b>NULL </b>ATPNCGCD,
+   <b>NULL </b>ATPNCGBC,
+   ATPNCGGPA,
+   CTNCODG ATPNCGCT,
+   IIF(<b>EXISTS</b>(
+ <b>SELECT </b>CT2.CTNCGEN <b>FROM </b>CONTRATO CT2
+ <b>WHERE
+ </b>CT2.CTDCADT &lt;= CT1.CTDCADT <b>AND
+ </b>CT1.CTNCGEN = CT2.CTNCGEN <b>AND
+ </b>CT2.CTDEXTN <b>IS NOT NULL
+ </b>), 'T', 'F') ATPLAUDT
+ <b>FROM
+   </b>AUDITORIATIPO, CONTRATO CT1
+   <b>WHERE
+   </b>ATPLESTN = 'T'
+
+<b>UNION ALL
+ </b>--ESTADO
+  <b>SELECT
+   </b>ATPNCODG,
+   <b>NULL </b>ATPLESTN,
+   ATPLUF,-- &lt;--
+   <b>NULL </b>ATPLPDFS,
+   <b>NULL </b>ATPNCGCD,
+   <b>NULL </b>ATPNCGBC,
+   ATPNCGGPA,
+   CTNCODG,
+   IIF(
+<b>EXISTS</b>(
+<b>SELECT
+</b>CDNCODG
+<b>FROM
+   </b>CIDADE
+   <b>LEFT JOIN </b>ENTIDADE <b>ON
+   </b>CIDADE.CDNCODG = ENTIDADE.ENNCGCD
+<b>WHERE
+   </b>CIDADE.CDCUF = ATPLUF <b>AND
+   </b>CTNCODG <b>IS NOT NULL AND
+   </b>CONTRATO.CTNC2EN = ENTIDADE.ENNCODG), 'T', 'F')
+ <b>FROM
+   </b>AUDITORIATIPO,CONTRATO
+ <b>WHERE
+   </b>ATPLUF <b>IS NOT NULL
+UNION ALL
+ </b>--CIDADE
+  <b>SELECT
+   </b>ATPNCODG,
+   <b>NULL </b>ATPLESTN,
+   <b>NULL </b>ATPLUF,
+   <b>NULL </b>ATPLPDFS,
+   ATPNCGCD,-- &lt;----
+   <b>NULL </b>ATPNCGBC,
+   ATPNCGGPA,
+   CTNCODG,
+   IIF(
+   <b>EXISTS</b>(
+   <b>SELECT
+   </b>ENNCGCD
+   <b>FROM
+   </b>ENTIDADE
+   <b>WHERE
+   </b>ATPNCGCD = ENTIDADE.ENNCGCD <b>AND
+   </b>CONTRATO.CTNC2EN = ENTIDADE.ENNCODG
+   ),
+   'T', 'F')
+ <b>FROM
+   </b>AUDITORIATIPO,CONTRATO
+ <b>WHERE
+   </b>ATPNCGCD <b>IS NOT NULL
+ UNION ALL
+ </b>--BANCO
+  <b>SELECT
+   </b>ATPNCODG,
+   <b>NULL </b>ATPLESTN,
+   <b>NULL </b>ATPLUF,
+   <b>NULL </b>ATPLPDFS,
+   <b>NULL </b>ATPNCGCD,
+   ATPNCGBC,-- &lt;---
+   ATPNCGGPA,
+   CTNCODG,
+   IIF(CONTRATO.CTNCGBC = ATPNCGBC,'T','F')
+ <b>FROM
+   </b>AUDITORIATIPO,CONTRATO
+   <b>WHERE
+   </b>ATPNCGBC <b>IS NOT NULL
+UNION ALL
+ </b>--CORRETOR QUE TEVE PENDENCIA COM FISICO
+  <b>SELECT
+   </b>ATPNCODG,
+   <b>NULL </b>ATPLESTN,
+   <b>NULL </b>ATPLUF,
+   ATPLPDFS,
+   <b>NULL </b>ATPNCGCD,
+   <b>NULL </b>ATPNCGBC,
+   ATPNCGGPA,
+   CTNCODG,
+   IIF(
+    <b>EXISTS</b>(<b>SELECT </b>CTDBXFI <b>FROM </b>CONTRATO CT2 <b>WHERE
+   </b>CT2.CTDBXFI <b>IS NOT NULL AND
+   </b>CT2.CTNCGEN = CT1.CTNCGEN <b>AND
+ </b>(<b>SELECT </b>* <b>FROM </b>SP_DAYSBETWEEN(
+  <b>CAST</b>(CT2.CTDBXFI <b>AS DATE</b>),<b>CAST</b>(CT2.CTDVERB <b>AS DATE</b>))) &gt; 8)
+   ,'T', 'F')
+ <b>FROM
+   </b>AUDITORIATIPO,CONTRATO CT1
+   <b>WHERE
+   </b>ATPLPDFS = 'N'
+
+<b>UNION ALL
+ </b>--CORRETOR QUE TEM PENDENCIA COM FISICO
+  <b>SELECT
+   </b>ATPNCODG,
+   <b>NULL </b>ATPLESTN,
+   <b>NULL </b>ATPLUF,
+   ATPLPDFS,
+   <b>NULL </b>ATPNCGCD,
+   <b>NULL </b>ATPNCGBC,
+   ATPNCGGPA,
+   CTNCODG,
+   IIF(
+    <b>EXISTS</b>(<b>SELECT </b>CTDBXFI <b>FROM </b>CONTRATO CT2 <b>WHERE
+   </b>CT2.CTDBXFI <b>IS NULL AND
+   </b>CT2.CTNCGEN = CT1.CTNCGEN <b>AND
+ </b>(<b>SELECT </b>* <b>FROM </b>SP_DAYSBETWEEN(
+  <b>CAST</b>('NOW' <b>AS DATE</b>),<b>CAST</b>(CT2.CTDVERB <b>AS DATE</b>))) &gt; 8)
+   ,'T','F')
+ <b>FROM
+   </b>AUDITORIATIPO,CONTRATO CT1
+   <b>WHERE
+   </b>ATPLPDFS = 'T'
+<i>/*/**/
+</i>)
+;
+
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:49</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="VW_AUDITORIATIPO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="VW_AUDITORIAVALOR.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<TITLE>CIDADE</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="CHEQUECAIXA.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="CLASS.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">CIDADE</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">Tabela de Cidades de Todo o Brasil</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Fields</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="1%"><P CLASS="Base2"><B>PK</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>FK</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Name</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Domain</B></P>
+<TH WIDTH="10%"><P CLASS="Base2"><B>Data type</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Not null</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Default</B></P>
+<TH><P CLASS="Base2"><B>Description</B></P>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CDCUF</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">VARCHAR(2)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">CDCDESC</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">VARCHAR(50)</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Triggers</P>
+<P CLASS="Base">There are no triggers for table CIDADE</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Indices</P>
+<TABLE CLASS="dtArg" CELLSPACING="0">
+<TH><P CLASS="Base2"><B>Index</B></P>
+<TH><P CLASS="Base2"><B>Fields</B></P>
+<TH><P CLASS="Base2"><B>Active</B></P>
+<TH><P CLASS="Base2"><B>Unique</B></P>
+<TH><P CLASS="Base2"><B>Order</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/IDX_CDCUF.html">IDX_CDCUF</A></TD><TD><P CLASS="Base2">CDCUF</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Indices/">PK_CIDADE</A></TD><TD><P CLASS="Base2">CDNCODG</P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD ALIGN="middle"><P CLASS="Base2"><IMG SRC="../Images/Yes.bmp" BORDER="0"></P></TD>
+<TD><P CLASS="Base2">Ascending</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">References</P>
+<P CLASS="Base">There are no references for table CIDADE</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Referenced</P>
+<TABLE CLASS="dtArg" CELLSPACING="0">
+<TH><P CLASS="Base2"><B>Table</B></P>
+<TH><P CLASS="Base2"><B>Foreign Key</B></P>
+<TH><P CLASS="Base2"><B>Fields</B></P>
+<TH><P CLASS="Base2"><B>FK Fields</B></P>
+<TH><P CLASS="Base2"><B>DEL Rule</B></P>
+<TH><P CLASS="Base2"><B>UPD Rule</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIATIPO.html">AUDITORIATIPO</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_ATPCD.html">FK_ATPCD</A></TD><TD><P CLASS="Base2">ATPNCGCD</P></TD>
+<TD><P CLASS="Base2">CDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPRESA.html">EMPRESA</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_EPCD.html">FK_EPCD</A></TD><TD><P CLASS="Base2">EPNCGCD</P></TD>
+<TD><P CLASS="Base2">CDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_ENCD.html">FK_ENCD</A></TD><TD><P CLASS="Base2">ENNCGCD</P></TD>
+<TD><P CLASS="Base2">CDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="../Tables/FILIAL.html">FILIAL</A></TD><TD><P CLASS="Base2"><A HREF="../Foreign Keys/FK_FLCD.html">FK_FLCD</A></TD><TD><P CLASS="Base2">FLNCGCD</P></TD>
+<TD><P CLASS="Base2">CDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>CREATE TABLE </b>CIDADE (
+  CDNCODG <b>INTEGER NOT NULL</b>,
+  CDCUF <b>VARCHAR</b>(2) <b>CHARACTER SET </b>NONE <b>COLLATE </b>NONE,
+  CDCDESC <b>VARCHAR</b>(50) <b>CHARACTER SET </b>NONE <b>COLLATE </b>NONE);
+
+
+<b>ALTER TABLE </b>CIDADE <b>ADD CONSTRAINT </b>PK_CIDADE <b>PRIMARY KEY </b>(CDNCODG);
+
+
+<b>CREATE INDEX </b>IDX_CDCUF <b>ON </b>CIDADE(CDCUF);
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:40</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="CHEQUECAIXA.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="CLASS.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

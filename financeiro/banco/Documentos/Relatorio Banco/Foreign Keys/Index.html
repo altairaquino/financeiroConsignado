@@ -1,0 +1,1074 @@
+<HTML>
+<HEAD>
+<TITLE>Foreign Keys</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="../Index.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="FK_AJCEMP.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">Foreign Keys</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Foreign Key</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Table</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>Fields</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>FK Table</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>FK Fields</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>DEL Rule</B></P>
+<TH WIDTH="1%"><P CLASS="Base2"><B>UPD Rule</B></P>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_AJCEMP.html">FK_AJCEMP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AJUDACUSTO.html">AJUDACUSTO</A></TD><TD><P CLASS="Base2">AJCNCGEMP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_AJCTAC.html">FK_AJCTAC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AJUDACUSTO.html">AJUDACUSTO</A></TD><TD><P CLASS="Base2">AJCNCGTAC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOAJCUST.html">TIPOAJCUST</A></TD><TD><P CLASS="Base2">TACNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_AMOFAU.html">FK_AMOFAU</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AMOSTRA.html">AMOSTRA</A></TD><TD><P CLASS="Base2">AMONCGFAU</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FILTROAUDITORIA.html">FILTROAUDITORIA</A></TD><TD><P CLASS="Base2">FAUNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ANPEN.html">FK_ANPEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ANDAMENTOPROCESSO.html">ANDAMENTOPROCESSO</A></TD><TD><P CLASS="Base2">ANPNCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ANPFAP.html">FK_ANPFAP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ANDAMENTOPROCESSO.html">ANDAMENTOPROCESSO</A></TD><TD><P CLASS="Base2">ANPNCGFAP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FASEPROCESSO.html">FASEPROCESSO</A></TD><TD><P CLASS="Base2">FAPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ANPPRO.html">FK_ANPPRO</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ANDAMENTOPROCESSO.html">ANDAMENTOPROCESSO</A></TD><TD><P CLASS="Base2">ANPNCGPRO</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/PROCESSO.html">PROCESSO</A></TD><TD><P CLASS="Base2">PRONCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ANEN.html">FK_ANEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ANGARIADOR.html">ANGARIADOR</A></TD><TD><P CLASS="Base2">ANNCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ANRE.html">FK_ANRE</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ANGARIADOR.html">ANGARIADOR</A></TD><TD><P CLASS="Base2">ANNCGRG</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/REGIONAL.html">REGIONAL</A></TD><TD><P CLASS="Base2">RGNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ANTN1.html">FK_ANTN1</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ANGARIADOR.html">ANGARIADOR</A></TD><TD><P CLASS="Base2">ANNCGTN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOANGARIADOR.html">TIPOANGARIADOR</A></TD><TD><P CLASS="Base2">TNNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ATIEN.html">FK_ATIEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ATIVIDADE.html">ATIVIDADE</A></TD><TD><P CLASS="Base2">ATINCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ATRCLA.html">FK_ATRCLA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ATRIBUTTE.html">ATRIBUTTE</A></TD><TD><P CLASS="Base2">ATRNIDCLA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CLASS.html">CLASS</A></TD><TD><P CLASS="Base2">CLANID</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ATRCLAS2.html">FK_ATRCLAS2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ATRIBUTTE.html">ATRIBUTTE</A></TD><TD><P CLASS="Base2">ATRNTIPO</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CLASS.html">CLASS</A></TD><TD><P CLASS="Base2">CLANID</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_AQSGPA.html">FK_AQSGPA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIAQUESTAO.html">AUDITORIAQUESTAO</A></TD><TD><P CLASS="Base2">AQSNCGGPA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPOAUDITORIA.html">GRUPOAUDITORIA</A></TD><TD><P CLASS="Base2">GPANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_AQSOPC.html">FK_AQSOPC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIAQUESTAO.html">AUDITORIAQUESTAO</A></TD><TD><P CLASS="Base2">AQSNCGOPC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/OPCAO.html">OPCAO</A></TD><TD><P CLASS="Base2">OPCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_AQSOPC2.html">FK_AQSOPC2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIAQUESTAO.html">AUDITORIAQUESTAO</A></TD><TD><P CLASS="Base2">AQSNCGGPO,AQSNCGOPC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/OPCAO.html">OPCAO</A></TD><TD><P CLASS="Base2">OPCNCGGPO,OPCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_AQSQST.html">FK_AQSQST</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIAQUESTAO.html">AUDITORIAQUESTAO</A></TD><TD><P CLASS="Base2">AQSNCGQST</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/QUESTAO.html">QUESTAO</A></TD><TD><P CLASS="Base2">QSTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_AQSQST2.html">FK_AQSQST2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIAQUESTAO.html">AUDITORIAQUESTAO</A></TD><TD><P CLASS="Base2">AQSNCGQST,AQSNCGGPO</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/QUESTAO.html">QUESTAO</A></TD><TD><P CLASS="Base2">QSTNCODG,QSTNCGGPO</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ATPBC.html">FK_ATPBC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIATIPO.html">AUDITORIATIPO</A></TD><TD><P CLASS="Base2">ATPNCGBC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/BANCO.html">BANCO</A></TD><TD><P CLASS="Base2">BCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ATPCD.html">FK_ATPCD</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIATIPO.html">AUDITORIATIPO</A></TD><TD><P CLASS="Base2">ATPNCGCD</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CIDADE.html">CIDADE</A></TD><TD><P CLASS="Base2">CDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ATPGPA.html">FK_ATPGPA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIATIPO.html">AUDITORIATIPO</A></TD><TD><P CLASS="Base2">ATPNCGGPA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPOAUDITORIA.html">GRUPOAUDITORIA</A></TD><TD><P CLASS="Base2">GPANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_AVLGPA.html">FK_AVLGPA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIAVALOR.html">AUDITORIAVALOR</A></TD><TD><P CLASS="Base2">AVLNCGGPA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPOAUDITORIA.html">GRUPOAUDITORIA</A></TD><TD><P CLASS="Base2">GPANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_BEBC.html">FK_BEBC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/BANCOEMPRESA.html">BANCOEMPRESA</A></TD><TD><P CLASS="Base2">BENCGBC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/BANCO.html">BANCO</A></TD><TD><P CLASS="Base2">BCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_BEEP.html">FK_BEEP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/BANCOEMPRESA.html">BANCOEMPRESA</A></TD><TD><P CLASS="Base2">BENCGEP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPRESA.html">EMPRESA</A></TD><TD><P CLASS="Base2">EPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CRCCP.html">FK_CRCCP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CENTROCONTAPAGAR.html">CENTROCONTAPAGAR</A></TD><TD><P CLASS="Base2">CRCNCGCP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTAPAGAR.html">CONTAPAGAR</A></TD><TD><P CLASS="Base2">CPNCODG</P></TD>
+<TD><P CLASS="Base2">CASCADE</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CRMCR.html">FK_CRMCR</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CENTROMOVCAIXA.html">CENTROMOVCAIXA</A></TD><TD><P CLASS="Base2">CRMNCGCR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CENTROCUSTO.html">CENTROCUSTO</A></TD><TD><P CLASS="Base2">CRNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CCAN.html">FK_CCAN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/COMISSAOCONTRATO.html">COMISSAOCONTRATO</A></TD><TD><P CLASS="Base2">CCNCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CCCT.html">FK_CCCT</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/COMISSAOCONTRATO.html">COMISSAOCONTRATO</A></TD><TD><P CLASS="Base2">CCNCGCT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CFAN.html">FK_CFAN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/COMISSAOFIXA.html">COMISSAOFIXA</A></TD><TD><P CLASS="Base2">CFNCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ANGARIADOR.html">ANGARIADOR</A></TD><TD><P CLASS="Base2">ANNCGEN</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CMSTFC.html">FK_CMSTFC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/COMISSAO_SINERGIA.html">COMISSAO_SINERGIA</A></TD><TD><P CLASS="Base2">CMSNCGTFC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOFUNCAGENCIA.html">TIPOFUNCAGENCIA</A></TD><TD><P CLASS="Base2">TFANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CMSTP.html">FK_CMSTP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/COMISSAO_SINERGIA.html">COMISSAO_SINERGIA</A></TD><TD><P CLASS="Base2">CMSNCGTP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TABELAPRODUTO.html">TABELAPRODUTO</A></TD><TD><P CLASS="Base2">TPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_COEN.html">FK_COEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTACORRENTE.html">CONTACORRENTE</A></TD><TD><P CLASS="Base2">CONCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_COTCT.html">FK_COTCT</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTACORRENTE.html">CONTACORRENTE</A></TD><TD><P CLASS="Base2">CONTCON</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOCONTACORRENTE.html">TIPOCONTACORRENTE</A></TD><TD><P CLASS="Base2">TCTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_COFCOG.html">FK_COFCOG</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTAFIXA.html">CONTAFIXA</A></TD><TD><P CLASS="Base2">COFNCONT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTAGRUPO.html">CONTAGRUPO</A></TD><TD><P CLASS="Base2">COGNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_COGGPC.html">FK_COGGPC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTAGRUPO.html">CONTAGRUPO</A></TD><TD><P CLASS="Base2">COGNCGGPC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPOCONTA.html">GRUPOCONTA</A></TD><TD><P CLASS="Base2">GPCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CPFLQ.html">FK_CPFLQ</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTAPAGAR.html">CONTAPAGAR</A></TD><TD><P CLASS="Base2">CPNFLQU</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FORMALIQUIDEZ.html">FORMALIQUIDEZ</A></TD><TD><P CLASS="Base2">FLQNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CPPLC.html">FK_CPPLC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTAPAGAR.html">CONTAPAGAR</A></TD><TD><P CLASS="Base2">CPNCONT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/PLANOCONTA.html">PLANOCONTA</A></TD><TD><P CLASS="Base2">PLCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTCTOT.html">FK_CTCTOT</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTATOSINDI.html">CONTATOSINDI</A></TD><TD><P CLASS="Base2">CTSNCGTOT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOCONTATO.html">TIPOCONTATO</A></TD><TD><P CLASS="Base2">TOTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTBC.html">FK_CTBC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNCGBC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/BANCO.html">BANCO</A></TD><TD><P CLASS="Base2">BCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTEN1.html">FK_CTEN1</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNC2EN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTEN2.html">FK_CTEN2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTFP.html">FK_CTFP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNCGFP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FORMAPAGAMENTO.html">FORMAPAGAMENTO</A></TD><TD><P CLASS="Base2">FPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTSC.html">FK_CTSC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNCGSC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/SITUACAOCONTRATO.html">SITUACAOCONTRATO</A></TD><TD><P CLASS="Base2">SCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTTP.html">FK_CTTP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNCGTP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TABELAPRODUTO.html">TABELAPRODUTO</A></TD><TD><P CLASS="Base2">TPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTACT.html">FK_CTACT</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOAUDITORIA.html">CONTRATOAUDITORIA</A></TD><TD><P CLASS="Base2">CTANCGCT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTAFAU.html">FK_CTAFAU</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOAUDITORIA.html">CONTRATOAUDITORIA</A></TD><TD><P CLASS="Base2">CTANCGFAU</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FILTROAUDITORIA.html">FILTROAUDITORIA</A></TD><TD><P CLASS="Base2">FAUNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTAEN.html">FK_CTAEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOAUTO.html">CONTRATOAUTO</A></TD><TD><P CLASS="Base2">CTANCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTAEN2.html">FK_CTAEN2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOAUTO.html">CONTRATOAUTO</A></TD><TD><P CLASS="Base2">CTANC2EN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTAEN3.html">FK_CTAEN3</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOAUTO.html">CONTRATOAUTO</A></TD><TD><P CLASS="Base2">CTANC3EN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTAPGT.html">FK_CTAPGT</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOAUTO.html">CONTRATOAUTO</A></TD><TD><P CLASS="Base2">CTANFPTO</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/PGTOCONTRATOAUTO.html">PGTOCONTRATOAUTO</A></TD><TD><P CLASS="Base2">PGTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTAVEI.html">FK_CTAVEI</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOAUTO.html">CONTRATOAUTO</A></TD><TD><P CLASS="Base2">CTANVEIC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/VEICULO.html">VEICULO</A></TD><TD><P CLASS="Base2">VEINCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTQCQN.html">FK_CTQCQN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOQUESTAO.html">CONTRATOQUESTAO</A></TD><TD><P CLASS="Base2">CTQNCGCQN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOQUESTIONARIO.html">CONTRATOQUESTIONARIO</A></TD><TD><P CLASS="Base2">CQNNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTQCQN2.html">FK_CTQCQN2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOQUESTAO.html">CONTRATOQUESTAO</A></TD><TD><P CLASS="Base2">CTQNCGCQN,CTQNCGQTN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOQUESTIONARIO.html">CONTRATOQUESTIONARIO</A></TD><TD><P CLASS="Base2">CQNNCODG,CQNNCGQTN</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CTQQST.html">FK_CTQQST</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOQUESTAO.html">CONTRATOQUESTAO</A></TD><TD><P CLASS="Base2">CTQNCGQST</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/QUESTAO.html">QUESTAO</A></TD><TD><P CLASS="Base2">QSTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CQNCT.html">FK_CQNCT</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOQUESTIONARIO.html">CONTRATOQUESTIONARIO</A></TD><TD><P CLASS="Base2">CQNNCGCT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_CQNQTN.html">FK_CQNQTN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOQUESTIONARIO.html">CONTRATOQUESTIONARIO</A></TD><TD><P CLASS="Base2">CQNNCGQTN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/QUESTIONARIO.html">QUESTIONARIO</A></TD><TD><P CLASS="Base2">QTNNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_DFEFER.html">FK_DFEFER</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/DATAFERIADO.html">DATAFERIADO</A></TD><TD><P CLASS="Base2">DFENCGFER</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FERIADO.html">FERIADO</A></TD><TD><P CLASS="Base2">FERNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_EMPCTE.html">FK_EMPCTE</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCGCTE</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CATEGORIA_EMPREGADO.html">CATEGORIA_EMPREGADO</A></TD><TD><P CLASS="Base2">CTENCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_EMPEN.html">FK_EMPEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCGCEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_EMPGIN.html">FK_EMPGIN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCGGIN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRAU_INSTRUCAO.html">GRAU_INSTRUCAO</A></TD><TD><P CLASS="Base2">GINNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_EMPOCP.html">FK_EMPOCP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCGOCP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/OCUPACAO.html">OCUPACAO</A></TD><TD><P CLASS="Base2">OCPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_EMPSTE.html">FK_EMPSTE</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCGSTE</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/SITUACAO_EMPREGADO.html">SITUACAO_EMPREGADO</A></TD><TD><P CLASS="Base2">STENCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_EMPTAD.html">FK_EMPTAD</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCGTAD</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPO_ADMISSAO.html">TIPO_ADMISSAO</A></TD><TD><P CLASS="Base2">TADNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_EMPVIN.html">FK_EMPVIN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCGVIN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/VINCULO.html">VINCULO</A></TD><TD><P CLASS="Base2">VINNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ECCCR.html">FK_ECCCR</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO_CENTROCUSTO.html">EMPREGADO_CENTROCUSTO</A></TD><TD><P CLASS="Base2">ECCNCGCR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CENTROCUSTO.html">CENTROCUSTO</A></TD><TD><P CLASS="Base2">CRNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ECCEMP.html">FK_ECCEMP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO_CENTROCUSTO.html">EMPREGADO_CENTROCUSTO</A></TD><TD><P CLASS="Base2">ECCNCGEMP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_EPCD.html">FK_EPCD</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/EMPRESA.html">EMPRESA</A></TD><TD><P CLASS="Base2">EPNCGCD</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CIDADE.html">CIDADE</A></TD><TD><P CLASS="Base2">CDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ENCD.html">FK_ENCD</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCGCD</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CIDADE.html">CIDADE</A></TD><TD><P CLASS="Base2">CDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ENEC.html">FK_ENEC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCGEC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ESTADOCIVIL.html">ESTADOCIVIL</A></TD><TD><P CLASS="Base2">ECNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ENPP.html">FK_ENPP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCGPP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOPESSOA.html">TIPOPESSOA</A></TD><TD><P CLASS="Base2">PPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ENTE.html">FK_ENTE</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCGTE</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOENTIDADE.html">TIPOENTIDADE</A></TD><TD><P CLASS="Base2">TENCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ENTL.html">FK_ENTL</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCGTL</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOLOGRADOURO.html">TIPOLOGRADOURO</A></TD><TD><P CLASS="Base2">TLNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ETEN.html">FK_ETEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADETIPO.html">ENTIDADETIPO</A></TD><TD><P CLASS="Base2">ETNCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_ETTE.html">FK_ETTE</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADETIPO.html">ENTIDADETIPO</A></TD><TD><P CLASS="Base2">ETNCGTE</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOENTIDADE.html">TIPOENTIDADE</A></TD><TD><P CLASS="Base2">TENCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FAMSGR.html">FK_FAMSGR</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FAMILIA.html">FAMILIA</A></TD><TD><P CLASS="Base2">FAMNCGSGR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/SUBGRUPO.html">SUBGRUPO</A></TD><TD><P CLASS="Base2">SGRNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FERTFE.html">FK_FERTFE</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FERIADO.html">FERIADO</A></TD><TD><P CLASS="Base2">FERNCGTFE</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOFERIADO.html">TIPOFERIADO</A></TD><TD><P CLASS="Base2">TFENCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FLCD.html">FK_FLCD</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FILIAL.html">FILIAL</A></TD><TD><P CLASS="Base2">FLNCGCD</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CIDADE.html">CIDADE</A></TD><TD><P CLASS="Base2">CDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FLEP.html">FK_FLEP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FILIAL.html">FILIAL</A></TD><TD><P CLASS="Base2">FLNCGEP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPRESA.html">EMPRESA</A></TD><TD><P CLASS="Base2">EPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FACFIL.html">FK_FACFIL</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FILTROAJCUST.html">FILTROAJCUST</A></TD><TD><P CLASS="Base2">FACNCGFIL</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FILTRO.html">FILTRO</A></TD><TD><P CLASS="Base2">FILNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FILAJC.html">FK_FILAJC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FILTROAJCUST.html">FILTROAJCUST</A></TD><TD><P CLASS="Base2">FACNCGAJC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/AJUDACUSTO.html">AJUDACUSTO</A></TD><TD><P CLASS="Base2">AJCNCODG</P></TD>
+<TD><P CLASS="Base2">CASCADE</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FAUATP.html">FK_FAUATP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FILTROAUDITORIA.html">FILTROAUDITORIA</A></TD><TD><P CLASS="Base2">FAUNCGATP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIATIPO.html">AUDITORIATIPO</A></TD><TD><P CLASS="Base2">ATPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FAUAVL.html">FK_FAUAVL</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FILTROAUDITORIA.html">FILTROAUDITORIA</A></TD><TD><P CLASS="Base2">FAUNCGAVL</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/AUDITORIAVALOR.html">AUDITORIAVALOR</A></TD><TD><P CLASS="Base2">AVLNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FAUGPA.html">FK_FAUGPA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FILTROAUDITORIA.html">FILTROAUDITORIA</A></TD><TD><P CLASS="Base2">FAUNCGGPA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPOAUDITORIA.html">GRUPOAUDITORIA</A></TD><TD><P CLASS="Base2">GPANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FOLEP.html">FK_FOLEP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FOLHA.html">FOLHA</A></TD><TD><P CLASS="Base2">FOLNCGEP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPRESA.html">EMPRESA</A></TD><TD><P CLASS="Base2">EPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FOEEMP.html">FK_FOEEMP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FOLHA_EMP.html">FOLHA_EMP</A></TD><TD><P CLASS="Base2">FOENCGEMP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FOEFOL.html">FK_FOEFOL</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FOLHA_EMP.html">FOLHA_EMP</A></TD><TD><P CLASS="Base2">FOENCGFOL</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FOLHA.html">FOLHA</A></TD><TD><P CLASS="Base2">FOLNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FEIDER.html">FK_FEIDER</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FOLHA_EMP_ITEM.html">FOLHA_EMP_ITEM</A></TD><TD><P CLASS="Base2">FEINCGDER</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/DESC_REND.html">DESC_REND</A></TD><TD><P CLASS="Base2">DERNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FEIFOE.html">FK_FEIFOE</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FOLHA_EMP_ITEM.html">FOLHA_EMP_ITEM</A></TD><TD><P CLASS="Base2">FEINCGFOE</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FOLHA_EMP.html">FOLHA_EMP</A></TD><TD><P CLASS="Base2">FOENCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FCAEN.html">FK_FCAEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FUNCIONARIOAGENCIA.html">FUNCIONARIOAGENCIA</A></TD><TD><P CLASS="Base2">FCANCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FCAEN10.html">FK_FCAEN10</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FUNCIONARIOAGENCIA.html">FUNCIONARIOAGENCIA</A></TD><TD><P CLASS="Base2">FCANC2EN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FCATFA.html">FK_FCATFA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FUNCIONARIOAGENCIA.html">FUNCIONARIOAGENCIA</A></TD><TD><P CLASS="Base2">FCANCGTFA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOFUNCAGENCIA.html">TIPOFUNCAGENCIA</A></TD><TD><P CLASS="Base2">TFANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FREEN.html">FK_FREEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FUNCREGIONAL.html">FUNCREGIONAL</A></TD><TD><P CLASS="Base2">FRENCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FRERG.html">FK_FRERG</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FUNCREGIONAL.html">FUNCREGIONAL</A></TD><TD><P CLASS="Base2">FRENCGRG</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/REGIONAL.html">REGIONAL</A></TD><TD><P CLASS="Base2">RGNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_FRETFA.html">FK_FRETFA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/FUNCREGIONAL.html">FUNCREGIONAL</A></TD><TD><P CLASS="Base2">FRENCGTFA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOFUNCAGENCIA.html">TIPOFUNCAGENCIA</A></TD><TD><P CLASS="Base2">TFANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_GCICT.html">FK_GCICT</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/GCOMIMPORT.html">GCOMIMPORT</A></TD><TD><P CLASS="Base2">GCINCGCT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_GPAGPA.html">FK_GPAGPA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/GRUPOAUDITORIA.html">GRUPOAUDITORIA</A></TD><TD><P CLASS="Base2">GPANCGGPA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPOAUDITORIA.html">GRUPOAUDITORIA</A></TD><TD><P CLASS="Base2">GPANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_IDR_DER.html">FK_IDR_DER</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ITEM_DESC_REND.html">ITEM_DESC_REND</A></TD><TD><P CLASS="Base2">IDRNCGDER</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/DESC_REND.html">DESC_REND</A></TD><TD><P CLASS="Base2">DERNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_IDR_TDR.html">FK_IDR_TDR</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/ITEM_DESC_REND.html">ITEM_DESC_REND</A></TD><TD><P CLASS="Base2">IDRNCGTDR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPO_DESC_REND.html">TIPO_DESC_REND</A></TD><TD><P CLASS="Base2">TDRNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LCLCLA.html">FK_LCLCLA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LAYOUTCLASS.html">LAYOUTCLASS</A></TD><TD><P CLASS="Base2">LCLNIDCLA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CLASS.html">CLASS</A></TD><TD><P CLASS="Base2">CLANID</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LCLLAY.html">FK_LCLLAY</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LAYOUTCLASS.html">LAYOUTCLASS</A></TD><TD><P CLASS="Base2">LCLNIDLAY</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/LAYOUT.html">LAYOUT</A></TD><TD><P CLASS="Base2">LAYNID</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LITATR.html">FK_LITATR</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LAYOUTITEM.html">LAYOUTITEM</A></TD><TD><P CLASS="Base2">LITNIDATR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ATRIBUTTE.html">ATRIBUTTE</A></TD><TD><P CLASS="Base2">ATRNID</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LITATR2.html">FK_LITATR2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LAYOUTITEM.html">LAYOUTITEM</A></TD><TD><P CLASS="Base2">LITNIDCLA,LITNIDATR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ATRIBUTTE.html">ATRIBUTTE</A></TD><TD><P CLASS="Base2">ATRNIDCLA,ATRNID</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LITCLA.html">FK_LITCLA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LAYOUTITEM.html">LAYOUTITEM</A></TD><TD><P CLASS="Base2">LITNIDCLA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CLASS.html">CLASS</A></TD><TD><P CLASS="Base2">CLANID</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LITLAY.html">FK_LITLAY</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LAYOUTITEM.html">LAYOUTITEM</A></TD><TD><P CLASS="Base2">LITNIDLAY</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/LAYOUT.html">LAYOUT</A></TD><TD><P CLASS="Base2">LAYNID</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LITLCL.html">FK_LITLCL</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LAYOUTITEM.html">LAYOUTITEM</A></TD><TD><P CLASS="Base2">LITNIDLAY,LITNIDCLA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/LAYOUTCLASS.html">LAYOUTCLASS</A></TD><TD><P CLASS="Base2">LCLNIDLAY,LCLNIDCLA</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LITTIP.html">FK_LITTIP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LAYOUTITEM.html">LAYOUTITEM</A></TD><TD><P CLASS="Base2">LITNIDTIP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPO.html">TIPO</A></TD><TD><P CLASS="Base2">TIPNID</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LGEN.html">FK_LGEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LIGACAO.html">LIGACAO</A></TD><TD><P CLASS="Base2">LGNCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LGML.html">FK_LGML</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LIGACAO.html">LIGACAO</A></TD><TD><P CLASS="Base2">LGNCGML</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/MOTIVOLIGACAO.html">MOTIVOLIGACAO</A></TD><TD><P CLASS="Base2">MLNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LGRL.html">FK_LGRL</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LIGACAO.html">LIGACAO</A></TD><TD><P CLASS="Base2">LGNCGRL</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/RESULTADOLIGACAO.html">RESULTADOLIGACAO</A></TD><TD><P CLASS="Base2">RLNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LTEGEM.html">FK_LTEGEM</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LISTAEMAIL.html">LISTAEMAIL</A></TD><TD><P CLASS="Base2">LTENCGGEM</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPOEMAIL.html">GRUPOEMAIL</A></TD><TD><P CLASS="Base2">GEMNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_LOGEN.html">FK_LOGEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/LOG.html">LOG</A></TD><TD><P CLASS="Base2">LGNCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVEN1.html">FK_MOVEN1</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVCAIXA.html">MOVCAIXA</A></TD><TD><P CLASS="Base2">MOVNCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVEN2.html">FK_MOVEN2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVCAIXA.html">MOVCAIXA</A></TD><TD><P CLASS="Base2">MOVNFORN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVEP.html">FK_MOVEP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVCAIXA.html">MOVCAIXA</A></TD><TD><P CLASS="Base2">MOVNEMPR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPRESA.html">EMPRESA</A></TD><TD><P CLASS="Base2">EPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVFL.html">FK_MOVFL</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVCAIXA.html">MOVCAIXA</A></TD><TD><P CLASS="Base2">MOVNFILI</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FILIAL.html">FILIAL</A></TD><TD><P CLASS="Base2">FLNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVFLQ.html">FK_MOVFLQ</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVCAIXA.html">MOVCAIXA</A></TD><TD><P CLASS="Base2">MOVNFLQU</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FORMALIQUIDEZ.html">FORMALIQUIDEZ</A></TD><TD><P CLASS="Base2">FLQNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVPLC.html">FK_MOVPLC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVCAIXA.html">MOVCAIXA</A></TD><TD><P CLASS="Base2">MOVNCONT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/PLANOCONTA.html">PLANOCONTA</A></TD><TD><P CLASS="Base2">PLCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVCOCO.html">FK_MOVCOCO</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVIMENTO.html">MOVIMENTO</A></TD><TD><P CLASS="Base2">MOVNCOCO</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTACORRENTE.html">CONTACORRENTE</A></TD><TD><P CLASS="Base2">CONCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVCOG.html">FK_MOVCOG</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVIMENTO.html">MOVIMENTO</A></TD><TD><P CLASS="Base2">MOVNCGCOG</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTAGRUPO.html">CONTAGRUPO</A></TD><TD><P CLASS="Base2">COGNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVFILI.html">FK_MOVFILI</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVIMENTO.html">MOVIMENTO</A></TD><TD><P CLASS="Base2">MOVNFILI</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FILIAL.html">FILIAL</A></TD><TD><P CLASS="Base2">FLNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVFLQ2.html">FK_MOVFLQ2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVIMENTO.html">MOVIMENTO</A></TD><TD><P CLASS="Base2">MOVNFLQU</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FORMALIQUIDEZ.html">FORMALIQUIDEZ</A></TD><TD><P CLASS="Base2">FLQNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVFORN.html">FK_MOVFORN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVIMENTO.html">MOVIMENTO</A></TD><TD><P CLASS="Base2">MOVNFORN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_MOVORE.html">FK_MOVORE</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/MOVIMENTO.html">MOVIMENTO</A></TD><TD><P CLASS="Base2">MOVNCGORE</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ORIGEMENTRADA.html">ORIGEMENTRADA</A></TD><TD><P CLASS="Base2">ORENCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_OCOPCC.html">FK_OCOPCC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/OCORPARCELACONTRATO.html">OCORPARCELACONTRATO</A></TD><TD><P CLASS="Base2">OCONPCCT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/PARCCONTRATOAUTO.html">PARCCONTRATOAUTO</A></TD><TD><P CLASS="Base2">PCCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_OCPFAM.html">FK_OCPFAM</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/OCUPACAO.html">OCUPACAO</A></TD><TD><P CLASS="Base2">OCPNCGFAM</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FAMILIA.html">FAMILIA</A></TD><TD><P CLASS="Base2">FAMNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_OPCGPO.html">FK_OPCGPO</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/OPCAO.html">OPCAO</A></TD><TD><P CLASS="Base2">OPCNCGGPO</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPOOPCAO.html">GRUPOOPCAO</A></TD><TD><P CLASS="Base2">GPONCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_GOGR.html">FK_GOGR</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/OPERACAOGRUPO.html">OPERACAOGRUPO</A></TD><TD><P CLASS="Base2">GONCGGR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPO.html">GRUPO</A></TD><TD><P CLASS="Base2">GRNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_GOOP.html">FK_GOOP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/OPERACAOGRUPO.html">OPERACAOGRUPO</A></TD><TD><P CLASS="Base2">GONCGOP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/OPERACAO.html">OPERACAO</A></TD><TD><P CLASS="Base2">OPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PACFIL.html">FK_PACFIL</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PAGTOAJCUST.html">PAGTOAJCUST</A></TD><TD><P CLASS="Base2">PACNCGFIL</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FILTRO.html">FILTRO</A></TD><TD><P CLASS="Base2">FILNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PACTAC.html">FK_PACTAC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PAGTOAJCUST.html">PAGTOAJCUST</A></TD><TD><P CLASS="Base2">PACNCGTAC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOAJCUST.html">TIPOAJCUST</A></TD><TD><P CLASS="Base2">TACNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PCEEMP.html">FK_PCEEMP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PAGTOAJCUSTEMP.html">PAGTOAJCUSTEMP</A></TD><TD><P CLASS="Base2">PCENCGEMP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PCEPAC.html">FK_PCEPAC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PAGTOAJCUSTEMP.html">PAGTOAJCUSTEMP</A></TD><TD><P CLASS="Base2">PCENCGPAC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/PAGTOAJCUST.html">PAGTOAJCUST</A></TD><TD><P CLASS="Base2">PACNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PCETAC.html">FK_PCETAC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PAGTOAJCUSTEMP.html">PAGTOAJCUSTEMP</A></TD><TD><P CLASS="Base2">PCENCGTAC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOAJCUST.html">TIPOAJCUST</A></TD><TD><P CLASS="Base2">TACNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PCETAC2.html">FK_PCETAC2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PAGTOAJCUSTEMP.html">PAGTOAJCUSTEMP</A></TD><TD><P CLASS="Base2">PCENCGTAC,PCENCGPAC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/PAGTOAJCUST.html">PAGTOAJCUST</A></TD><TD><P CLASS="Base2">PACNCGTAC,PACNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PCCCTA.html">FK_PCCCTA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PARCCONTRATOAUTO.html">PARCCONTRATOAUTO</A></TD><TD><P CLASS="Base2">PCCNCTAU</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOAUTO.html">CONTRATOAUTO</A></TD><TD><P CLASS="Base2">CTANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PAEP.html">FK_PAEP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PATRIMONIO.html">PATRIMONIO</A></TD><TD><P CLASS="Base2">PANCGEP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPRESA.html">EMPRESA</A></TD><TD><P CLASS="Base2">EPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PDCCTA.html">FK_PDCCTA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PENDCONTRATOAUTO.html">PENDCONTRATOAUTO</A></TD><TD><P CLASS="Base2">PDCNCTAU</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATOAUTO.html">CONTRATOAUTO</A></TD><TD><P CLASS="Base2">CTANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PDCTPD.html">FK_PDCTPD</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PENDCONTRATOAUTO.html">PENDCONTRATOAUTO</A></TD><TD><P CLASS="Base2">PDCNPEND</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOPENDCONTRATOAUTO.html">TIPOPENDCONTRATOAUTO</A></TD><TD><P CLASS="Base2">TPDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PECT.html">FK_PECT</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PENDENCIACONTRATO.html">PENDENCIACONTRATO</A></TD><TD><P CLASS="Base2">PENCGCT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/CONTRATO.html">CONTRATO</A></TD><TD><P CLASS="Base2">CTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PETD.html">FK_PETD</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PENDENCIACONTRATO.html">PENDENCIACONTRATO</A></TD><TD><P CLASS="Base2">PENCGTD</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOPENDCONTRATO.html">TIPOPENDCONTRATO</A></TD><TD><P CLASS="Base2">TDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PLCPLC.html">FK_PLCPLC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PLANOCONTA.html">PLANOCONTA</A></TD><TD><P CLASS="Base2">PLCNPAI</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/PLANOCONTA.html">PLANOCONTA</A></TD><TD><P CLASS="Base2">PLCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PROEN1.html">FK_PROEN1</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PROCESSO.html">PROCESSO</A></TD><TD><P CLASS="Base2">PRONCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PROEN2.html">FK_PROEN2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PROCESSO.html">PROCESSO</A></TD><TD><P CLASS="Base2">PRONC2EN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PROEN3.html">FK_PROEN3</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PROCESSO.html">PROCESSO</A></TD><TD><P CLASS="Base2">PRONCADT</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PROTAC.html">FK_PROTAC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PROCESSO.html">PROCESSO</A></TD><TD><P CLASS="Base2">PRONCGTAC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOACAOJUDICIAL.html">TIPOACAOJUDICIAL</A></TD><TD><P CLASS="Base2">TACNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PDBC.html">FK_PDBC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PRODUTO.html">PRODUTO</A></TD><TD><P CLASS="Base2">PDNCGBC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/BANCO.html">BANCO</A></TD><TD><P CLASS="Base2">BCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PDAEN.html">FK_PDAEN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PRODUTO_ANGARIADOR.html">PRODUTO_ANGARIADOR</A></TD><TD><P CLASS="Base2">PDANCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_PDAPD.html">FK_PDAPD</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/PRODUTO_ANGARIADOR.html">PRODUTO_ANGARIADOR</A></TD><TD><P CLASS="Base2">PDANCGPD</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/PRODUTO.html">PRODUTO</A></TD><TD><P CLASS="Base2">PDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_QSTGPO.html">FK_QSTGPO</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/QUESTAO.html">QUESTAO</A></TD><TD><P CLASS="Base2">QSTNCGGPO</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPOOPCAO.html">GRUPOOPCAO</A></TD><TD><P CLASS="Base2">GPONCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_QSTQST.html">FK_QSTQST</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/QUESTAO.html">QUESTAO</A></TD><TD><P CLASS="Base2">QSTNCGQST</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/QUESTAO.html">QUESTAO</A></TD><TD><P CLASS="Base2">QSTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_QSTQTN.html">FK_QSTQTN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/QUESTAO.html">QUESTAO</A></TD><TD><P CLASS="Base2">QSTNCGQTN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/QUESTIONARIO.html">QUESTIONARIO</A></TD><TD><P CLASS="Base2">QTNNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_QSSOPC.html">FK_QSSOPC</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/QUESTAOSUBITENS.html">QUESTAOSUBITENS</A></TD><TD><P CLASS="Base2">QSSNCGOPC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/OPCAO.html">OPCAO</A></TD><TD><P CLASS="Base2">OPCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_QSSOPC2.html">FK_QSSOPC2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/QUESTAOSUBITENS.html">QUESTAOSUBITENS</A></TD><TD><P CLASS="Base2">QSSNCGGPO,QSSNCGOPC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/OPCAO.html">OPCAO</A></TD><TD><P CLASS="Base2">OPCNCGGPO,OPCNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_QSSQST.html">FK_QSSQST</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/QUESTAOSUBITENS.html">QUESTAOSUBITENS</A></TD><TD><P CLASS="Base2">QSSNCGQST</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/QUESTAO.html">QUESTAO</A></TD><TD><P CLASS="Base2">QSTNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_QSSQST2.html">FK_QSSQST2</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/QUESTAOSUBITENS.html">QUESTAOSUBITENS</A></TD><TD><P CLASS="Base2">QSSNCGQST,QSSNCGGPO</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/QUESTAO.html">QUESTAO</A></TD><TD><P CLASS="Base2">QSTNCODG,QSTNCGGPO</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_SETEMP.html">FK_SETEMP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/SETOR.html">SETOR</A></TD><TD><P CLASS="Base2">SETNCGEMP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/EMPREGADO.html">EMPREGADO</A></TD><TD><P CLASS="Base2">EMPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_SDPO.html">FK_SDPO</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/SINDICATO.html">SINDICATO</A></TD><TD><P CLASS="Base2">SDNCGPO</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/POLO.html">POLO</A></TD><TD><P CLASS="Base2">PONCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_SINOCP.html">FK_SINOCP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/SINONIMO.html">SINONIMO</A></TD><TD><P CLASS="Base2">SINNCGOCP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/OCUPACAO.html">OCUPACAO</A></TD><TD><P CLASS="Base2">OCPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_SGRSGP.html">FK_SGRSGP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/SUBGRUPO.html">SUBGRUPO</A></TD><TD><P CLASS="Base2">SGRNCGSGP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/SUBGRUPOPRINCIPAL.html">SUBGRUPOPRINCIPAL</A></TD><TD><P CLASS="Base2">SGPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_SGPGGR.html">FK_SGPGGR</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/SUBGRUPOPRINCIPAL.html">SUBGRUPOPRINCIPAL</A></TD><TD><P CLASS="Base2">SGPNCGGGR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRANDEGRUPO.html">GRANDEGRUPO</A></TD><TD><P CLASS="Base2">GGRNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_TABTTB.html">FK_TABTTB</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/TABELA.html">TABELA</A></TD><TD><P CLASS="Base2">TABNCGTTB</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOTABELA.html">TIPOTABELA</A></TD><TD><P CLASS="Base2">TTBNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_TBCTFA.html">FK_TBCTFA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/TABELACOMISSAO.html">TABELACOMISSAO</A></TD><TD><P CLASS="Base2">TBCNCGTFA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOFUNCAGENCIA.html">TIPOFUNCAGENCIA</A></TD><TD><P CLASS="Base2">TFANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_TFCFCA.html">FK_TFCFCA</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/TABELAFUNCIONARIO.html">TABELAFUNCIONARIO</A></TD><TD><P CLASS="Base2">TFCNCGFCA</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/FUNCIONARIOAGENCIA.html">FUNCIONARIOAGENCIA</A></TD><TD><P CLASS="Base2">FCANCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_TPPD.html">FK_TPPD</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/TABELAPRODUTO.html">TABELAPRODUTO</A></TD><TD><P CLASS="Base2">TPNCGPD</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/PRODUTO.html">PRODUTO</A></TD><TD><P CLASS="Base2">PDNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_TGAN.html">FK_TGAN</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/TABELA_ANGARIADOR.html">TABELA_ANGARIADOR</A></TD><TD><P CLASS="Base2">TGNCGEN</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ANGARIADOR.html">ANGARIADOR</A></TD><TD><P CLASS="Base2">ANNCGEN</P></TD>
+<TD><P CLASS="Base2">CASCADE</P></TD>
+<TD><P CLASS="Base2">CASCADE</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_TGTP.html">FK_TGTP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/TABELA_ANGARIADOR.html">TABELA_ANGARIADOR</A></TD><TD><P CLASS="Base2">TGNCGTP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TABELAPRODUTO.html">TABELAPRODUTO</A></TD><TD><P CLASS="Base2">TPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_UGGR.html">FK_UGGR</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/USUARIOGRUPO.html">USUARIOGRUPO</A></TD><TD><P CLASS="Base2">UGNCGGR</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/GRUPO.html">GRUPO</A></TD><TD><P CLASS="Base2">GRNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_UGUS.html">FK_UGUS</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/USUARIOGRUPO.html">USUARIOGRUPO</A></TD><TD><P CLASS="Base2">UGNCGUS</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_UOOP.html">FK_UOOP</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/USUARIOOPERACAO.html">USUARIOOPERACAO</A></TD><TD><P CLASS="Base2">UONCGOP</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/OPERACAO.html">OPERACAO</A></TD><TD><P CLASS="Base2">OPNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_UOUS.html">FK_UOUS</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/USUARIOOPERACAO.html">USUARIOOPERACAO</A></TD><TD><P CLASS="Base2">UONCGUS</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/ENTIDADE.html">ENTIDADE</A></TD><TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_VEIMVE.html">FK_VEIMVE</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/VEICULO.html">VEICULO</A></TD><TD><P CLASS="Base2">VEINMARC</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/MARCAVEICULO.html">MARCAVEICULO</A></TD><TD><P CLASS="Base2">MVENCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2"><A HREF="FK_VEITCO.html">FK_VEITCO</A></TD><TD><P CLASS="Base2"><A HREF="../Tables/VEICULO.html">VEICULO</A></TD><TD><P CLASS="Base2">VEINCOMB</P></TD>
+<TD><P CLASS="Base2"><A HREF="../Tables/TIPOCOMBUSTIVEL.html">TIPOCOMBUSTIVEL</A></TD><TD><P CLASS="Base2">TCONCODG</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+<TD><P CLASS="Base2">&nbsp;</P></TD>
+</TR>
+</TABLE>
+
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:55</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="../Index.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="FK_AJCEMP.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>SP_ATUALIZA_SPREAD_CORRETORES</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_ATUALIZA_COMIS_FUNC_AGENCIA.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_AUDITORIAQUESTAO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_ATUALIZA_SPREAD_CORRETORES</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_ATUALIZA_SPREAD_CORRETORES</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<P CLASS="Base">There are no input parameters for procedure SP_ATUALIZA_SPREAD_CORRETORES</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_ATUALIZA_SPREAD_CORRETORES</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_ATUALIZA_SPREAD_CORRETORES
+<b>AS
+DECLARE VARIABLE </b>CORRETOR <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>PRODUCAO_TRIMESTRE <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>DATA_INICIO <b>DATE</b>;
+<b>DECLARE VARIABLE </b>MEDIA_TRIMESTRE <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>PRODUCAO <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>SPREAD <b>FLOAT</b>;
+<b>BEGIN
+   </b>DATA_INICIO = ADDDAY('NOW', -90);
+   
+   <b>FOR SELECT </b>ANNCGEN <b>FROM </b>ANGARIADOR
+       <b>INNER JOIN </b>ENTIDADE <b>ON
+         </b>ENNCODG = ANNCGEN
+       <b>WHERE </b>ANNCGTN = 3
+       <b>AND </b>ENLATIV = 'T'
+       <b>INTO </b>:CORRETOR
+       <b>DO BEGIN
+           SELECT </b>COALESCE(<b>SUM</b>(CTYVALR),0)
+           <b>FROM </b>CONTRATO <b>INNER JOIN </b>SITUACAOCONTRATO <b>ON
+              </b>CTNCGSC = SCNCODG
+           <b>WHERE </b>CTNCGEN = :CORRETOR
+           <b>AND </b>SCLPGCM = 'T'
+           <b>AND </b>CTDPGTO &gt; :DATA_INICIO
+           <b>INTO </b>:PRODUCAO_TRIMESTRE;
+           
+           MEDIA_TRIMESTRE = PRODUCAO_TRIMESTRE / 3.0;
+           
+           <b>SELECT </b>TBCNVALR <b>FROM </b>TABELACOMISSAO
+           <b>WHERE </b>TBCCTIPO = 'CO'
+           <b>AND </b>:MEDIA_TRIMESTRE <b>BETWEEN </b>TBCNVLIN <b>AND </b>TBCNVLFN
+           <b>INTO </b>:SPREAD;
+           
+           -- ATUALIZA SPREAD DA EXATA EM CIMA <b>DO </b>CORRETOR
+           <b>UPDATE </b>ANGARIADOR <b>SET
+           </b>ANNSPRE = :SPREAD
+           <b>WHERE </b>ANNCGEN = :CORRETOR;
+
+       <b>END
+
+
+END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_ATUALIZA_COMIS_FUNC_AGENCIA.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_AUDITORIAQUESTAO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

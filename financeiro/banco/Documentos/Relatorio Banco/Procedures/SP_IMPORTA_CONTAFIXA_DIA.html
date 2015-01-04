@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<TITLE>SP_IMPORTA_CONTAFIXA_DIA</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_FINALIZA_CONTRATO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_INSERE_COMISSAOCONTRATO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_IMPORTA_CONTAFIXA_DIA</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_IMPORTA_CONTAFIXA_DIA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">ENNCODG</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_IMPORTA_CONTAFIXA_DIA</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_IMPORTA_CONTAFIXA_DIA(
+  ENNCODG <b>INTEGER</b>)
+<b>AS
+DECLARE VARIABLE </b>COD_FORN <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>MOVNCODG <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>CONTA_FORN <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>VALOR <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>DESCRICAO <b>VARCHAR</b>(80);
+<b>DECLARE VARIABLE </b>DOCUMENTO <b>VARCHAR</b>(80);
+<b>DECLARE VARIABLE </b>CONTA <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>CENTRO <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>FILIAL <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>MES <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>DIA <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>ANO <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>CPNCODG <b>INTEGER</b>;
+<b>BEGIN
+  </b>MES = <b>EXTRACT</b>(<b>MONTH FROM CAST</b>('NOW' <b>AS DATE</b>));
+  ANO = <b>EXTRACT</b>(<b>YEAR FROM CAST</b>('NOW' <b>AS DATE</b>));
+  
+<i>/* IMPORTA CONTAS FIXAS PARA CONTAS A PAGAR */
+  </i><b>FOR SELECT </b>COFNCONT, COFNFILI, COFNFORN, COFNCOCO,
+             COFCDESC, COFCDOCM, COFYVALR, COFNDIA
+      <b>FROM </b>CONTAFIXA
+      <b>WHERE </b>COFNDIA = <b>EXTRACT</b>(<b>DAY FROM CAST</b>('NOW' <b>AS DATE</b>))
+      <b>AND </b>COFLATIV = 'T'
+      <b>INTO </b>:CONTA, :FILIAL, :COD_FORN, :CONTA_FORN,
+            :DESCRICAO, :DOCUMENTO, :VALOR, :DIA
+      <b>DO BEGIN
+         </b>MOVNCODG = <b>GEN_ID</b>(MOVNCODG_GEN, 1);
+         <b>INSERT INTO </b>MOVIMENTO(MOVNCODG, MOVDVENC, MOVNCGCOG, MOVNFILI, MOVCDESC, MOVCDOCM, MOVNFORN, MOVNCOCO, MOVYVALR, MOVNCADT, MOVLTIPO)
+         <b>VALUES </b>(:MOVNCODG, :MES||'/'||:DIA||'/'||:ANO, :CONTA, :FILIAL, :DESCRICAO, :DOCUMENTO, :COD_FORN, :CONTA_FORN, :VALOR, :ENNCODG, 'F');
+
+         <b>FOR SELECT </b>CRNCODG <b>FROM </b>CENTROCUSTO <b>WHERE </b>CRLATIV = 'T'
+         <b>INTO </b>:CENTRO
+         <b>DO BEGIN
+            INSERT INTO </b>CENTROMOVCAIXA(CRMNMOVC,CRMNCGCR)
+            <b>VALUES</b>(:MOVNCODG,:CENTRO);
+         <b>END
+         
+      END
+      
+END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_FINALIZA_CONTRATO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_INSERE_COMISSAOCONTRATO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

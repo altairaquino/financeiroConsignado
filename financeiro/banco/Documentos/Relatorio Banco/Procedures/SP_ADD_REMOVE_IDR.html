@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<TITLE>SP_ADD_REMOVE_IDR</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_ADD_REMOVE_ECC.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_ATUALIZACOMISSAO_FUNC.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_ADD_REMOVE_IDR</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_ADD_REMOVE_IDR</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">IDRNCGDER</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">IDRNCGTDR</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">TIPO</P></TD>
+<TD><P CLASS="Base2">CHAR(1)</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_ADD_REMOVE_IDR</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_ADD_REMOVE_IDR(
+  IDRNCGDER <b>INTEGER</b>,
+  IDRNCGTDR <b>INTEGER</b>,
+  TIPO <b>CHAR</b>(1) <b>CHARACTER SET </b>NONE)
+<b>RETURNS</b>(
+  IDRCTIPO <b>CHAR</b>(1) <b>CHARACTER SET </b>NONE)
+<b>AS
+DECLARE VARIABLE </b>IDRNCODG <b>INTEGER</b>;
+<b>BEGIN
+     SELECT
+       </b>IDRNCODG
+     <b>FROM
+       </b>ITEM_DESC_REND
+     <b>WHERE
+       </b>IDRNCGDER = :IDRNCGDER <b>AND </b>IDRNCGTDR = :IDRNCGTDR
+     <b>INTO
+       </b>:IDRNCODG;
+  <b>IF</b>(IDRNCODG <b>IS NOT NULL</b>)<b>THEN
+  BEGIN
+       IF</b>(TIPO <b>IS NULL OR </b>TIPO = '') <b>THEN
+       BEGIN
+         DELETE
+         FROM
+           </b>ITEM_DESC_REND
+         <b>WHERE
+           </b>IDRNCODG = :IDRNCODG;
+         IDRNCODG = <b>NULL</b>;
+       <b>END ELSE
+       BEGIN
+         UPDATE
+           </b>ITEM_DESC_REND
+         <b>SET
+           </b>IDRCTIPO = :TIPO
+         <b>WHERE
+           </b>IDRNCODG = :IDRNCODG;
+       <b>END
+  END ELSE
+  BEGIN
+    IF</b>(<b>NOT</b>(TIPO <b>IS NULL OR </b>TIPO = '')) <b>THEN
+    BEGIN
+       </b>IDRNCODG = <b>GEN_ID</b>(IDRNCODG_GEN,1);
+       <b>INSERT
+       INTO
+         </b>ITEM_DESC_REND ( IDRNCODG, IDRNCGDER, IDRNCGTDR, IDRCTIPO )
+       <b>VALUES
+         </b>( :IDRNCODG, :IDRNCGDER, :IDRNCGTDR, :TIPO );
+    <b>END
+  END
+   SELECT
+       </b>IDRCTIPO
+     <b>FROM
+       </b>ITEM_DESC_REND
+     <b>WHERE
+       </b>IDRNCGDER = :IDRNCGDER <b>AND </b>IDRNCGTDR = :IDRNCGTDR
+     <b>INTO
+       </b>:IDRCTIPO;
+  <b>SUSPEND</b>;
+<b>END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_ADD_REMOVE_ECC.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_ATUALIZACOMISSAO_FUNC.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

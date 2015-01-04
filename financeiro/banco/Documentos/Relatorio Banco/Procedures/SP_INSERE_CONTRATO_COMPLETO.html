@@ -1,0 +1,225 @@
+<HTML>
+<HEAD>
+<TITLE>SP_INSERE_CONTRATO_COMPLETO</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_INSERE_COMISSAOCONTRATO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_INSERE_PROCESSO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_INSERE_CONTRATO_COMPLETO</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_INSERE_CONTRATO_COMPLETO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">ENCNOME</P></TD>
+<TD><P CLASS="Base2">VARCHAR(60)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENCDOCM</P></TD>
+<TD><P CLASS="Base2">VARCHAR(11)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENDNASC</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENCSEXO</P></TD>
+<TD><P CLASS="Base2">CHAR(1)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENCRG</P></TD>
+<TD><P CLASS="Base2">VARCHAR(14)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENDEXRG</P></TD>
+<TD><P CLASS="Base2">DATE</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENCOERG</P></TD>
+<TD><P CLASS="Base2">VARCHAR(5)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENCUFRG</P></TD>
+<TD><P CLASS="Base2">VARCHAR(2)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENCDORG</P></TD>
+<TD><P CLASS="Base2">VARCHAR(200)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENCFONE</P></TD>
+<TD><P CLASS="Base2">VARCHAR(10)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENNCGTL</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENLENDR</P></TD>
+<TD><P CLASS="Base2">VARCHAR(80)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENNCGCD</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENCCEP</P></TD>
+<TD><P CLASS="Base2">VARCHAR(8)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ENCBAIR</P></TD>
+<TD><P CLASS="Base2">VARCHAR(50)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">CTNNUMR</P></TD>
+<TD><P CLASS="Base2">VARCHAR(15)</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">CTNCGEN</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">CTNCADT</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">CTNCGFP</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">CTNCGTP</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">CTYVALR</P></TD>
+<TD><P CLASS="Base2">FLOAT</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">CTNCGBC</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">CTCAGEN</P></TD>
+<TD><P CLASS="Base2">VARCHAR(6)</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_INSERE_CONTRATO_COMPLETO</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_INSERE_CONTRATO_COMPLETO(
+  ENCNOME <b>VARCHAR</b>(60) <b>CHARACTER SET </b>NONE,
+  ENCDOCM <b>VARCHAR</b>(11) <b>CHARACTER SET </b>NONE,
+  ENDNASC <b>DATE</b>,
+  ENCSEXO <b>CHAR</b>(1) <b>CHARACTER SET </b>NONE,
+  ENCRG <b>VARCHAR</b>(14) <b>CHARACTER SET </b>NONE,
+  ENDEXRG <b>DATE</b>,
+  ENCOERG <b>VARCHAR</b>(5) <b>CHARACTER SET </b>NONE,
+  ENCUFRG <b>VARCHAR</b>(2) <b>CHARACTER SET </b>NONE,
+  ENCDORG <b>VARCHAR</b>(200) <b>CHARACTER SET </b>NONE,
+  ENCFONE <b>VARCHAR</b>(10) <b>CHARACTER SET </b>NONE,
+  ENNCGTL <b>INTEGER</b>,
+  ENLENDR <b>VARCHAR</b>(80) <b>CHARACTER SET </b>NONE,
+  ENNCGCD <b>INTEGER</b>,
+  ENCCEP <b>VARCHAR</b>(8) <b>CHARACTER SET </b>NONE,
+  ENCBAIR <b>VARCHAR</b>(50) <b>CHARACTER SET </b>NONE,
+  CTNNUMR <b>VARCHAR</b>(15) <b>CHARACTER SET </b>NONE,
+  CTNCGEN <b>INTEGER</b>,
+  CTNCADT <b>INTEGER</b>,
+  CTNCGFP <b>INTEGER</b>,
+  CTNCGTP <b>INTEGER</b>,
+  CTYVALR <b>FLOAT</b>,
+  CTNCGBC <b>INTEGER</b>,
+  CTCAGEN <b>VARCHAR</b>(6) <b>CHARACTER SET </b>NONE)
+<b>AS
+DECLARE VARIABLE </b>ENNCODG <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>CTNCODG <b>INTEGER</b>;
+<b>BEGIN
+
+     IF </b>(<b>EXISTS</b>(<b>SELECT </b>FIRST 1 ENNCODG <b>FROM </b>ENTIDADE <b>WHERE </b>ENCDOCM = :ENCDOCM <b>AND </b>ENNCGTE = 1)) <b>THEN
+     BEGIN
+          SELECT </b>FIRST 1 ENNCODG <b>FROM </b>ENTIDADE <b>WHERE </b>ENCDOCM = :ENCDOCM <b>AND </b>ENNCGTE = 1
+          <b>INTO </b>:ENNCODG;
+
+          <b>UPDATE </b>ENTIDADE <b>SET </b>ENCNOME = :ENCNOME, ENCSEXO = :ENCSEXO,
+          ENDNASC = :ENDNASC, ENDEXRG = :ENDEXRG, ENCRG = :ENCRG, ENCOERG = :ENCOERG,
+          ENCUFRG = :ENCUFRG, ENCDORG = :ENCDORG, ENCFONE = :ENCFONE, ENNCGTL = :ENNCGTL,
+          ENLENDR = :ENLENDR, ENNCGCD = :ENNCGCD, ENCCEP = :ENCCEP, ENCBAIR = :ENCBAIR
+          <b>WHERE </b>ENNCODG = :ENNCODG;
+
+          <b>INSERT
+          INTO </b>CONTRATO(CTNNUMR, CTNC2EN, CTNCGEN, CTYVALR, CTNCGFP, CTNCGTP,
+          CTNCADT, CTNCGBC, CTCAGEN)
+          <b>VALUES </b>(:CTNNUMR, :ENNCODG, :CTNCGEN, :CTYVALR, :CTNCGFP, :CTNCGTP,
+          :CTNCADT, :CTNCGBC, :CTCAGEN);
+     
+     <b>END
+     ELSE
+     BEGIN
+          </b>ENNCODG  =  <b>GEN_ID</b>(ENNCODG_GEN,1);
+
+          <b>INSERT
+          INTO </b>ENTIDADE(ENNCODG, ENCNOME, ENNCGTE, ENNCGPP, ENCSEXO, ENCDOCM,
+          ENDNASC, ENDEXRG, ENCRG, ENCOERG, ENCUFRG, ENCDORG, ENCFONE, ENNCGTL,
+          ENLENDR, ENNCGCD, ENCCEP, ENCBAIR)
+          <b>VALUES </b>(:ENNCODG, :ENCNOME, 1, 1, :ENCSEXO, :ENCDOCM, :ENDNASC, :ENDEXRG,
+          :ENCRG, :ENCOERG, :ENCUFRG, :ENCDORG, :ENCFONE, :ENNCGTL, :ENLENDR,
+          :ENNCGCD, :ENCCEP, :ENCBAIR);
+          
+          <b>INSERT
+          INTO </b>CONTRATO(CTNNUMR, CTNC2EN, CTNCGEN, CTYVALR, CTNCGFP, CTNCGTP,
+          CTNCADT, CTNCGBC, CTCAGEN)
+          <b>VALUES </b>(:CTNNUMR, :ENNCODG, :CTNCGEN, :CTYVALR, :CTNCGFP, :CTNCGTP,
+          :CTNCADT, :CTNCGBC, :CTCAGEN);
+     
+     <b>END
+     
+     
+
+     
+
+END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_INSERE_COMISSAOCONTRATO.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_INSERE_PROCESSO.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>

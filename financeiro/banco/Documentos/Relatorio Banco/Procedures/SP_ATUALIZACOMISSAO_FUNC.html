@@ -1,0 +1,164 @@
+<HTML>
+<HEAD>
+<TITLE>SP_ATUALIZACOMISSAO_FUNC</TITLE>
+<META content="text/html" http-equiv=Content-Type>
+<LINK HREF="../HTMLReport.css" type=text/css rel=STYLESHEET>
+</HEAD>
+<BODY>
+<DIV ID="nsbanner">
+  <DIV ID="bannerrow1">
+    <TABLE CLASS="bannerparthead" CELLSPACING=0>
+      <TR ID="hdr" VALIGN="middle">
+        <TD CLASS="runninghead">"firebird02.kinghost.net:/firebird/exatagrupo.gdb"</TD>
+        <TD ALIGN="left" WIDTH="54px" NOWRAP>
+          <A HREF="SP_ADD_REMOVE_IDR.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+          <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+          <A HREF="SP_ATUALIZACOMISSAO_FUNC2.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <DIV ID="TitleRow">
+    <P CLASS="dtH1">SP_ATUALIZACOMISSAO_FUNC</P>
+  </DIV>
+</DIV>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Descriptions</P>
+<P CLASS="Base">There is no description for procedure SP_ATUALIZACOMISSAO_FUNC</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Input Parameters</P>
+<TABLE CLASS="dtArg" CELLSPACING="0" WIDTH=90%>
+<TH WIDTH="30%"><P CLASS="Base2"><B>Parameter</B></P>
+<TH><P CLASS="Base2"><B>Type</B></P>
+<TR>
+<TD><P CLASS="Base2">MES</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+<TR>
+<TD><P CLASS="Base2">ANO</P></TD>
+<TD><P CLASS="Base2">INTEGER</P></TD>
+</TR>
+</TABLE>
+
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Output Parameters</P>
+<P CLASS="Base">There are no output parameters for procedure SP_ATUALIZACOMISSAO_FUNC</P>
+<P CLASS="Base">&nbsp;</P>
+<P CLASS="Header1">Definition</P>
+<P CLASS="Base">
+<blockquote><code><pre><basefont size=1 face="Courier New"><font size= +2>
+<b>SET </b>TERM ^ ;
+
+<b>CREATE PROCEDURE </b>SP_ATUALIZACOMISSAO_FUNC(
+  MES <b>INTEGER</b>,
+  ANO <b>INTEGER</b>)
+<b>AS
+DECLARE VARIABLE </b>PROD_AGENCIA <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>PERC_AGENCIA <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>META_AGENCIA <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>COD_AGENCIA <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>META_FUNC <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>COMIS <b>FLOAT</b>;
+<b>DECLARE VARIABLE </b>COD_FUNC <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>TIPO_FUNC <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>COD_CONTRATO <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>PARC_CONTRATO <b>INTEGER</b>;
+<b>DECLARE VARIABLE </b>TABELA_PROD <b>INTEGER</b>;
+<b>BEGIN
+
+  FOR SELECT </b>ANNCGEN, ANNMETA <b>FROM </b>ANGARIADOR <b>INNER JOIN </b>ENTIDADE <b>ON
+      </b>ENNCODG = ANNCGEN
+      <b>WHERE </b>ANNCGTN = 9
+      <b>AND </b>ENLATIV = 'T'
+      <b>INTO </b>:COD_AGENCIA, :META_AGENCIA
+  <b>DO BEGIN
+          SELECT SUM</b>(CTYVALR) <b>FROM </b>CONTRATO
+          <b>INNER JOIN </b>SITUACAOCONTRATO <b>ON
+             </b>CTNCGSC = SCNCODG
+          <b>WHERE </b>CTNCGEN = :COD_AGENCIA
+          <b>AND </b>CTDVERB <b>IS NOT NULL
+          AND </b>SCLPGCM = 'T'
+          <b>AND EXTRACT</b>(<b>YEAR FROM </b>CTDPGTO) = :ANO
+          <b>AND EXTRACT</b>(<b>MONTH FROM </b>CTDPGTO) = :MES
+          <b>INTO </b>:PROD_AGENCIA;
+
+          <b>FOR SELECT </b>FCANC2EN, FCANMETA, FCANCGTFA <b>FROM </b>FUNCIONARIOAGENCIA
+              <b>WHERE </b>FCANCGEN = :COD_AGENCIA
+              <b>AND </b>FCALATIV = 'T'
+              <b>INTO </b>:COD_FUNC, :META_FUNC, :TIPO_FUNC
+          <b>DO BEGIN
+                  </b>PERC_AGENCIA = (PROD_AGENCIA / META_AGENCIA * 100);
+
+                  <b>FOR SELECT </b>CTNCODG, TPNQTPC, TPNCODG <b>FROM </b>CONTRATO
+                      <b>INNER JOIN </b>TABELAPRODUTO <b>ON
+                         </b>TPNCODG = CTNCGTP
+                      <b>INNER JOIN </b>SITUACAOCONTRATO <b>ON
+                         </b>SCNCODG = CTNCGSC
+                      <b>WHERE </b>CTNCGEN = :COD_AGENCIA
+                      <b>AND </b>SCLPGCM = 'T'
+                      <b>AND </b>CTDVERB <b>IS NOT NULL
+                      AND EXTRACT</b>(<b>YEAR FROM </b>CTDPGTO) = :ANO
+                      <b>AND EXTRACT</b>(<b>MONTH FROM </b>CTDPGTO) = :MES
+                      --<b>AND </b>TPNQTPC <b>IN </b>(48,60)
+                      <b>INTO </b>:COD_CONTRATO, :PARC_CONTRATO, :TABELA_PROD
+                  <b>DO BEGIN
+
+                     IF </b>(PERC_AGENCIA &gt; META_FUNC)<b>THEN
+                     BEGIN
+                          </b>-- FUNCIONÁRIO CUMPRIU A META
+                          
+                          <b>SELECT </b>IIF(
+                                     :PERC_AGENCIA <b>BETWEEN </b>100 <b>AND </b>150,
+                                     TFCNCM70,
+                                     IIF(
+                                         :PERC_AGENCIA &gt; 150,
+                                         TFCNCM100,
+                                         TFCNCOMS)
+                                         )
+                          <b>FROM </b>TABELAFUNCIONARIO
+                          <b>INNER JOIN </b>FUNCIONARIOAGENCIA <b>ON
+                               </b>FCANCODG = TFCNCGFCA
+                          <b>WHERE </b>TFCNCGTP = :TABELA_PROD
+                          <b>AND </b>FCANC2EN = :COD_FUNC
+                          <b>AND </b>FCANCGEN = :COD_AGENCIA
+                          <b>INTO </b>:COMIS;
+
+                          <b>UPDATE </b>COMISSAOCONTRATO
+                          <b>SET </b>CCNPERC = :COMIS
+                          <b>WHERE </b>CCNCGCT = :COD_CONTRATO
+                          <b>AND </b>CCNCGEN = :COD_FUNC
+                          --<b>AND </b>CCNPERC &gt; 0
+                          ;
+                               
+                      <b>END
+                      ELSE
+                      BEGIN
+                           UPDATE </b>COMISSAOCONTRATO
+                           <b>SET </b>CCNPERC = 0
+                           <b>WHERE </b>CCNCGCT = :COD_CONTRATO
+                           <b>AND </b>CCNCGEN = :COD_FUNC
+                           <b>AND </b>CCNPERC &gt; 0;
+                      <b>END
+                 END </b>-- <b>END DO FOR </b>CONTRATO
+          <b>END </b>-- <b>END DO FOR </b>FUNCIONARIO
+  <b>END </b>-- <b>END DO FOR </b>AGENCIA
+
+<b>END</b>^
+
+<b>SET </b>TERM ; ^
+</font></basefont></pre></code></blockquote>
+</P>
+<DIV CLASS="footer"><BR><HR></DIV>
+  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH=100%>
+    <TR VALIGN="middle">
+      <TD>&nbsp;&nbsp;&nbsp;&nbsp;This file was generated with SQL Manager 2005 for InterBase and Firebird (<A HREF="http://www.ibmanager.com/">www.ibmanager.com</A>) at 16/9/2009 08:54</TD>
+      <TD ALIGN="left" WIDTH="54px" NOWRAP>
+        <A HREF="SP_ADD_REMOVE_IDR.html"><IMG ALT="Previous topic" SRC="../Images/GoPrev.bmp" BORDER="0"></A>
+        <A HREF="../Index.html"><IMG ALT="Chapter index" SRC="../Images/GoIndex.bmp" BORDER="0"></A>
+        <A HREF="SP_ATUALIZACOMISSAO_FUNC2.html"><IMG ALT="Next topic" SRC="../Images/GoNext.bmp" BORDER="0"></A>
+      </TD>
+    </TR>
+  </TABLE>
+<P CLASS="Base">&nbsp;</P></BODY>
+</HTML>
